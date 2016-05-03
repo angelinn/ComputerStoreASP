@@ -9,7 +9,7 @@ namespace DataAccess.Models.XML
 {
     public class Memory
     {
-        [XmlAttribute]
+        [XmlAttribute("id")]
         public string ID { get; set; }
 
         [XmlText]

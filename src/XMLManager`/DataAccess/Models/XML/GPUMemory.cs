@@ -9,7 +9,7 @@ namespace DataAccess.Models.XML
 {
     public class GPUMemory
     {
-        [XmlAttribute]
+        [XmlAttribute("type")]
         public string Type { get; set; }
         [XmlText]
         public string Amount { get; set; }

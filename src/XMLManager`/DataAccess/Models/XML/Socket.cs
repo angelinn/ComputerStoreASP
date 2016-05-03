@@ -9,7 +9,7 @@ namespace DataAccess.Models.XML
 {
     public class Socket
     {
-        [XmlAttribute]
+        [XmlAttribute("id")]
         public string ID { get; set; }
 
         [XmlText]

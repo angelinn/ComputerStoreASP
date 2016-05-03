@@ -9,22 +9,26 @@ namespace DataAccess.Models.XML
 {
     public class Motherboard
     {
-        [XmlAttribute]
+        [XmlAttribute("id")]
         public string ID { get; set; }
-        [XmlAttribute]
+        [XmlAttribute("socket-id")]
         public string SocketID { get; set; }
-        [XmlAttribute]
+        [XmlAttribute("processor")]
         public string Processor { get; set; }
-        [XmlAttribute]
+        [XmlAttribute("video-card")]
         public string VideoCard { get; set; }
-        [XmlAttribute]
+        [XmlAttribute("ram-memory")]
         public string RamMemory { get; set; }
-        [XmlAttribute]
+        [XmlAttribute("hard-drive")]
         public string HardDrive { get; set; }
 
+        [XmlElement("manufacturer")]
         public string Manufacturer { get; set; }
+        [XmlElement("chipset")]
         public string Chipset { get; set; }
+        [XmlElement("available")]
         public int Available { get; set; }
+        [XmlElement("price")]
         public string Price { get; set; }
 
     }

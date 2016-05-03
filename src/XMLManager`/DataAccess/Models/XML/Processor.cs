@@ -9,20 +9,28 @@ namespace DataAccess.Models.XML
 {
     public class Processor
     {
-        [XmlAttribute]
+        [XmlAttribute("id")]
         public string ID { get; set; }
-        [XmlAttribute]
+        [XmlAttribute("socket")]
         public string Socket { get; set; }
-        [XmlAttribute]
+        [XmlAttribute("integrated_video")]
         public bool IntegratedVideo { get; set; }
 
+        [XmlElement("model")]
         public string Model { get; set; }
+        [XmlElement("manufacturer")]
         public string Manufacturer { get; set; }
+        [XmlElement("architecture")]
         public string Architecture { get; set; }
+        [XmlElement("clock-frequency")]
         public string ClockFrequency { get; set; }
+        [XmlElement("cache")]
         public string Cache { get; set; }
+        [XmlElement("threads")]
         public Threads Threads { get; set; }
+        [XmlElement("available")]
         public int Available { get; set; }
+        [XmlElement("price")]
         public string Price { get; set; }
     }
 }
