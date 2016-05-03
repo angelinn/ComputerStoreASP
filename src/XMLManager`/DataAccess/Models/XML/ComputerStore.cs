@@ -7,6 +7,7 @@ using System.Xml.Serialization;
 
 namespace DataAccess.Models.XML
 {
+    [XmlRoot("computer-store")]
     public class ComputerStore
     {
         [XmlElement("parts")]

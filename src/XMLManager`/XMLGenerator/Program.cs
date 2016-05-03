@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
 using System.Xml.Serialization;
 
 namespace XMLGenerator
@@ -14,7 +15,14 @@ namespace XMLGenerator
         static void Main(string[] args)
         {
             XmlSerializer serializer = new XmlSerializer(typeof(ComputerStore));
-            TextWriter writer = new StreamWriter("file.xml");
+            TextWriter textWriter = new StreamWriter("file.xml");
+
+            XmlWriterSettings writerSettings = new XmlWriterSettings();
+            writerSettings.Indent = true;
+            writerSettings.IndentChars = "\t";
+
+            XmlWriter xmlWriter = XmlWriter.Create(textWriter, writerSettings);
+            xmlWriter.WriteDocType("computer-store", null, "computer-store.dtd", null);
             ComputerStore store = new ComputerStore();
             store.Parts = new Parts();
             store.Parts.Processors = new Processor[1];
@@ -24,7 +32,7 @@ namespace XMLGenerator
                 Model = "i5 4200h"
             };
 
-            serializer.Serialize(writer, store);
+            serializer.Serialize(xmlWriter, store);
         }
     }
 }
