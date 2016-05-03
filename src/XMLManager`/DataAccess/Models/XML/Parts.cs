@@ -9,15 +9,20 @@ namespace DataAccess.Models.XML
 {
     public class Parts
     {
-        [XmlElement("processors")]
+        [XmlArray("processors")]
+        [XmlArrayItem("processor")]
         public Processor[] Processors { get; set; }
-        [XmlElement("ram-boards")]
+        [XmlArray("ram-boards")]
+        [XmlArrayItem("ram-board")]
         public RamBoard[] RamBoards { get; set; }
-        [XmlElement("video-cards")]
+        [XmlArray("video-cards")]
+        [XmlArrayItem("video-cards")]
         public VideoCard[] VideoCards { get; set; }
-        [XmlElement("hard-drives")]
+        [XmlArray("hard-drives")]
+        [XmlArrayItem("hard-drive")]
         public HardDrive[] HardDrives { get; set; }
-        [XmlElement("motherboards")]
+        [XmlArray("motherboards")]
+        [XmlArrayItem("motherboard")]
         public Motherboard[] Motherboards { get; set; }
     }
 }

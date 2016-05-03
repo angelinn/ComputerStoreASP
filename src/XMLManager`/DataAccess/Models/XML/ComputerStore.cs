@@ -12,9 +12,11 @@ namespace DataAccess.Models.XML
     {
         [XmlElement("parts")]
         public Parts Parts { get; set; }
-        [XmlElement("sockets")]
+        [XmlArray("sockets")]
+        [XmlArrayItem("socket")]
         public Socket[] Sockets { get; set; }
-        [XmlElement("memory-types")]
+        [XmlArray("memory-types")]
+        [XmlArrayItem("memory-type")]
         public Memory[] MemoryTypes{ get; set; }
     }
 }
