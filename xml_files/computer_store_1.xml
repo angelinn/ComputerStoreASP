@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE computer-store SYSTEM "computer_store.dtd">
+
+<computer-store>
+    <parts>
+        <processors>
+            <processor id="I54210U" socket="I5" integrated_video="true">
+                <model>i5 4210u</model>
+                <manufacturer>Интел</manufacturer>
+                <architecture>Максуел</architecture>
+                <clock-frequency>1800</clock-frequency>
+                <cache>
+                    <levels>3</levels>
+                    <memory>2МБ</memory>
+                </cache>
+                <threads>
+                    <physical>2</physical>
+                    <logical>4</logical>
+                </threads>
+                <available>3</available>
+                <price>120 лева</price>
+            </processor>
+            <processor id="FXX8" socket="A3">
+                <model>FX X8 8350</model>
+                <manufacturer>AMD</manufacturer>
+                <architecture></architecture>
+                <clock-frequency>4000</clock-frequency>
+                <cache>
+                    <levels>3</levels>
+                    <memory>8МБ</memory>
+                </cache>
+                <threads>
+                    <physical>8</physical>
+                    <logical>8</logical>
+                </threads>
+                <available>7</available>
+                <price>464 лева</price>
+            </processor>
+        </processors>
+        
+        <ram-boards>
+            <ram-board id="SB" type="D3">
+                <manufacturer>Kingston Savage</manufacturer>
+                <memory>8ГБ</memory>
+                <frequency>1664 мега-херца</frequency>
+                <channel>двоен</channel>
+                <available>1</available>
+                <price>118 лева</price>
+            </ram-board>
+            <ram-board id="KSD8" type="D3">
+                <manufacturer>Kingston SO-DIMM</manufacturer>
+                <memory>8GB</memory>
+                <frequency>1666 мега-херца</frequency>
+                <channel>двоен</channel>
+                <available>2</available>
+                <price>89 лева</price>
+            </ram-board>
+        </ram-boards>
+        
+        
+        <video-cards>
+            <video-card id="GTX980TI" interface="PCIE-3">
+                <manufacturer>NVidia</manufacturer>
+                <model>GTX 980 TI</model>
+                <gpu_memory type="GD3">4ГБ</gpu_memory>
+                <bus-width>256 бита</bus-width>
+                <bandwidth>40.3 ГБ/с</bandwidth>
+                <directx>12</directx>
+                <shaders>21.9 гига-пиксела/с</shaders>
+                <available>1</available>
+                <price>1229 лева</price>
+            </video-card>
+            <video-card id="R7265" interface="PCIE-3">
+                <manufacturer>ATI</manufacturer>
+                <model>R7 265</model>
+                <gpu_memory type="GD3">2ГБ</gpu_memory>
+                <bus-width>256 бита</bus-width>
+                <bandwidth>33.5 ГБ/с</bandwidth>
+                <directx>11</directx>
+                <shaders>17.5 гига-пиксела/с</shaders>
+                <available>2</available>
+                <price>359 лева</price>
+            </video-card>
+        </video-cards>
+        
+        <hard-drives>
+            <hard-drive id="SAM1" bus="SATA3" laptop-compatible="true">
+                <manufacturer>Samsung</manufacturer>
+                <drive-memory>
+                    <amount>256ГБ</amount>
+                    <type>Флаш</type>
+                </drive-memory>
+                <speed>няма</speed>
+                <size>2.5 инча</size>                
+                <available>11</available>
+                <price>239 лева</price>
+            </hard-drive>
+            <hard-drive id="SEA4" bus="SATA3" laptop-compatible="false">
+                <manufacturer>Seagate</manufacturer>
+                <drive-memory>
+                    <amount>500ГБ</amount>
+                    <type>Оптична</type>
+                </drive-memory>
+                <speed>7200 оборота/м</speed>
+                <size>3.2 инча</size>
+                <available>4</available>
+                <price>99 лева</price>
+            </hard-drive>
+        </hard-drives>
+        
+        <motherboards>
+            <motherboard id="ASUSM1"
+                socket-id="I5"
+                processor="I54210U"
+                video-card="GTX980TI"
+                ram-memory="KSD8"
+                hard-drive="SAM1">
+                <manufacturer>ASUS</manufacturer>
+                <chipset>Maxwell</chipset>
+                <available>1</available>
+                <price>249 лева</price>
+            </motherboard>
+            <motherboard id="I0"
+                socket-id="A3"
+                processor="FXX8"
+                video-card="R7265"
+                ram-memory="SB"
+                hard-drive="SEA4">
+                <manufacturer>Intel</manufacturer>
+                <chipset>AMD</chipset>
+                <available>7</available>
+                <price>190 лева</price>
+            </motherboard>
+        </motherboards>
+    </parts>
+    
+    <sockets>
+        <socket id="I5">i5510</socket>
+        <socket id="A3">AM3+</socket>
+    </sockets>
+    <memory-types>
+        <memory-type id="D3">DDR3</memory-type>
+        <memory-type id="GD3">GDDR3</memory-type>
+    </memory-types>
+</computer-store>

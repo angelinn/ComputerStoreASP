@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE computer-store SYSTEM "computer_store.dtd">
+
+<computer-store>
+    <parts>
+        <processors>
+            <processor id="I54690K" socket="I5" integrated_video="true">
+                <model>i5 4690K</model>
+                <manufacturer>Интел</manufacturer>
+                <architecture>Бродуел</architecture>
+                <clock-frequency>3800</clock-frequency>
+                <cache>
+                    <levels>3</levels>
+                    <memory>6МБ</memory>
+                </cache>
+                <threads>
+                    <physical>4</physical>
+                    <logical>8</logical>
+                </threads>
+                <available>1</available>
+                <price>499 лева</price>
+            </processor>
+            <processor id="I34370" socket="I5" integrated_video="true">
+                <model>i3 4370</model>
+                <manufacturer>Интел</manufacturer>
+                <architecture>Бродуел</architecture>
+                <clock-frequency>3500</clock-frequency>
+                <cache>
+                    <levels>3</levels>
+                    <memory>4МБ</memory>
+                </cache>
+                <threads>
+                    <physical>2</physical>
+                    <logical>4</logical>
+                </threads>
+                <available>5</available>
+                <price>486 лева</price>
+            </processor>
+        </processors>
+        
+        <ram-boards>
+            <ram-board id="COR2" type="D2">
+                <manufacturer>Corsair</manufacturer>
+                <memory>2ГБ</memory>
+                <frequency>800 мега-херца</frequency>
+                <channel>двоен</channel>
+                <available>6</available>
+                <price>29 лева</price>
+            </ram-board>
+            <ram-board id="SAMD3" type="D3">
+                <manufacturer>Samsung</manufacturer>
+                <memory>1ГБ</memory>
+                <frequency>1333 мега-херца</frequency>
+                <channel>двоен</channel>
+                <available>1</available>
+                <price>30 лева</price>
+            </ram-board>
+        </ram-boards>
+        
+        
+        <video-cards>
+            <video-card id="HD4550" interface="PCIE-2">
+                <manufacturer>AMD</manufacturer>
+                <model>HD 4550</model>
+                <gpu_memory type="GD3">1ГБ</gpu_memory>
+                <bus-width>64 бита</bus-width>
+                <bandwidth>6.4 ГБ/с</bandwidth>
+                <directx>10</directx>
+                <shaders>11.9 гига-пиксела/с</shaders>
+                <available>2</available>
+                <price>79 лева</price>
+            </video-card>
+            <video-card id="HD8330" interface="PCIE-3">
+                <manufacturer>AMD</manufacturer>
+                <model>HD 8330</model>
+                <gpu_memory type="GD3">1ГБ</gpu_memory>
+                <bus-width>128 бита</bus-width>
+                <bandwidth>10.3 ГБ/с</bandwidth>
+                <directx>11</directx>
+                <shaders>18.5 гига-пиксела/с</shaders>
+                <available>11</available>
+                <price>189 лева</price>
+            </video-card>
+        </video-cards>
+        
+        <hard-drives>
+            <hard-drive id="SBH" bus="SATA3" laptop-compatible="true">
+                <manufacturer>Seagate Baracuda</manufacturer>
+                <drive-memory>
+                    <amount>2ТБ</amount>
+                    <type>Оптична</type>
+                </drive-memory>
+                <speed>7200 оборота/м</speed>
+                <size>2.5 инча</size>                
+                <available>2</available>
+                <price>349 лева</price>
+            </hard-drive>
+            <hard-drive id="SAMH1" bus="SATA3" laptop-compatible="false">
+                <manufacturer>Samsung</manufacturer>
+                <drive-memory>
+                    <amount>80ГБ</amount>
+                    <type>Оптична</type>
+                </drive-memory>
+                <speed>5400 оборота/м</speed>
+                <size>3.5 инча</size>
+                <available>1</available>
+                <price>39 лева</price>
+            </hard-drive>
+        </hard-drives>
+        
+        <motherboards>
+            <motherboard id="AC1"
+                socket-id="I5"
+                processor="I54690K"
+                video-card="HD8330"
+                ram-memory="SAMD3"
+                hard-drive="SAMH1">
+                <manufacturer>Acer</manufacturer>
+                <chipset>Broadwell</chipset>
+                <available>1</available>
+                <price>229 лева</price>
+            </motherboard>
+            <motherboard id="epox"
+                socket-id="I5"
+                processor="I34370"
+                video-card="HD4550"
+                ram-memory="COR2"
+                hard-drive="SBH">
+                <manufacturer>Epox</manufacturer>
+                <chipset>Intel</chipset>
+                <available>1</available>
+                <price>69 лева</price>
+            </motherboard>
+        </motherboards>
+    </parts>
+    
+    <sockets>
+        <socket id="I5">i5510</socket>
+    </sockets>
+    <memory-types>
+        <memory-type id="D2">DDR2</memory-type>
+        <memory-type id="D3">DDR3</memory-type>
+        <memory-type id="GD3">GDDR3</memory-type>
+    </memory-types>
+</computer-store>

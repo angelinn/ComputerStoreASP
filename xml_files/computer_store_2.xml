@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE computer-store SYSTEM "computer_store.dtd">
+
+<computer-store>
+    <parts>
+        <processors>
+            <processor id="I76700K" socket="I5" integrated_video="true">
+                <model>i7 6700K</model>
+                <manufacturer>Интел</manufacturer>
+                <architecture>Хасуел</architecture>
+                <clock-frequency>4300</clock-frequency>
+                <cache>
+                    <levels>3</levels>
+                    <memory>12МБ</memory>
+                </cache>
+                <threads>
+                    <physical>8</physical>
+                    <logical>16</logical>
+                </threads>
+                <available>2</available>
+                <price>799 лева</price>
+            </processor>
+            <processor id="AS3" socket="A1">
+                <model>Sempron 3000+</model>
+                <manufacturer>AMD</manufacturer>
+                <architecture></architecture>
+                <clock-frequency>3000</clock-frequency>
+                <cache>
+                    <levels>2</levels>
+                    <memory>512КБ</memory>
+                </cache>
+                <threads>
+                    <physical>1</physical>
+                    <logical>1</logical>
+                </threads>
+                <available>3</available>
+                <price>89 лева</price>
+            </processor>
+        </processors>
+        
+        <ram-boards>
+            <ram-board id="CR" type="D2">
+                <manufacturer>Crucial</manufacturer>
+                <memory>4ГБ</memory>
+                <frequency>2133 мега-херца</frequency>
+                <channel>троен</channel>
+                <available>20</available>
+                <price>69 лева</price>
+            </ram-board>
+            <ram-board id="CE" type="ER">
+                <manufacturer>Crucial EDO</manufacturer>
+                <memory>512МБ</memory>
+                <frequency>400 мега-херца</frequency>
+                <channel>единичен</channel>
+                <available>1</available>
+                <price>46 лева</price>
+            </ram-board>
+        </ram-boards>
+        
+        
+        <video-cards>
+            <video-card id="R9FURY" interface="PCIE-3">
+                <manufacturer>AMD</manufacturer>
+                <model>R9 FURY</model>
+                <gpu_memory type="GD3">4ГБ</gpu_memory>
+                <bus-width>4096 бита</bus-width>
+                <bandwidth>56.4 ГБ/с</bandwidth>
+                <directx>12</directx>
+                <shaders>41.9 гига-пиксела/с</shaders>
+                <available>1</available>
+                <price>1119 лева</price>
+            </video-card>
+            <video-card id="GT9800" interface="PCIE-3">
+                <manufacturer>Geforce</manufacturer>
+                <model>9800GT</model>
+                <gpu_memory type="GD3">1ГБ</gpu_memory>
+                <bus-width>128 бита</bus-width>
+                <bandwidth>9.3 ГБ/с</bandwidth>
+                <directx>10</directx>
+                <shaders>12.5 гига-пиксела/с</shaders>
+                <available>4</available>
+                <price>89 лева</price>
+            </video-card>
+        </video-cards>
+        
+        <hard-drives>
+            <hard-drive id="KSSD" bus="SATA3" laptop-compatible="false">
+                <manufacturer>Kingston</manufacturer>
+                <drive-memory>
+                    <amount>128ГБ</amount>
+                    <type>Флаш</type>
+                </drive-memory>
+                <speed>няма</speed>
+                <size>3.5 инча</size>                
+                <available>4</available>
+                <price>109 лева</price>
+            </hard-drive>
+            <hard-drive id="PATHD" bus="SATA3" laptop-compatible="false">
+                <manufacturer>Patriot</manufacturer>
+                <drive-memory>
+                    <amount>300GB</amount>
+                    <type>Оптична</type>
+                </drive-memory>
+                <speed>7200 оборота/м</speed>
+                <size>3.5 инча</size>
+                <available>8</available>
+                <price>49 лева</price>
+            </hard-drive>
+        </hard-drives>
+        
+        <motherboards>
+            <motherboard id="GB1"
+                socket-id="I5"
+                processor="I76700K"
+                video-card="R9FURY"
+                ram-memory="CR"
+                hard-drive="PATHD">
+                <manufacturer>Gigabyte</manufacturer>
+                <chipset>Intel</chipset>
+                <available>3</available>
+                <price>349 лева</price>
+            </motherboard>
+            <motherboard id="BT"
+                socket-id="A1"
+                processor="AS3"
+                video-card="GT9800"
+                ram-memory="CR"
+                hard-drive="KSSD">
+                <manufacturer>Biotech</manufacturer>
+                <chipset>AMD</chipset>
+                <available>14</available>
+                <price>89 лева</price>
+            </motherboard>
+        </motherboards>
+    </parts>
+    
+    <sockets>
+        <socket id="I5">i5510</socket>
+        <socket id="A1">AM</socket>
+    </sockets>
+    <memory-types>
+        <memory-type id="D2">DDR2</memory-type>
+        <memory-type id="ER">EDO RAM</memory-type>
+        <memory-type id="GD3">GDDR3</memory-type>
+    </memory-types>
+</computer-store>

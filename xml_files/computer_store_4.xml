@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE computer-store SYSTEM "computer_store.dtd">
+
+<computer-store>
+    <parts>
+        <processors>
+            <processor id="IC478" socket="I478" integrated_video="false">
+                <model>Селерон FSB</model>
+                <manufacturer>Интел</manufacturer>
+                <architecture>Бродуел</architecture>
+                <clock-frequency>2200</clock-frequency>
+                <cache>
+                    <levels>2</levels>
+                    <memory>128КБ</memory>
+                </cache>
+                <threads>
+                    <physical>2</physical>
+                    <logical>2</logical>
+                </threads>
+                <available>1</available>
+                <price>49 лева</price>
+            </processor>
+            <processor id="A10-5700" socket="FM2" integrated_video="true">
+                <model>A10-5700</model>
+                <manufacturer>AMD</manufacturer>
+                <architecture>AMD64</architecture>  
+                <clock-frequency>4000</clock-frequency>
+                <cache>
+                    <levels>2</levels>
+                    <memory>4МБ</memory>
+                </cache>
+                <threads>
+                    <physical>4</physical>
+                    <logical>4</logical>
+                </threads>
+                <available>3</available>
+                <price>239 лева</price>
+            </processor>
+        </processors>
+        
+        <ram-boards>
+            <ram-board id="XTREME2" type="D1">
+                <manufacturer>XTremeDDR</manufacturer>
+                <memory>256МБ</memory>
+                <frequency>200 мега-херца</frequency>
+                <channel>единичен</channel>
+                <available>2</available>
+                <price>9 лева</price>
+            </ram-board>
+            <ram-board id="MIC4" type="D1">
+                <manufacturer>Micron</manufacturer>
+                <memory>512МБ</memory>
+                <frequency>400 мега-херца</frequency>
+                <channel>двоен</channel>
+                <available>1</available>
+                <price>19 лева</price>
+            </ram-board>
+        </ram-boards>
+        
+        
+        <video-cards>
+            <video-card id="HD4550" interface="PCIE-2">
+                <manufacturer>AMD</manufacturer>
+                <model>HD 4550</model>
+                <gpu_memory type="GD5">1ГБ</gpu_memory>
+                <bus-width>64 бита</bus-width>
+                <bandwidth>6.4 ГБ/с</bandwidth>
+                <directx>10</directx>
+                <shaders>11.9 гига-пиксела/с</shaders>
+                <available>2</available>
+                <price>79 лева</price>
+            </video-card>
+            <video-card id="HD8330" interface="PCIE-3">
+                <manufacturer>AMD</manufacturer>
+                <model>HD 8330</model>
+                <gpu_memory type="GD5">1ГБ</gpu_memory>
+                <bus-width>128 бита</bus-width>
+                <bandwidth>10.3 ГБ/с</bandwidth>
+                <directx>11</directx>
+                <shaders>18.5 гига-пиксела/с</shaders>
+                <available>11</available>
+                <price>189 лева</price>
+            </video-card>
+        </video-cards>
+        
+        <hard-drives>
+            <hard-drive id="WDB" bus="SATA3" laptop-compatible="true">
+                <manufacturer>Western Digital Black</manufacturer>
+                <drive-memory>
+                    <amount>4ТБ</amount>
+                    <type>Оптична</type>
+                </drive-memory>
+                <speed>7200 оборота/м</speed>
+                <size>2.5 инча</size>                
+                <available>2</available>
+                <price>559 лева</price>
+            </hard-drive>
+            <hard-drive id="IBM3000" bus="SATA2" laptop-compatible="false">
+                <manufacturer>IBM</manufacturer>
+                <drive-memory>
+                    <amount>256ГБ</amount>
+                    <type>Оптична</type>
+                </drive-memory>
+                <speed>5400 оборота/м</speed>
+                <size>3.5 инча</size>
+                <available>1</available>
+                <price>59 лева</price>
+            </hard-drive>
+        </hard-drives>
+        
+        <motherboards>
+            <motherboard id="LDMB"
+                socket-id="I478"
+                processor="IC478"
+                video-card="HD8330"
+                ram-memory="XTREME2"
+                hard-drive="WDB">
+                <manufacturer>Leadtech</manufacturer>
+                <chipset>VIA Technologies</chipset>
+                <available>8</available>
+                <price>229 лева</price>
+            </motherboard>
+            <motherboard id="PCMB"
+                socket-id="FM2"
+                processor="A10-5700"
+                video-card="HD4550"
+                ram-memory="MIC4"
+                hard-drive="IBM3000">
+                <manufacturer>Powercolor</manufacturer>
+                <chipset>NVidia</chipset>
+                <available>4</available>
+                <price>69 лева</price>
+            </motherboard>
+        </motherboards>
+    </parts>
+    
+    <sockets>
+        <socket id="I478">Intel 478</socket>
+        <socket id="FM2">AMD FM2</socket>
+    </sockets>
+    <memory-types>
+        <memory-type id="D1">DDR1</memory-type>
+        <memory-type id="GD5">GDDR5</memory-type>
+    </memory-types>
+</computer-store>
