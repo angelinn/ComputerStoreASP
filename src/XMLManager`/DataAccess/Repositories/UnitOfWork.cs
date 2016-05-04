@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Repositories
 {
-    public class UnitOfWork
+    public class UnitOfWork : IDisposable
     {
         public UnitOfWork(ComputerStoreContext context)
         {
@@ -36,6 +36,25 @@ namespace DataAccess.Repositories
             return (IGenericRepository<T>)repositories[typeof(T)];
         }
 
+        protected virtual void Dispose(bool disposing)
+        {
+            if (!this.disposed)
+            {
+                if (disposing)
+                {
+                    context.Dispose();
+                }
+            }
+            this.disposed = true;
+        }
+
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        private bool disposed = false;
         private ComputerStoreContext context;
         private Dictionary<Type, object> repositories;
     }

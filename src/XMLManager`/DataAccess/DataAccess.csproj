@@ -50,7 +50,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ComputerStoreContext.cs" />
+    <Compile Include="Models\Entities\Cache.cs" />
+    <Compile Include="Models\Entities\MemoryType.cs" />
     <Compile Include="Models\Entities\Parts.cs" />
+    <Compile Include="Models\Entities\Processor.cs" />
+    <Compile Include="Models\Entities\Socket.cs" />
+    <Compile Include="Models\Entities\Threads.cs" />
     <Compile Include="Models\XML\Cache.cs" />
     <Compile Include="Models\XML\ComputerStore.cs" />
     <Compile Include="Models\XML\DriveMemory.cs" />
