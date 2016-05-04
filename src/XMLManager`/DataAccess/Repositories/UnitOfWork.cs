@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Repositories
 {
-    public class UnitOfWork : IDisposable
+    internal class UnitOfWork : IDisposable
     {
         public UnitOfWork(ComputerStoreContext context)
         {

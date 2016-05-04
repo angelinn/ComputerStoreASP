@@ -6,21 +6,21 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Models.Entities
 {
-    internal class Processor
+    internal class VideoCard
     {
         public int ID { get; set; }
         public string Alias { get; set; }
-        public string Socket { get; set; }
+        public string Interface { get; set; }
         public string Manufacturer { get; set; }
         public string Model { get; set; }
-        public string Architecture { get; set; }
-        public string ClockFrequency { get; set; }
-        public string Price { get; set; }
+        public string BusWidth { get; set; }
+        public string Bandwidth { get; set; }
+        public int DirectX { get; set; }
+        public string Shaders { get; set; }
         public int Available { get; set; }
-        public bool IntegratedVideo { get; set; }
+        public string Price { get; set; }
 
-        public virtual Threads Threads { get; set; }
-        public virtual Cache Cache { get; set; }
+        public virtual GPUMemory GPUMemory { get; set; }
         public virtual Motherboard Owner { get; set; }
     }
 }

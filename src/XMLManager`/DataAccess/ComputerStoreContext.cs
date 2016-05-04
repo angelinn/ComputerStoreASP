@@ -22,6 +22,11 @@ namespace DataAccess
         public IDbSet<Threads> Threads { get; set; }
         public IDbSet<Cache> Caches { get; set; }
 
+        public IDbSet<VideoCard> VideoCards { get; set; }
+        public IDbSet<GPUMemory> GPUMemories { get; set; }
+
+        public IDbSet<HardDrive> HardDrives { get; set; }
+        public IDbSet<DriveMemory> DriveMemories { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
