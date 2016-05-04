@@ -17,5 +17,10 @@ namespace XMLGenerator.Databases
         {
             return Generator.random.Next(100, 801) + "лева";
         }
+
+        public static T GetRandomFromCollection<T>(IEnumerable<T> collection)
+        {
+            return collection.ElementAt(Generator.random.Next(0, collection.Count()));
+        }
     }
 }

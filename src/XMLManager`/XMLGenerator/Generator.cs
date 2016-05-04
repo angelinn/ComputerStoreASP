@@ -76,6 +76,17 @@ namespace XMLGenerator
                 store.Parts.VideoCards[i].Interface = GPUDatabase.GetRandomInterface();
                 store.Parts.VideoCards[i].Shaders = GPUDatabase.GetRandomShaders();
 
+                store.Parts.HardDrives[i] = new HardDrive();
+                store.Parts.HardDrives[i].ID = store.Parts.HardDrives[i].GetHashCode().ToString();
+                store.Parts.HardDrives[i].Available = CommonDatabase.GetRandomAvailable();
+                store.Parts.HardDrives[i].Price = CommonDatabase.GetRandomPrice();
+                store.Parts.HardDrives[i].Bus = HDDDatabase.GetRandomBus();
+                store.Parts.HardDrives[i].DriveMemory = HDDDatabase.GetRandomMemory();
+                store.Parts.HardDrives[i].Manufacturer = HDDDatabase.GetRandomManufacturer();
+                store.Parts.HardDrives[i].Size = HDDDatabase.GetRandomSize();
+                store.Parts.HardDrives[i].Speed = HDDDatabase.GetSpeedFromDriveType(store.Parts.HardDrives[i].DriveMemory.Type);
+                store.Parts.HardDrives[i].LaptopCompatible = HDDDatabase.GetLaptopCompatibleFromSize(store.Parts.HardDrives[i].Size);
+
             }
 
             return store;

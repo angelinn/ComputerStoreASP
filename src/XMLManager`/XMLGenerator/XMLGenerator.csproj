@@ -46,6 +46,7 @@
     <Compile Include="Databases\CommonDatabase.cs" />
     <Compile Include="Databases\CPUDatabase.cs" />
     <Compile Include="Databases\GPUDatabase.cs" />
+    <Compile Include="Databases\HDDDatabase.cs" />
     <Compile Include="Databases\RAMDatabase.cs" />
     <Compile Include="Generator.cs" />
     <Compile Include="Program.cs" />
