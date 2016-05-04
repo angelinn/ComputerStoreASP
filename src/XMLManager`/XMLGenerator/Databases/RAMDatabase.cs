@@ -34,6 +34,15 @@ namespace XMLGenerator.Databases
             return CommonDatabase.GetRandomFromCollection(MemoryTypes[type]) + " мега-херца";
         }
 
+        public static string GetRAMNameFromID(string name)
+        {
+            if (name[0] == 'D')
+                return "DDR" + name.Last();
+
+            else
+                return "EDO";
+        }
+
         private static string[] Memories = { "64мб", "128мб", "256мб", "512мб", "1ГБ", "2ГБ", "4ГБ", "8ГБ", "16ГБ" };
         private static string[] Channels = { "Единичен", "Двоен", "Троен" };
         private static string[] Manufacturers = { "Kingston", "XTremeDDR", "Micron", "Corsair", "Samsung", "AData",
@@ -41,11 +50,11 @@ namespace XMLGenerator.Databases
 
         private static Dictionary<string, int[]> MemoryTypes = new Dictionary<string, int[]>()
         {
-            { "DDR1", new int[] { 200, 400 } },
-            { "DDR2", new int[] { 800, 833 } },
-            { "DDR3", new int[] { 1664, 1666, 1333, 1866, 2133 } },
-            { "DDR4", new int[] { 1600, 1866, 2133, 2400 } },
-            { "EDO",  new int[] { 100, 122, 140, 210 } }
+            { "D1", new int[] { 200, 400 } },
+            { "D2", new int[] { 800, 833 } },
+            { "D3", new int[] { 1664, 1666, 1333, 1866, 2133 } },
+            { "D4", new int[] { 1600, 1866, 2133, 2400 } },
+            { "ER",  new int[] { 100, 122, 140, 210 } }
         };
     }
 }

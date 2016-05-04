@@ -39,6 +39,9 @@ namespace XMLGenerator
             store.Parts.VideoCards = new VideoCard[2];
             store.Parts.Motherboards = new Motherboard[2];
 
+            store.Sockets = new Socket[2];
+            store.MemoryTypes = new Memory[2];
+
             for (int i = 0; i < store.Parts.Processors.Length; ++i)
             {
                 store.Parts.Processors[i] = new Processor();
@@ -50,7 +53,7 @@ namespace XMLGenerator
                 store.Parts.Processors[i].Available = CommonDatabase.GetRandomAvailable();
                 store.Parts.Processors[i].Threads = CPUDatabase.GetRandomThreads();
                 store.Parts.Processors[i].Price = CommonDatabase.GetRandomPrice();
-                store.Parts.Processors[i].ID = CPUDatabase.GetIdFromModel(store.Parts.Processors[i].Model);
+                store.Parts.Processors[i].ID = store.Parts.Processors[i].GetHashCode().ToString();
                 store.Parts.Processors[i].Socket = CPUDatabase.GetSocketFromManufacturer(store.Parts.Processors[i].Manufacturer);
 
                 store.Parts.RamBoards[i] = new RamBoard();
@@ -87,6 +90,25 @@ namespace XMLGenerator
                 store.Parts.HardDrives[i].Speed = HDDDatabase.GetSpeedFromDriveType(store.Parts.HardDrives[i].DriveMemory.Type);
                 store.Parts.HardDrives[i].LaptopCompatible = HDDDatabase.GetLaptopCompatibleFromSize(store.Parts.HardDrives[i].Size);
 
+                store.Parts.Motherboards[i] = new Motherboard();
+                store.Parts.Motherboards[i].Available = CommonDatabase.GetRandomAvailable();
+                store.Parts.Motherboards[i].Price = CommonDatabase.GetRandomPrice();
+                store.Parts.Motherboards[i].HardDrive = store.Parts.HardDrives[i].ID;
+                store.Parts.Motherboards[i].ID = store.Parts.Motherboards[i].GetHashCode().ToString();
+                store.Parts.Motherboards[i].Processor = store.Parts.Processors[i].ID;
+                store.Parts.Motherboards[i].RamMemory = store.Parts.RamBoards[i].ID;
+                store.Parts.Motherboards[i].VideoCard = store.Parts.VideoCards[i].ID;
+                store.Parts.Motherboards[i].Chipset = MotherboardDatabase.GetRandomChipset();
+                store.Parts.Motherboards[i].SocketID = MotherboardDatabase.GetSocketIDFromSocket(store.Parts.Processors[i].Socket);
+                store.Parts.Motherboards[i].Manufacturer = MotherboardDatabase.GetRandomManufacturer();
+
+                store.Sockets[i] = new Socket();
+                store.Sockets[i].ID = store.Parts.Motherboards[i].SocketID;
+                store.Sockets[i].SocketName = store.Parts.Processors[i].Socket;
+
+                store.MemoryTypes[i] = new Memory();
+                store.MemoryTypes[i].ID = store.Parts.RamBoards[i].Type;
+                store.MemoryTypes[i].MemoryName = RAMDatabase.GetRAMNameFromID(store.MemoryTypes[i].ID);
             }
 
             return store;

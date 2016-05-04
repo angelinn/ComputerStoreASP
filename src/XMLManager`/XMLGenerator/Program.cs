@@ -14,8 +14,10 @@ namespace XMLGenerator
     {
         public static void Main(string[] args)
         {
-            ComputerStore store = Generator.GenerateRandomData();
-            Generator.SerializeXML(store, "xmled.xml");
+            string fileName = "computer-store-{0}.xml";
+
+            for (int i = 5; i < 30; ++i)
+                Generator.SerializeXML(Generator.GenerateRandomData(), String.Format(fileName, i));
         }
     }
 }
