@@ -30,7 +30,7 @@ namespace XMLGenerator.Databases
 
         public static string GetRandomFrequencyFromType(string type)
         {
-            return MemoryTypes[type][Generator.random.Next(0, MemoryTypes[type].Length)] + " мега-хертза";
+            return MemoryTypes[type][Generator.random.Next(0, MemoryTypes[type].Length)] + " мега-херца";
         }
 
         private static string[] Memories = { "64мб", "128мб", "256мб", "512мб", "1ГБ", "2ГБ", "4ГБ", "8ГБ", "16ГБ" };

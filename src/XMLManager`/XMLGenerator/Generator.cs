@@ -62,6 +62,20 @@ namespace XMLGenerator
                 store.Parts.RamBoards[i].Available = CommonDatabase.GetRandomAvailable();
                 store.Parts.RamBoards[i].Price = CommonDatabase.GetRandomPrice();
                 store.Parts.RamBoards[i].ID = store.Parts.RamBoards[i].GetHashCode().ToString();
+
+                store.Parts.VideoCards[i] = new VideoCard();
+                store.Parts.VideoCards[i].Available = CommonDatabase.GetRandomAvailable();
+                store.Parts.VideoCards[i].Price = CommonDatabase.GetRandomPrice();
+                store.Parts.VideoCards[i].Manufacturer = GPUDatabase.GetRandomManufacturer();
+                store.Parts.VideoCards[i].Model = GPUDatabase.GetRandomModel(store.Parts.VideoCards[i].Manufacturer);
+                store.Parts.VideoCards[i].ID = store.Parts.VideoCards[i].GetHashCode().ToString();
+                store.Parts.VideoCards[i].DirectX = GPUDatabase.GetRandomDirectX();
+                store.Parts.VideoCards[i].Bandwidth = GPUDatabase.GetRandomBandwidth();
+                store.Parts.VideoCards[i].BusWidth = GPUDatabase.GetRandomBusWidth();
+                store.Parts.VideoCards[i].GPUMemory = GPUDatabase.GetRandomGPUMemory();
+                store.Parts.VideoCards[i].Interface = GPUDatabase.GetRandomInterface();
+                store.Parts.VideoCards[i].Shaders = GPUDatabase.GetRandomShaders();
+
             }
 
             return store;
