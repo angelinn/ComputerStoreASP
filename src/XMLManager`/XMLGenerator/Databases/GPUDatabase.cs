@@ -49,7 +49,7 @@ namespace XMLGenerator.Databases
 
         public static string GetRandomBusWidth()
         {
-            return String.Format("{0} бита", Bits[Generator.random.Next(0, Bits.Length)]);
+            return String.Format("{0} бита", CommonDatabase.GetRandomFromCollection(Bits));
         }
 
         public static string GetRandomInterface()
@@ -66,13 +66,13 @@ namespace XMLGenerator.Databases
         {
             return new GPUMemory
             {
-                Amount = Bits[Generator.random.Next(0, Bits.Length)] * Generator.random.Next(1, 3) + "мега-байта",
-                Type = GraphicMemoryTypes[Generator.random.Next(0, GraphicMemoryTypes.Length)]
+                Amount = CommonDatabase.GetRandomFromCollection(Bits) * Generator.random.Next(1, 3) + "мега-байта",
+                Type = CommonDatabase.GetRandomFromCollection(GraphicMemoryTypes)
             };
         }
 
         private static int[] Bits = { 64, 128, 256, 512 };
-        private static string[] GraphicMemoryTypes = { "GDDR3", "GDDR5" };
+        private static string[] GraphicMemoryTypes = { "GD3", "GD5" };
         private static string[] Manufacturers = { "ATi", "NVidia" };
         private static Dictionary<string, string[]> Models = new Dictionary<string, string[]>()
         {

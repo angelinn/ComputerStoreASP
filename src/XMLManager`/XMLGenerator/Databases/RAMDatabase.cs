@@ -10,27 +10,28 @@ namespace XMLGenerator.Databases
     {
         public static string GetRandomRAM()
         {
-            return Manufacturers[Generator.random.Next(0, Manufacturers.Length)];
+            return CommonDatabase.GetRandomFromCollection(Manufacturers);
         }
 
         public static string GetRandomChannel()
         {
-            return Channels[Generator.random.Next(0, Channels.Length)];
+            return CommonDatabase.GetRandomFromCollection(Channels);
         }
 
         public static string GetRandomMemory()
         {
-            return Memories[Generator.random.Next(0, Memories.Length)];
+            return CommonDatabase.GetRandomFromCollection(Memories);
         }
 
         public static string GetRandomType()
         {
-            return MemoryTypes.Keys.ElementAt(Generator.random.Next(0, MemoryTypes.Keys.Count));
+
+            return CommonDatabase.GetRandomFromCollection(MemoryTypes.Keys);
         }
 
         public static string GetRandomFrequencyFromType(string type)
         {
-            return MemoryTypes[type][Generator.random.Next(0, MemoryTypes[type].Length)] + " мега-херца";
+            return CommonDatabase.GetRandomFromCollection(MemoryTypes[type]) + " мега-херца";
         }
 
         private static string[] Memories = { "64мб", "128мб", "256мб", "512мб", "1ГБ", "2ГБ", "4ГБ", "8ГБ", "16ГБ" };

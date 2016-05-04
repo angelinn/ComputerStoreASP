@@ -42,7 +42,7 @@ namespace XMLGenerator.Databases
             if (manufacturer == "АМД")
                 return "amd64";
 
-            return Architectures[Generator.random.Next(0, Architectures.Length)];
+            return CommonDatabase.GetRandomFromCollection(Architectures);
         }
 
         public static string GetRandomClockFrequency()
