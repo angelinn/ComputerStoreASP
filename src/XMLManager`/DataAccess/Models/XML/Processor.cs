@@ -25,7 +25,7 @@ namespace DataAccess.Models.XML
         [XmlElement("clock-frequency")]
         public string ClockFrequency { get; set; }
         [XmlElement("cache")]
-        public string Cache { get; set; }
+        public Cache Cache { get; set; }
         [XmlElement("threads")]
         public Threads Threads { get; set; }
         [XmlElement("available")]
