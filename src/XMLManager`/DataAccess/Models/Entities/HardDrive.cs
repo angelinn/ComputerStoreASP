@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Models.Entities
 {
-    internal class HardDrive
+    public class HardDrive
     {
         public int ID { get; set; }
         public string Alias { get; set; }
@@ -18,7 +18,7 @@ namespace DataAccess.Models.Entities
         public int Available { get; set; }
         public string Price { get; set; }
 
+        public int? DriveMemoryID { get; set; }
         public virtual DriveMemory DriveMemory { get; set; }
-        public virtual Motherboard Owner { get; set; }
     }
 }

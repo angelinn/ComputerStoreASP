@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Models.Entities
 {
-    internal class VideoCard
+    public class VideoCard
     {
         public int ID { get; set; }
         public string Alias { get; set; }
@@ -20,7 +20,7 @@ namespace DataAccess.Models.Entities
         public int Available { get; set; }
         public string Price { get; set; }
 
+        public int? GPUMemoryID { get; set; }
         public virtual GPUMemory GPUMemory { get; set; }
-        public virtual Motherboard Owner { get; set; }
     }
 }

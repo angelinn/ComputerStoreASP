@@ -6,10 +6,13 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Models.Entities
 {
-    internal class Socket
+    public class Socket
     {
         public int ID { get; set; }
         public string Alias { get; set; }
         public string Name { get; set; }
+
+        public ICollection<Processor> Processors { get; set; }
+        public ICollection<Motherboard> Motherboards { get; set; }
     }
 }

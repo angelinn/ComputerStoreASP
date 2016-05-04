@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess
 {
-    internal class ComputerStoreContext : DbContext
+    public class ComputerStoreContext : DbContext
     {
         public ComputerStoreContext() : base("ComputerStoreContext")
         {   }

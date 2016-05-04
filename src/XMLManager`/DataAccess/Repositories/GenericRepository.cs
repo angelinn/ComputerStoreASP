@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataAccess.Models.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Repositories
 {
-    public class GenericRepository<T> : IGenericRepository<T>
+    public class GenericRepository<T> : IGenericRepository<T> where T : class
     {
         public GenericRepository(ComputerStoreContext context)
         {
@@ -21,7 +22,7 @@ namespace DataAccess.Repositories
 
         public void Create(T entity)
         {
-            throw new NotImplementedException();
+            context.Set<T>().Add(entity);
         }
 
         public void Delete(int id)

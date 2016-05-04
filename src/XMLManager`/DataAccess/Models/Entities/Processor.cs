@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Models.Entities
 {
-    internal class Processor
+    public class Processor
     {
         public int ID { get; set; }
         public string Alias { get; set; }
@@ -19,8 +19,11 @@ namespace DataAccess.Models.Entities
         public int Available { get; set; }
         public bool IntegratedVideo { get; set; }
 
+        public int? ThreadsID { get; set; }
         public virtual Threads Threads { get; set; }
+        public int? CacheID { get; set; }
         public virtual Cache Cache { get; set; }
-        public virtual Motherboard Owner { get; set; }
+        public int? SocketID { get; set; }
+        public virtual Socket SocketObject { get; set; }
     }
 }

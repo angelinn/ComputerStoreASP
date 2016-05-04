@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Models.Entities
 {
-    internal class Parts
+    public class Parts
     {
         public int ID { get; set; }
 
