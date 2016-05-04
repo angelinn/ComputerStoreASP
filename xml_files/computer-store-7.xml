@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE computer-store SYSTEM "computer_store.dtd">
+<computer-store>
+	<parts>
+		<processors>
+			<processor id="st_17625630" socket="i1" integrated_video="false">
+				<model>N2350</model>
+				<manufacturer>Интел</manufacturer>
+				<architecture>Скайлейк</architecture>
+				<clock-frequency>1900mhz</clock-frequency>
+				<cache>
+					<levels>1</levels>
+					<memory>5MB</memory>
+				</cache>
+				<threads>
+					<physical>7</physical>
+					<logical>14</logical>
+				</threads>
+				<available>7</available>
+				<price>160лева</price>
+			</processor>
+			<processor id="st_51595365" socket="A3" integrated_video="false">
+				<model>Phenom II X6 1035T</model>
+				<manufacturer>АМД</manufacturer>
+				<architecture>amd64</architecture>
+				<clock-frequency>2900mhz</clock-frequency>
+				<cache>
+					<levels>1</levels>
+					<memory>3MB</memory>
+				</cache>
+				<threads>
+					<physical>5</physical>
+					<logical>10</logical>
+				</threads>
+				<available>9</available>
+				<price>142лева</price>
+			</processor>
+		</processors>
+		<ram-boards>
+			<ram-board id="st_24412946" type="D4">
+				<manufacturer>AData</manufacturer>
+				<memory>256мб</memory>
+				<frequency>1600 мега-херца</frequency>
+				<channel>Троен</channel>
+				<available>1</available>
+				<price>489лева</price>
+			</ram-board>
+			<ram-board id="st_61705107" type="ER">
+				<manufacturer>Kingston HYPER-X</manufacturer>
+				<memory>64мб</memory>
+				<frequency>100 мега-херца</frequency>
+				<channel>Двоен</channel>
+				<available>8</available>
+				<price>542лева</price>
+			</ram-board>
+		</ram-boards>
+		<video-cards>
+			<video-card id="st_18389930" interface="PCIE-3">
+				<manufacturer>ATi</manufacturer>
+				<model>FirePro W9000</model>
+				<gpu_memory type="GD5">128мега-байта</gpu_memory>
+				<bus-width>256 бита</bus-width>
+				<bandwidth>30.2гб/с</bandwidth>
+				<directx>10</directx>
+				<shaders>16.9 гига пиксела</shaders>
+				<available>8</available>
+				<price>655лева</price>
+			</video-card>
+			<video-card id="st_18475057" interface="PCIE-3">
+				<manufacturer>ATi</manufacturer>
+				<model>R9 285</model>
+				<gpu_memory type="GD3">1024мега-байта</gpu_memory>
+				<bus-width>64 бита</bus-width>
+				<bandwidth>16.9гб/с</bandwidth>
+				<directx>12</directx>
+				<shaders>11.2 гига пиксела</shaders>
+				<available>2</available>
+				<price>659лева</price>
+			</video-card>
+		</video-cards>
+		<hard-drives>
+			<hard-drive id="st_31291646" bus="ATA" laptop-compatible="false">
+				<manufacturer>Corsair</manufacturer>
+				<drive-memory>
+					<amount>320гб</amount>
+					<type>Оптична</type>
+				</drive-memory>
+				<speed>7200 оборота/минута</speed>
+				<size>3.5"</size>
+				<available>8</available>
+				<price>652лева</price>
+			</hard-drive>
+			<hard-drive id="st_32057793" bus="SATA3" laptop-compatible="true">
+				<manufacturer>IBM</manufacturer>
+				<drive-memory>
+					<amount>500гб</amount>
+					<type>Флаш</type>
+				</drive-memory>
+				<speed>няма</speed>
+				<size>2.5"</size>
+				<available>5</available>
+				<price>501лева</price>
+			</hard-drive>
+		</hard-drives>
+		<motherboards>
+			<motherboard id="st_13189358" socket-id="i1" processor="st_17625630" video-card="st_18389930" ram-memory="st_24412946" hard-drive="st_31291646">
+				<manufacturer>ASUS</manufacturer>
+				<chipset>Nvidia</chipset>
+				<available>4</available>
+				<price>278лева</price>
+			</motherboard>
+			<motherboard id="st_20084682" socket-id="A3" processor="st_51595365" video-card="st_18475057" ram-memory="st_61705107" hard-drive="st_32057793">
+				<manufacturer>Powercolor</manufacturer>
+				<chipset>Intel</chipset>
+				<available>9</available>
+				<price>530лева</price>
+			</motherboard>
+		</motherboards>
+	</parts>
+	<sockets>
+		<socket id="i1">i1151</socket>
+		<socket id="A3">AM3</socket>
+	</sockets>
+	<memory-types>
+		<memory-type id="D4">DDR4</memory-type>
+		<memory-type id="GD5">GDDR5</memory-type>
+		<memory-type id="ER">EDO</memory-type>
+		<memory-type id="GD3">GDDR3</memory-type>
+	</memory-types>
+</computer-store>

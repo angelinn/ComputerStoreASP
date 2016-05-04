@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE computer-store SYSTEM "computer_store.dtd">
+<computer-store>
+	<parts>
+		<processors>
+			<processor id="st_5894231" socket="i1" integrated_video="false">
+				<model>i7-6700HQ</model>
+				<manufacturer>Интел</manufacturer>
+				<architecture>Бродуел</architecture>
+				<clock-frequency>1500mhz</clock-frequency>
+				<cache>
+					<levels>2</levels>
+					<memory>2MB</memory>
+				</cache>
+				<threads>
+					<physical>2</physical>
+					<logical>4</logical>
+				</threads>
+				<available>0</available>
+				<price>612лева</price>
+			</processor>
+			<processor id="st_21932166" socket="i1" integrated_video="false">
+				<model>Itanium 2300</model>
+				<manufacturer>Интел</manufacturer>
+				<architecture>Максуел</architecture>
+				<clock-frequency>3500mhz</clock-frequency>
+				<cache>
+					<levels>2</levels>
+					<memory>3MB</memory>
+				</cache>
+				<threads>
+					<physical>7</physical>
+					<logical>14</logical>
+				</threads>
+				<available>4</available>
+				<price>714лева</price>
+			</processor>
+		</processors>
+		<ram-boards>
+			<ram-board id="st_53048087" type="D3">
+				<manufacturer>Crucial</manufacturer>
+				<memory>128мб</memory>
+				<frequency>1333 мега-херца</frequency>
+				<channel>Единичен</channel>
+				<available>2</available>
+				<price>333лева</price>
+			</ram-board>
+			<ram-board id="st_63171767" type="D3">
+				<manufacturer>Kingston Savage</manufacturer>
+				<memory>128мб</memory>
+				<frequency>2133 мега-херца</frequency>
+				<channel>Троен</channel>
+				<available>2</available>
+				<price>163лева</price>
+			</ram-board>
+		</ram-boards>
+		<video-cards>
+			<video-card id="st_7670737" interface="PCIE-3">
+				<manufacturer>NVidia</manufacturer>
+				<model>GeForce 8300GS</model>
+				<gpu_memory type="GD3">512мега-байта</gpu_memory>
+				<bus-width>64 бита</bus-width>
+				<bandwidth>32.1гб/с</bandwidth>
+				<directx>10</directx>
+				<shaders>8.7 гига пиксела</shaders>
+				<available>1</available>
+				<price>600лева</price>
+			</video-card>
+			<video-card id="st_31674992" interface="PCIE-3">
+				<manufacturer>ATi</manufacturer>
+				<model>R7 280</model>
+				<gpu_memory type="GD5">64мега-байта</gpu_memory>
+				<bus-width>512 бита</bus-width>
+				<bandwidth>23.5гб/с</bandwidth>
+				<directx>12</directx>
+				<shaders>12.5 гига пиксела</shaders>
+				<available>2</available>
+				<price>239лева</price>
+			</video-card>
+		</video-cards>
+		<hard-drives>
+			<hard-drive id="st_1927776" bus="SATA2" laptop-compatible="false">
+				<manufacturer>IBM</manufacturer>
+				<drive-memory>
+					<amount>256гб</amount>
+					<type>Оптична</type>
+				</drive-memory>
+				<speed>7200 оборота/минута</speed>
+				<size>3.5"</size>
+				<available>1</available>
+				<price>649лева</price>
+			</hard-drive>
+			<hard-drive id="st_16639474" bus="ATA" laptop-compatible="false">
+				<manufacturer>Western Digital</manufacturer>
+				<drive-memory>
+					<amount>500гб</amount>
+					<type>Оптична</type>
+				</drive-memory>
+				<speed>5200 оборота/минута</speed>
+				<size>3.5"</size>
+				<available>5</available>
+				<price>651лева</price>
+			</hard-drive>
+		</hard-drives>
+		<motherboards>
+			<motherboard id="st_17349988" socket-id="i1" processor="st_5894231" video-card="st_7670737" ram-memory="st_53048087" hard-drive="st_1927776">
+				<manufacturer>Via Technologies</manufacturer>
+				<chipset>Intel</chipset>
+				<available>3</available>
+				<price>676лева</price>
+			</motherboard>
+			<motherboard id="st_15537542" socket-id="i1" processor="st_21932166" video-card="st_31674992" ram-memory="st_63171767" hard-drive="st_16639474">
+				<manufacturer>Via Technologies</manufacturer>
+				<chipset>Nvidia</chipset>
+				<available>1</available>
+				<price>344лева</price>
+			</motherboard>
+		</motherboards>
+	</parts>
+	<sockets>
+		<socket id="i1">i1151</socket>
+	</sockets>
+	<memory-types>
+		<memory-type id="D3">DDR3</memory-type>
+		<memory-type id="GD3">GDDR3</memory-type>
+		<memory-type id="GD5">GDDR5</memory-type>
+	</memory-types>
+</computer-store>

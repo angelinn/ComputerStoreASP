@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE computer-store SYSTEM "computer_store.dtd">
+<computer-store>
+	<parts>
+		<processors>
+			<processor id="st_60232767" socket="i1" integrated_video="false">
+				<model>Itanium 2</model>
+				<manufacturer>Интел</manufacturer>
+				<architecture>Бродуел</architecture>
+				<clock-frequency>2700mhz</clock-frequency>
+				<cache>
+					<levels>2</levels>
+					<memory>2MB</memory>
+				</cache>
+				<threads>
+					<physical>4</physical>
+					<logical>8</logical>
+				</threads>
+				<available>9</available>
+				<price>541лева</price>
+			</processor>
+			<processor id="st_49131481" socket="A3" integrated_video="false">
+				<model>Duron 1800</model>
+				<manufacturer>АМД</manufacturer>
+				<architecture>amd64</architecture>
+				<clock-frequency>1400mhz</clock-frequency>
+				<cache>
+					<levels>2</levels>
+					<memory>3MB</memory>
+				</cache>
+				<threads>
+					<physical>5</physical>
+					<logical>10</logical>
+				</threads>
+				<available>0</available>
+				<price>722лева</price>
+			</processor>
+		</processors>
+		<ram-boards>
+			<ram-board id="st_5223998" type="D2">
+				<manufacturer>Samsung</manufacturer>
+				<memory>128мб</memory>
+				<frequency>800 мега-херца</frequency>
+				<channel>Единичен</channel>
+				<available>9</available>
+				<price>370лева</price>
+			</ram-board>
+			<ram-board id="st_39530145" type="D3">
+				<manufacturer>Samsung</manufacturer>
+				<memory>8ГБ</memory>
+				<frequency>1664 мега-херца</frequency>
+				<channel>Единичен</channel>
+				<available>8</available>
+				<price>755лева</price>
+			</ram-board>
+		</ram-boards>
+		<video-cards>
+			<video-card id="st_47015983" interface="PCIE-3">
+				<manufacturer>ATi</manufacturer>
+				<model>Radeon HD 3850 X2</model>
+				<gpu_memory type="GD3">256мега-байта</gpu_memory>
+				<bus-width>64 бита</bus-width>
+				<bandwidth>21.2гб/с</bandwidth>
+				<directx>9</directx>
+				<shaders>22.4 гига пиксела</shaders>
+				<available>2</available>
+				<price>618лева</price>
+			</video-card>
+			<video-card id="st_20226985" interface="PCIE-3">
+				<manufacturer>ATi</manufacturer>
+				<model>Radeon 340</model>
+				<gpu_memory type="GD5">128мега-байта</gpu_memory>
+				<bus-width>256 бита</bus-width>
+				<bandwidth>13.9гб/с</bandwidth>
+				<directx>10</directx>
+				<shaders>16.5 гига пиксела</shaders>
+				<available>5</available>
+				<price>280лева</price>
+			</video-card>
+		</video-cards>
+		<hard-drives>
+			<hard-drive id="st_20490669" bus="ATA" laptop-compatible="false">
+				<manufacturer>Kingston</manufacturer>
+				<drive-memory>
+					<amount>1ТБ</amount>
+					<type>Оптична</type>
+				</drive-memory>
+				<speed>5200 оборота/минута</speed>
+				<size>3.5"</size>
+				<available>0</available>
+				<price>175лева</price>
+			</hard-drive>
+			<hard-drive id="st_47825138" bus="ATA" laptop-compatible="true">
+				<manufacturer>IBM</manufacturer>
+				<drive-memory>
+					<amount>256гб</amount>
+					<type>Флаш</type>
+				</drive-memory>
+				<speed>няма</speed>
+				<size>2.5"</size>
+				<available>3</available>
+				<price>224лева</price>
+			</hard-drive>
+		</hard-drives>
+		<motherboards>
+			<motherboard id="st_50198296" socket-id="i1" processor="st_60232767" video-card="st_47015983" ram-memory="st_5223998" hard-drive="st_20490669">
+				<manufacturer>IBM</manufacturer>
+				<chipset>Nvidia</chipset>
+				<available>2</available>
+				<price>440лева</price>
+			</motherboard>
+			<motherboard id="st_27773061" socket-id="A3" processor="st_49131481" video-card="st_20226985" ram-memory="st_39530145" hard-drive="st_47825138">
+				<manufacturer>Leadtech</manufacturer>
+				<chipset>AMD</chipset>
+				<available>4</available>
+				<price>193лева</price>
+			</motherboard>
+		</motherboards>
+	</parts>
+	<sockets>
+		<socket id="i1">i1151</socket>
+		<socket id="A3">AM3</socket>
+	</sockets>
+	<memory-types>
+		<memory-type id="D2">DDR2</memory-type>
+		<memory-type id="GD3">GDDR3</memory-type>
+		<memory-type id="D3">DDR3</memory-type>
+		<memory-type id="GD5">GDDR5</memory-type>
+	</memory-types>
+</computer-store>

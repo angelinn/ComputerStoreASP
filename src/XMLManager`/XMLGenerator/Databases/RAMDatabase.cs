@@ -38,7 +38,8 @@ namespace XMLGenerator.Databases
         {
             if (name[0] == 'D')
                 return "DDR" + name.Last();
-
+            else if (name[0] == 'G')
+                return "GDDR" + name.Last();
             else
                 return "EDO";
         }

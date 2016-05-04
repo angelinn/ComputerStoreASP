@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE computer-store SYSTEM "computer_store.dtd">
+<computer-store>
+	<parts>
+		<processors>
+			<processor id="st_16090703" socket="A3" integrated_video="false">
+				<model>FX-4150</model>
+				<manufacturer>АМД</manufacturer>
+				<architecture>amd64</architecture>
+				<clock-frequency>2800mhz</clock-frequency>
+				<cache>
+					<levels>1</levels>
+					<memory>4MB</memory>
+				</cache>
+				<threads>
+					<physical>7</physical>
+					<logical>14</logical>
+				</threads>
+				<available>3</available>
+				<price>379лева</price>
+			</processor>
+			<processor id="st_12674872" socket="A3" integrated_video="false">
+				<model>Sempron64X1</model>
+				<manufacturer>АМД</manufacturer>
+				<architecture>amd64</architecture>
+				<clock-frequency>2100mhz</clock-frequency>
+				<cache>
+					<levels>1</levels>
+					<memory>1MB</memory>
+				</cache>
+				<threads>
+					<physical>3</physical>
+					<logical>6</logical>
+				</threads>
+				<available>7</available>
+				<price>750лева</price>
+			</processor>
+		</processors>
+		<ram-boards>
+			<ram-board id="st_10598606" type="ER">
+				<manufacturer>Crucial EDO</manufacturer>
+				<memory>1ГБ</memory>
+				<frequency>140 мега-херца</frequency>
+				<channel>Двоен</channel>
+				<available>2</available>
+				<price>282лева</price>
+			</ram-board>
+			<ram-board id="st_46964992" type="D4">
+				<manufacturer>Crucial EDO</manufacturer>
+				<memory>1ГБ</memory>
+				<frequency>2400 мега-херца</frequency>
+				<channel>Единичен</channel>
+				<available>4</available>
+				<price>198лева</price>
+			</ram-board>
+		</ram-boards>
+		<video-cards>
+			<video-card id="st_28278595" interface="PCIE-3">
+				<manufacturer>ATi</manufacturer>
+				<model>FirePro W600</model>
+				<gpu_memory type="GD5">64мега-байта</gpu_memory>
+				<bus-width>64 бита</bus-width>
+				<bandwidth>35.9гб/с</bandwidth>
+				<directx>11</directx>
+				<shaders>8.6 гига пиксела</shaders>
+				<available>3</available>
+				<price>651лева</price>
+			</video-card>
+			<video-card id="st_20031746" interface="PCIE-3">
+				<manufacturer>ATi</manufacturer>
+				<model>Rage XL</model>
+				<gpu_memory type="GD3">512мега-байта</gpu_memory>
+				<bus-width>64 бита</bus-width>
+				<bandwidth>15.2гб/с</bandwidth>
+				<directx>12</directx>
+				<shaders>20.8 гига пиксела</shaders>
+				<available>7</available>
+				<price>191лева</price>
+			</video-card>
+		</video-cards>
+		<hard-drives>
+			<hard-drive id="st_53180767" bus="ATA" laptop-compatible="true">
+				<manufacturer>Corsair</manufacturer>
+				<drive-memory>
+					<amount>500гб</amount>
+					<type>Оптична</type>
+				</drive-memory>
+				<speed>5200 оборота/минута</speed>
+				<size>2.5"</size>
+				<available>3</available>
+				<price>148лева</price>
+			</hard-drive>
+			<hard-drive id="st_46067993" bus="SATA3" laptop-compatible="true">
+				<manufacturer>Seagate</manufacturer>
+				<drive-memory>
+					<amount>256гб</amount>
+					<type>Оптична</type>
+				</drive-memory>
+				<speed>7200 оборота/минута</speed>
+				<size>2.5"</size>
+				<available>7</available>
+				<price>727лева</price>
+			</hard-drive>
+		</hard-drives>
+		<motherboards>
+			<motherboard id="st_8864859" socket-id="A3" processor="st_16090703" video-card="st_28278595" ram-memory="st_10598606" hard-drive="st_53180767">
+				<manufacturer>Via Technologies</manufacturer>
+				<chipset>AMD</chipset>
+				<available>0</available>
+				<price>474лева</price>
+			</motherboard>
+			<motherboard id="st_11958757" socket-id="A3" processor="st_12674872" video-card="st_20031746" ram-memory="st_46964992" hard-drive="st_46067993">
+				<manufacturer>Gigabyte</manufacturer>
+				<chipset>Nvidia</chipset>
+				<available>5</available>
+				<price>514лева</price>
+			</motherboard>
+		</motherboards>
+	</parts>
+	<sockets>
+		<socket id="A3">AM3</socket>
+	</sockets>
+	<memory-types>
+		<memory-type id="ER">EDO</memory-type>
+		<memory-type id="GD5">GDDR5</memory-type>
+		<memory-type id="D4">DDR4</memory-type>
+		<memory-type id="GD3">GDDR3</memory-type>
+	</memory-types>
+</computer-store>

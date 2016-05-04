@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE computer-store SYSTEM "computer_store.dtd">
+<computer-store>
+	<parts>
+		<processors>
+			<processor id="st_24211521" socket="i1" integrated_video="false">
+				<model>i5-250m</model>
+				<manufacturer>Интел</manufacturer>
+				<architecture>Санди Бридж</architecture>
+				<clock-frequency>2500mhz</clock-frequency>
+				<cache>
+					<levels>2</levels>
+					<memory>5MB</memory>
+				</cache>
+				<threads>
+					<physical>3</physical>
+					<logical>6</logical>
+				</threads>
+				<available>8</available>
+				<price>576лева</price>
+			</processor>
+			<processor id="st_45988614" socket="i1" integrated_video="false">
+				<model>i5-4200h</model>
+				<manufacturer>Интел</manufacturer>
+				<architecture>Айви Бридж</architecture>
+				<clock-frequency>3600mhz</clock-frequency>
+				<cache>
+					<levels>1</levels>
+					<memory>5MB</memory>
+				</cache>
+				<threads>
+					<physical>6</physical>
+					<logical>12</logical>
+				</threads>
+				<available>8</available>
+				<price>756лева</price>
+			</processor>
+		</processors>
+		<ram-boards>
+			<ram-board id="st_16577099" type="D2">
+				<manufacturer>Micron</manufacturer>
+				<memory>64мб</memory>
+				<frequency>833 мега-херца</frequency>
+				<channel>Единичен</channel>
+				<available>2</available>
+				<price>438лева</price>
+			</ram-board>
+			<ram-board id="st_11244347" type="D2">
+				<manufacturer>Crucial</manufacturer>
+				<memory>8ГБ</memory>
+				<frequency>833 мега-херца</frequency>
+				<channel>Троен</channel>
+				<available>2</available>
+				<price>647лева</price>
+			</ram-board>
+		</ram-boards>
+		<video-cards>
+			<video-card id="st_14976165" interface="PCIE-3">
+				<manufacturer>ATi</manufacturer>
+				<model>Radeon 330</model>
+				<gpu_memory type="GD3">128мега-байта</gpu_memory>
+				<bus-width>512 бита</bus-width>
+				<bandwidth>38.5гб/с</bandwidth>
+				<directx>10</directx>
+				<shaders>15.4 гига пиксела</shaders>
+				<available>2</available>
+				<price>714лева</price>
+			</video-card>
+			<video-card id="st_34090260" interface="PCIE-3">
+				<manufacturer>ATi</manufacturer>
+				<model>Radeon 9100</model>
+				<gpu_memory type="GD3">128мега-байта</gpu_memory>
+				<bus-width>512 бита</bus-width>
+				<bandwidth>37.7гб/с</bandwidth>
+				<directx>10</directx>
+				<shaders>14.7 гига пиксела</shaders>
+				<available>7</available>
+				<price>209лева</price>
+			</video-card>
+		</video-cards>
+		<hard-drives>
+			<hard-drive id="st_567760" bus="ATA" laptop-compatible="true">
+				<manufacturer>Western Digital</manufacturer>
+				<drive-memory>
+					<amount>1ТБ</amount>
+					<type>Оптична</type>
+				</drive-memory>
+				<speed>5200 оборота/минута</speed>
+				<size>2.5"</size>
+				<available>9</available>
+				<price>427лева</price>
+			</hard-drive>
+			<hard-drive id="st_38376892" bus="SATA3" laptop-compatible="false">
+				<manufacturer>Seagate</manufacturer>
+				<drive-memory>
+					<amount>2ТБ</amount>
+					<type>Флаш</type>
+				</drive-memory>
+				<speed>няма</speed>
+				<size>3.5"</size>
+				<available>3</available>
+				<price>157лева</price>
+			</hard-drive>
+		</hard-drives>
+		<motherboards>
+			<motherboard id="st_5109846" socket-id="i1" processor="st_24211521" video-card="st_14976165" ram-memory="st_16577099" hard-drive="st_567760">
+				<manufacturer>Nvidia</manufacturer>
+				<chipset>Intel</chipset>
+				<available>1</available>
+				<price>268лева</price>
+			</motherboard>
+			<motherboard id="st_9847715" socket-id="i1" processor="st_45988614" video-card="st_34090260" ram-memory="st_11244347" hard-drive="st_38376892">
+				<manufacturer>Acer</manufacturer>
+				<chipset>Intel</chipset>
+				<available>6</available>
+				<price>166лева</price>
+			</motherboard>
+		</motherboards>
+	</parts>
+	<sockets>
+		<socket id="i1">i1151</socket>
+	</sockets>
+	<memory-types>
+		<memory-type id="D2">DDR2</memory-type>
+		<memory-type id="GD3">GDDR3</memory-type>
+	</memory-types>
+</computer-store>

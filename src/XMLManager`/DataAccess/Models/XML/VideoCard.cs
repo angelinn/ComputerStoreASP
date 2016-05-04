@@ -18,7 +18,7 @@ namespace DataAccess.Models.XML
         public string Manufacturer { get; set; }
         [XmlElement("model")]
         public string Model { get; set; }
-        [XmlElement("gpu-memory")]
+        [XmlElement("gpu_memory")]
         public GPUMemory GPUMemory { get; set; }
         [XmlElement("bus-width")]
         public string BusWidth { get; set; }

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE computer-store SYSTEM "computer_store.dtd">
+<computer-store>
+	<parts>
+		<processors>
+			<processor id="st_64636290" socket="A3" integrated_video="false">
+				<model>AthlonX4-860K</model>
+				<manufacturer>АМД</manufacturer>
+				<architecture>amd64</architecture>
+				<clock-frequency>2500mhz</clock-frequency>
+				<cache>
+					<levels>1</levels>
+					<memory>5MB</memory>
+				</cache>
+				<threads>
+					<physical>4</physical>
+					<logical>8</logical>
+				</threads>
+				<available>0</available>
+				<price>369лева</price>
+			</processor>
+			<processor id="st_25911262" socket="i1" integrated_video="false">
+				<model>Pentium III</model>
+				<manufacturer>Интел</manufacturer>
+				<architecture>Скайлейк</architecture>
+				<clock-frequency>2600mhz</clock-frequency>
+				<cache>
+					<levels>1</levels>
+					<memory>1MB</memory>
+				</cache>
+				<threads>
+					<physical>5</physical>
+					<logical>10</logical>
+				</threads>
+				<available>7</available>
+				<price>549лева</price>
+			</processor>
+		</processors>
+		<ram-boards>
+			<ram-board id="st_44855704" type="D1">
+				<manufacturer>AData</manufacturer>
+				<memory>512мб</memory>
+				<frequency>200 мега-херца</frequency>
+				<channel>Единичен</channel>
+				<available>4</available>
+				<price>590лева</price>
+			</ram-board>
+			<ram-board id="st_31874772" type="D1">
+				<manufacturer>Corsair</manufacturer>
+				<memory>512мб</memory>
+				<frequency>400 мега-херца</frequency>
+				<channel>Единичен</channel>
+				<available>2</available>
+				<price>561лева</price>
+			</ram-board>
+		</ram-boards>
+		<video-cards>
+			<video-card id="st_1048160" interface="PCIE-3">
+				<manufacturer>ATi</manufacturer>
+				<model>Radeon HD 6750</model>
+				<gpu_memory type="GD5">1024мега-байта</gpu_memory>
+				<bus-width>64 бита</bus-width>
+				<bandwidth>10.9гб/с</bandwidth>
+				<directx>12</directx>
+				<shaders>15.8 гига пиксела</shaders>
+				<available>8</available>
+				<price>205лева</price>
+			</video-card>
+			<video-card id="st_18437496" interface="PCIE-3">
+				<manufacturer>NVidia</manufacturer>
+				<model>GeForce2 TI</model>
+				<gpu_memory type="GD3">128мега-байта</gpu_memory>
+				<bus-width>64 бита</bus-width>
+				<bandwidth>28.5гб/с</bandwidth>
+				<directx>10</directx>
+				<shaders>17.0 гига пиксела</shaders>
+				<available>0</available>
+				<price>537лева</price>
+			</video-card>
+		</video-cards>
+		<hard-drives>
+			<hard-drive id="st_9433441" bus="SATA2" laptop-compatible="true">
+				<manufacturer>Corsair</manufacturer>
+				<drive-memory>
+					<amount>320гб</amount>
+					<type>Оптична</type>
+				</drive-memory>
+				<speed>5200 оборота/минута</speed>
+				<size>2.5"</size>
+				<available>8</available>
+				<price>455лева</price>
+			</hard-drive>
+			<hard-drive id="st_31719739" bus="ATA" laptop-compatible="true">
+				<manufacturer>IBM</manufacturer>
+				<drive-memory>
+					<amount>2ТБ</amount>
+					<type>Оптична</type>
+				</drive-memory>
+				<speed>5200 оборота/минута</speed>
+				<size>2.5"</size>
+				<available>2</available>
+				<price>479лева</price>
+			</hard-drive>
+		</hard-drives>
+		<motherboards>
+			<motherboard id="st_17792110" socket-id="A3" processor="st_64636290" video-card="st_1048160" ram-memory="st_44855704" hard-drive="st_9433441">
+				<manufacturer>AMD</manufacturer>
+				<chipset>AMD</chipset>
+				<available>3</available>
+				<price>244лева</price>
+			</motherboard>
+			<motherboard id="st_17042198" socket-id="i1" processor="st_25911262" video-card="st_18437496" ram-memory="st_31874772" hard-drive="st_31719739">
+				<manufacturer>IBM</manufacturer>
+				<chipset>Nvidia</chipset>
+				<available>6</available>
+				<price>462лева</price>
+			</motherboard>
+		</motherboards>
+	</parts>
+	<sockets>
+		<socket id="A3">AM3</socket>
+		<socket id="i1">i1151</socket>
+	</sockets>
+	<memory-types>
+		<memory-type id="D1">DDR1</memory-type>
+		<memory-type id="GD5">GDDR5</memory-type>
+		<memory-type id="GD3">GDDR3</memory-type>
+	</memory-types>
+</computer-store>

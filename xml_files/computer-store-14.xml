@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE computer-store SYSTEM "computer_store.dtd">
+<computer-store>
+	<parts>
+		<processors>
+			<processor id="st_38336904" socket="i1" integrated_video="false">
+				<model>Pentium II Xeon</model>
+				<manufacturer>Интел</manufacturer>
+				<architecture>Бродуел</architecture>
+				<clock-frequency>1500mhz</clock-frequency>
+				<cache>
+					<levels>1</levels>
+					<memory>5MB</memory>
+				</cache>
+				<threads>
+					<physical>3</physical>
+					<logical>6</logical>
+				</threads>
+				<available>6</available>
+				<price>669лева</price>
+			</processor>
+			<processor id="st_39696553" socket="A3" integrated_video="false">
+				<model>Am386</model>
+				<manufacturer>АМД</manufacturer>
+				<architecture>amd64</architecture>
+				<clock-frequency>3600mhz</clock-frequency>
+				<cache>
+					<levels>1</levels>
+					<memory>1MB</memory>
+				</cache>
+				<threads>
+					<physical>1</physical>
+					<logical>1</logical>
+				</threads>
+				<available>8</available>
+				<price>342лева</price>
+			</processor>
+		</processors>
+		<ram-boards>
+			<ram-board id="st_9487824" type="D3">
+				<manufacturer>Crucial EDO</manufacturer>
+				<memory>512мб</memory>
+				<frequency>1333 мега-херца</frequency>
+				<channel>Троен</channel>
+				<available>7</available>
+				<price>466лева</price>
+			</ram-board>
+			<ram-board id="st_21724664" type="D3">
+				<manufacturer>Micron</manufacturer>
+				<memory>4ГБ</memory>
+				<frequency>1666 мега-херца</frequency>
+				<channel>Единичен</channel>
+				<available>0</available>
+				<price>464лева</price>
+			</ram-board>
+		</ram-boards>
+		<video-cards>
+			<video-card id="st_18281552" interface="PCIE-3">
+				<manufacturer>NVidia</manufacturer>
+				<model>Quadro2 MXR</model>
+				<gpu_memory type="GD3">128мега-байта</gpu_memory>
+				<bus-width>128 бита</bus-width>
+				<bandwidth>38.5гб/с</bandwidth>
+				<directx>10</directx>
+				<shaders>21.6 гига пиксела</shaders>
+				<available>1</available>
+				<price>350лева</price>
+			</video-card>
+			<video-card id="st_61304253" interface="PCIE-3">
+				<manufacturer>NVidia</manufacturer>
+				<model>Quadro FX 4800SDI</model>
+				<gpu_memory type="GD3">128мега-байта</gpu_memory>
+				<bus-width>64 бита</bus-width>
+				<bandwidth>34.6гб/с</bandwidth>
+				<directx>11</directx>
+				<shaders>24.8 гига пиксела</shaders>
+				<available>0</available>
+				<price>646лева</price>
+			</video-card>
+		</video-cards>
+		<hard-drives>
+			<hard-drive id="st_30316242" bus="ATA" laptop-compatible="true">
+				<manufacturer>Western Digital</manufacturer>
+				<drive-memory>
+					<amount>320гб</amount>
+					<type>Оптична</type>
+				</drive-memory>
+				<speed>5200 оборота/минута</speed>
+				<size>2.5"</size>
+				<available>5</available>
+				<price>507лева</price>
+			</hard-drive>
+			<hard-drive id="st_14867369" bus="SATA2" laptop-compatible="false">
+				<manufacturer>Hitachi</manufacturer>
+				<drive-memory>
+					<amount>160гб</amount>
+					<type>Флаш</type>
+				</drive-memory>
+				<speed>няма</speed>
+				<size>3.5"</size>
+				<available>4</available>
+				<price>378лева</price>
+			</hard-drive>
+		</hard-drives>
+		<motherboards>
+			<motherboard id="st_4410728" socket-id="i1" processor="st_38336904" video-card="st_18281552" ram-memory="st_9487824" hard-drive="st_30316242">
+				<manufacturer>Epox</manufacturer>
+				<chipset>AMD</chipset>
+				<available>0</available>
+				<price>347лева</price>
+			</motherboard>
+			<motherboard id="st_66697461" socket-id="A3" processor="st_39696553" video-card="st_61304253" ram-memory="st_21724664" hard-drive="st_14867369">
+				<manufacturer>Nvidia</manufacturer>
+				<chipset>Nvidia</chipset>
+				<available>4</available>
+				<price>599лева</price>
+			</motherboard>
+		</motherboards>
+	</parts>
+	<sockets>
+		<socket id="i1">i1151</socket>
+		<socket id="A3">AM3</socket>
+	</sockets>
+	<memory-types>
+		<memory-type id="D3">DDR3</memory-type>
+		<memory-type id="GD3">GDDR3</memory-type>
+	</memory-types>
+</computer-store>

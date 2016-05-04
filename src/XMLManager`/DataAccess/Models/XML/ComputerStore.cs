@@ -13,10 +13,10 @@ namespace DataAccess.Models.XML
         [XmlElement("parts")]
         public Parts Parts { get; set; }
         [XmlArray("sockets")]
-        [XmlArrayItem("socket")]
+        [XmlArrayItem("socket", IsNullable = false)]
         public Socket[] Sockets { get; set; }
         [XmlArray("memory-types")]
-        [XmlArrayItem("memory-type")]
+        [XmlArrayItem("memory-type", IsNullable = false)]
         public Memory[] MemoryTypes{ get; set; }
     }
 }

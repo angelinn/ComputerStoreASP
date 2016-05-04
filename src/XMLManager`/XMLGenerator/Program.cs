@@ -1,4 +1,5 @@
-﻿using DataAccess.Models.XML;
+﻿using Common;
+using DataAccess.Models.XML;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -16,8 +17,12 @@ namespace XMLGenerator
         {
             string fileName = "computer-store-{0}.xml";
 
-            for (int i = 5; i < 30; ++i)
+            for (int i = 5; i < 20; ++i)
+            {
                 Generator.SerializeXML(Generator.GenerateRandomData(), String.Format(fileName, i));
+                if (!XMLValidator.ValidateXML(String.Format(fileName, i)))
+                    Console.ReadLine();
+            }
         }
     }
 }

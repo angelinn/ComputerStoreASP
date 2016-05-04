@@ -16,7 +16,7 @@ namespace DataAccess.Models.XML
         [XmlArrayItem("ram-board")]
         public RamBoard[] RamBoards { get; set; }
         [XmlArray("video-cards")]
-        [XmlArrayItem("video-cards")]
+        [XmlArrayItem("video-card")]
         public VideoCard[] VideoCards { get; set; }
         [XmlArray("hard-drives")]
         [XmlArrayItem("hard-drive")]

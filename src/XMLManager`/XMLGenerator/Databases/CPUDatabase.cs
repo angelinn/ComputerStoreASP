@@ -69,9 +69,9 @@ namespace XMLGenerator.Databases
         public static string GetSocketFromManufacturer(string manufacturer)
         {
             if (manufacturer == "АМД")
-                return "AM3+";
+                return "AM3";
             else
-                return "1151";
+                return "i1151";
         }
 
         private static string[] ProcessorManufacturers = { "Интел", "АМД" };

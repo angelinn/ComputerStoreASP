@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE computer-store SYSTEM "computer_store.dtd">
+<computer-store>
+	<parts>
+		<processors>
+			<processor id="st_20908074" socket="A3" integrated_video="false">
+				<model>FX-8370E</model>
+				<manufacturer>АМД</manufacturer>
+				<architecture>amd64</architecture>
+				<clock-frequency>3800mhz</clock-frequency>
+				<cache>
+					<levels>2</levels>
+					<memory>2MB</memory>
+				</cache>
+				<threads>
+					<physical>3</physical>
+					<logical>6</logical>
+				</threads>
+				<available>9</available>
+				<price>426лева</price>
+			</processor>
+			<processor id="st_66228199" socket="A3" integrated_video="false">
+				<model>Athlon64</model>
+				<manufacturer>АМД</manufacturer>
+				<architecture>amd64</architecture>
+				<clock-frequency>1900mhz</clock-frequency>
+				<cache>
+					<levels>1</levels>
+					<memory>5MB</memory>
+				</cache>
+				<threads>
+					<physical>6</physical>
+					<logical>12</logical>
+				</threads>
+				<available>6</available>
+				<price>661лева</price>
+			</processor>
+		</processors>
+		<ram-boards>
+			<ram-board id="st_53954942" type="D2">
+				<manufacturer>Samsung</manufacturer>
+				<memory>8ГБ</memory>
+				<frequency>833 мега-херца</frequency>
+				<channel>Двоен</channel>
+				<available>7</available>
+				<price>616лева</price>
+			</ram-board>
+			<ram-board id="st_59182880" type="D3">
+				<manufacturer>Crucial EDO</manufacturer>
+				<memory>256мб</memory>
+				<frequency>1333 мега-херца</frequency>
+				<channel>Троен</channel>
+				<available>8</available>
+				<price>248лева</price>
+			</ram-board>
+		</ram-boards>
+		<video-cards>
+			<video-card id="st_15832433" interface="PCIE-3">
+				<manufacturer>NVidia</manufacturer>
+				<model>GeForce GTX 850m</model>
+				<gpu_memory type="GD3">512мега-байта</gpu_memory>
+				<bus-width>64 бита</bus-width>
+				<bandwidth>38.5гб/с</bandwidth>
+				<directx>12</directx>
+				<shaders>10.2 гига пиксела</shaders>
+				<available>4</available>
+				<price>191лева</price>
+			</video-card>
+			<video-card id="st_62883878" interface="PCIE-3">
+				<manufacturer>ATi</manufacturer>
+				<model>Rage</model>
+				<gpu_memory type="GD5">64мега-байта</gpu_memory>
+				<bus-width>64 бита</bus-width>
+				<bandwidth>34.6гб/с</bandwidth>
+				<directx>12</directx>
+				<shaders>18.1 гига пиксела</shaders>
+				<available>5</available>
+				<price>768лева</price>
+			</video-card>
+		</video-cards>
+		<hard-drives>
+			<hard-drive id="st_8274172" bus="SATA2" laptop-compatible="true">
+				<manufacturer>Kingston</manufacturer>
+				<drive-memory>
+					<amount>500гб</amount>
+					<type>Флаш</type>
+				</drive-memory>
+				<speed>няма</speed>
+				<size>2.5"</size>
+				<available>3</available>
+				<price>392лева</price>
+			</hard-drive>
+			<hard-drive id="st_29083993" bus="ATA" laptop-compatible="false">
+				<manufacturer>Patriot</manufacturer>
+				<drive-memory>
+					<amount>160гб</amount>
+					<type>Флаш</type>
+				</drive-memory>
+				<speed>няма</speed>
+				<size>3.5"</size>
+				<available>8</available>
+				<price>409лева</price>
+			</hard-drive>
+		</hard-drives>
+		<motherboards>
+			<motherboard id="st_7358688" socket-id="A3" processor="st_20908074" video-card="st_15832433" ram-memory="st_53954942" hard-drive="st_8274172">
+				<manufacturer>Biostar</manufacturer>
+				<chipset>Intel</chipset>
+				<available>9</available>
+				<price>311лева</price>
+			</motherboard>
+			<motherboard id="st_60429346" socket-id="A3" processor="st_66228199" video-card="st_62883878" ram-memory="st_59182880" hard-drive="st_29083993">
+				<manufacturer>Nvidia</manufacturer>
+				<chipset>Intel</chipset>
+				<available>7</available>
+				<price>528лева</price>
+			</motherboard>
+		</motherboards>
+	</parts>
+	<sockets>
+		<socket id="A3">AM3</socket>
+	</sockets>
+	<memory-types>
+		<memory-type id="D2">DDR2</memory-type>
+		<memory-type id="GD3">GDDR3</memory-type>
+		<memory-type id="D3">DDR3</memory-type>
+		<memory-type id="GD5">GDDR5</memory-type>
+	</memory-types>
+</computer-store>
