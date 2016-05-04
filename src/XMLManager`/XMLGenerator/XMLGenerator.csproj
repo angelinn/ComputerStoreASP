@@ -43,7 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Database.cs" />
+    <Compile Include="Databases\CommonDatabase.cs" />
+    <Compile Include="Databases\CPUDatabase.cs" />
+    <Compile Include="Databases\RAMDatabase.cs" />
     <Compile Include="Generator.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -14,8 +14,8 @@ namespace XMLGenerator
     {
         public static void Main(string[] args)
         {
-            ComputerStore store = Serializer.GenerateRandomData();
-            Serializer.SerializeXML(store, "xmled.xml");
+            ComputerStore store = Generator.GenerateRandomData();
+            Generator.SerializeXML(store, "xmled.xml");
         }
     }
 }

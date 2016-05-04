@@ -5,13 +5,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace XMLGenerator
+namespace XMLGenerator.Databases
 {
-    public static class Database
+    public class CPUDatabase
     {
         public static string GetRandomCPU()
         {
-            int position = random.Next(0, ProcessorManufacturers.Length);
+            int position = Generator.random.Next(0, ProcessorManufacturers.Length);
 
             if (ProcessorModels[ProcessorManufacturers[position]].Length == 0)
             {
@@ -26,7 +26,7 @@ namespace XMLGenerator
 
         public static string GetRandomCPUModel(string manufacturer)
         {
-            int position = random.Next(0, ProcessorModels[manufacturer].Length);
+            int position = Generator.random.Next(0, ProcessorModels[manufacturer].Length);
 
             if (ProcessorModels[manufacturer].Length == 1)
                 return ProcessorModels[manufacturer][position];
@@ -39,33 +39,23 @@ namespace XMLGenerator
 
         public static string GetRandomArchitecture()
         {
-            return Architectures[random.Next(0, Architectures.Length)];
+            return Architectures[Generator.random.Next(0, Architectures.Length)];
         }
 
         public static string GetRandomClockFrequency()
         {
-            return random.Next(10, 41) + "00mhz";
+            return Generator.random.Next(10, 41) + "00mhz";
         }
 
         public static Cache GetRandomCache()
         {
-            return new Cache { Levels = random.Next(1, 3), Memory = random.Next(1, 6) + "MB" };
+            return new Cache { Levels = Generator.random.Next(1, 3), Memory = Generator.random.Next(1, 6) + "MB" };
         }
 
         public static Threads GetRandomThreads()
         {
-            int physical = random.Next(1, 8);
+            int physical = Generator.random.Next(1, 8);
             return new Threads { Physical = physical, Logical = physical == 1 ? physical : physical * 2 };
-        }
-
-        public static int GetRandomAvailable()
-        {
-            return random.Next(10);
-        }
-
-        public static string GetRandomCPUPrice()
-        {
-            return random.Next(100, 801) + "лева";
         }
 
         public static string GetIdFromModel(string model)
@@ -81,8 +71,6 @@ namespace XMLGenerator
                 return "1151";
         }
 
-        private static readonly Random random = new Random();
-        private static string[] MemoryTypes = { "DDR1", "DDR2", "DDR3", "DDR4" };
         private static string[] ProcessorManufacturers = { "Интел", "АМД" };
         private static string[] Architectures = { "Максуел", "Бродуел", "Скайлейк" };
         private static Dictionary<string, string[]> ProcessorModels = new Dictionary<string, string[]>()
@@ -93,6 +81,5 @@ namespace XMLGenerator
             { "АМД", new string[] { "Athlon64", "Athlon64X2", "Phenom64", "Sempron64X1", "Opteron4300", "Opteron6700",
                                     "FX-4150", "FX-6130", "FX-8370E", "FX8350-Black", "AthlonX4-860K"} }
         };
-
     }
 }
