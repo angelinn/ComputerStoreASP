@@ -44,7 +44,7 @@ namespace XMLGenerator
                 store.Parts.Processors[i] = new Processor();
                 store.Parts.Processors[i].Manufacturer = CPUDatabase.GetRandomCPU();
                 store.Parts.Processors[i].Model = CPUDatabase.GetRandomCPUModel(store.Parts.Processors[i].Manufacturer);
-                store.Parts.Processors[i].Architecture = CPUDatabase.GetRandomArchitecture();
+                store.Parts.Processors[i].Architecture = CPUDatabase.GetRandomArchitecture(store.Parts.Processors[i].Manufacturer);
                 store.Parts.Processors[i].ClockFrequency = CPUDatabase.GetRandomClockFrequency();
                 store.Parts.Processors[i].Cache = CPUDatabase.GetRandomCache();
                 store.Parts.Processors[i].Available = CommonDatabase.GetRandomAvailable();
