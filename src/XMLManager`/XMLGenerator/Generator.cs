@@ -17,7 +17,7 @@ namespace XMLGenerator
         public static void SerializeXML<T>(T toSerialize, string fileName)
         {
             XmlSerializer serializer = new XmlSerializer(typeof(T));
-            TextWriter textWriter = new StreamWriter(fileName);
+            
 
             XmlWriterSettings writerSettings = new XmlWriterSettings();
             writerSettings.Indent = true;
@@ -26,12 +26,12 @@ namespace XMLGenerator
             XmlSerializerNamespaces ns = new XmlSerializerNamespaces();
             ns.Add("", "");
 
-            XmlWriter xmlWriter = XmlWriter.Create(textWriter, writerSettings);
-            xmlWriter.WriteDocType("computer-store", null, "computer_store.dtd", null);
-
-            serializer.Serialize(xmlWriter, toSerialize, ns);
-            xmlWriter.Close();
-            textWriter.Close();
+            using (TextWriter textWriter = new StreamWriter(fileName))
+            using (XmlWriter xmlWriter = XmlWriter.Create(textWriter, writerSettings))
+            {
+                xmlWriter.WriteDocType("computer-store", null, "computer_store.dtd", null);
+                serializer.Serialize(xmlWriter, toSerialize, ns);
+            }
         }
 
         public static ComputerStore GenerateRandomData()
