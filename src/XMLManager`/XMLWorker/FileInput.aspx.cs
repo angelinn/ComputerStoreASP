@@ -13,5 +13,15 @@ namespace XMLWorker
         {
 
         }
+
+        protected void btnSubmit_Click(object sender, EventArgs e)
+        {
+            HttpFileCollection files = Request.Files;
+
+            for (int i = 0; i < files.Count; ++i)
+            {
+                files[i].SaveAs(String.Format("{0}user_uploads\\{1}", HttpRuntime.AppDomainAppPath, files[i].FileName));
+            }
+        }
     }
 }
