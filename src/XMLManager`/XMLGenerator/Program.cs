@@ -20,7 +20,7 @@ namespace XMLGenerator
             for (int i = 5; i < 20; ++i)
             {
                 Generator.SerializeXML(Generator.GenerateRandomData(), String.Format(fileName, i));
-                if (!XMLValidator.ValidateXML(String.Format(fileName, i)))
+                if (!new XMLValidator().ValidateXML(String.Format(fileName, i)))
                     Console.ReadLine();
             }
         }

@@ -10,9 +10,9 @@ namespace Common
 {
     public class XMLValidator
     {
-        private static bool isValid = true;
+        private bool isValid = true;
 
-        public static bool ValidateXML(string fileName)
+        public bool ValidateXML(string fileName)
         {
             // Set the validation settings.
             XmlReaderSettings settings = new XmlReaderSettings();
@@ -34,10 +34,11 @@ namespace Common
             else
                 Console.WriteLine(String.Format("Document {0} is invalid", fileName));
 
+            reader.Close();
             return isValid;
         }
 
-        public static void ValidationCallBack(object sender,
+        public void ValidationCallBack(object sender,
                                             ValidationEventArgs args)
         {
             isValid = false;

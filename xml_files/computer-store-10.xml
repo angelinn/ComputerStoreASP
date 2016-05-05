@@ -3,7 +3,7 @@
 <computer-store>
 	<parts>
 		<processors>
-			<processor id="st_20908074" socket="A3" integrated_video="false">
+			<processorss id="st_20908074" socket="A3" integrated_video="false">
 				<model>FX-8370E</model>
 				<manufacturer>АМД</manufacturer>
 				<architecture>amd64</architecture>
@@ -18,7 +18,7 @@
 				</threads>
 				<available>9</available>
 				<price>426лева</price>
-			</processor>
+			</processorss>
 			<processor id="st_66228199" socket="A3" integrated_video="false">
 				<model>Athlon64</model>
 				<manufacturer>АМД</manufacturer>

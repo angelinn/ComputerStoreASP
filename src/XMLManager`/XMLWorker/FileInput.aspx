@@ -6,4 +6,8 @@
         <asp:FileUpload  ID="fuXmlFiles" runat="server" AllowMultiple="true"  />
     </div>
     <asp:Button id="btnSubmit" runat="server" class="btn btn-default" type="submit" Text="Качване" OnClick="btnSubmit_Click" />
+
+    <hr />
+    <asp:Table ID="tblResults" runat="server" CellPadding="10" >
+    </asp:Table>
 </asp:Content>
