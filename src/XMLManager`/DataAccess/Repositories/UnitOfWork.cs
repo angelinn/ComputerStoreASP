@@ -52,6 +52,11 @@ namespace DataAccess.Repositories
             return (IGenericRepository<T>)repositories[typeof(T)];
         }
 
+        public void Save()
+        {
+            context.SaveChanges();
+        }
+
         protected virtual void Dispose(bool disposing)
         {
             if (!this.disposed)

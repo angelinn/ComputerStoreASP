@@ -1,4 +1,4 @@
-﻿using DataAccess.Models.XML;
+﻿using DataAccess.Models.Entities;
 using DataAccess.Repositories;
 using System;
 using System.Collections.Generic;
@@ -14,12 +14,16 @@ namespace DataAccess.Domain
     { 
         public static void AddStoreData(string fileName)
         {
-            XmlSerializer serializer = new XmlSerializer(typeof(ComputerStore));
+            XmlSerializer serializer = new XmlSerializer(typeof(Models.XML.ComputerStore));
 
             using (StreamReader reader = new StreamReader(fileName))
             using (UnitOfWork uow = new UnitOfWork())
             {
-                ComputerStore store = (ComputerStore)serializer.Deserialize(reader);
+                Models.XML.ComputerStore store = (Models.XML.ComputerStore)serializer.Deserialize(reader);
+
+                Parts parts = Parts.XMLToEntity(store.Parts);
+                uow.Parts.Add(parts);
+                uow.Save();
             }
         }
     }
