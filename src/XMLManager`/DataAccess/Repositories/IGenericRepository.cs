@@ -11,9 +11,9 @@ namespace DataAccess.Repositories
     {
         IQueryable<T> All();
         IQueryable<T> Where(Expression<Func<T, bool>> filter);
-        IQueryable<T> FindById(int id);
+        T FindById(int id);
         
-        void Create(T entity);
+        void Add(T entity);
         void Delete(int id);
         void Update(T entity);
         void Save();

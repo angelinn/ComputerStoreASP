@@ -26,6 +26,22 @@ namespace DataAccess.Repositories
             }
         }
 
+        public IGenericRepository<Socket> Sockets
+        {
+            get
+            {
+                return GetRepository<Socket>();
+            }
+        }
+
+        public IGenericRepository<MemoryType> MemoryTypes
+        {
+            get
+            {
+                return GetRepository<MemoryType>();
+            }
+        }
+
         private IGenericRepository<T> GetRepository<T>() where T : class
         {
             if (!repositories.ContainsKey(typeof(T)))

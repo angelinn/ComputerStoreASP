@@ -1,6 +1,7 @@
 ﻿using DataAccess.Models.Entities;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
@@ -17,37 +18,38 @@ namespace DataAccess.Repositories
 
         public IQueryable<T> All()
         {
-            throw new NotImplementedException();
+            return context.Set<T>().AsQueryable();
         }
 
-        public void Create(T entity)
+        public void Add(T entity)
         {
             context.Set<T>().Add(entity);
         }
 
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            T entity = FindById(id);
+            context.Set<T>().Remove(entity);
         }
 
-        public IQueryable<T> FindById(int id)
+        public T FindById(int id)
         {
-            throw new NotImplementedException();
+            return context.Set<T>().Find(id);
         }
 
         public void Save()
         {
-            throw new NotImplementedException();
+            context.SaveChanges();
         }
 
         public void Update(T entity)
         {
-            throw new NotImplementedException();
+            context.Entry(entity).State = EntityState.Modified;
         }
 
         public IQueryable<T> Where(Expression<Func<T, bool>> filter)
         {
-            throw new NotImplementedException();
+            return context.Set<T>().Where(filter);
         }
 
         protected virtual void Dispose(bool disposing)
