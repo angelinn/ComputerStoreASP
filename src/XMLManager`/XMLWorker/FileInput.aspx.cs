@@ -19,7 +19,6 @@ namespace XMLWorker
         {
             HttpFileCollection files = Request.Files;
             string message = "File extension is not XML.";
-            string serverFileName = String.Empty;
 
             for (int i = 0; i < files.Count; ++i)
             {
@@ -30,13 +29,11 @@ namespace XMLWorker
 
                     if (System.IO.Path.GetExtension(files[i].FileName) == ".xml")
                     {
-                        serverFileName = String.Format("{0}user_uploads\\{1}", HttpRuntime.AppDomainAppPath, files[i].FileName);
+                        string serverFileName = BuildServerFileName(files[i].FileName);
                         files[i].SaveAs(serverFileName);
 
-                        if (new XMLValidator().ValidateXML(serverFileName))
-                            message = "Success.";
-                        else
-                            message = "File not valid by the DTD schema.";
+                        XMLValidator validator = new XMLValidator();
+                        message = validator.ValidateXML(serverFileName) ? "Success." : "File not valid by the DTD schema.";
 
                         System.IO.File.Delete(serverFileName);
                     }
@@ -46,17 +43,27 @@ namespace XMLWorker
                     message = "Failed to upload file.";
                 }
 
-                TableRow uploadEntry = new TableRow();
-                TableCell fileName = new TableCell();
-                fileName.Text = files[i].FileName;
-                TableCell status = new TableCell();
-                status.Text = message;
-
-                uploadEntry.Cells.Add(fileName);
-                uploadEntry.Cells.Add(status);
-
-                tblResults.Rows.Add(uploadEntry);
+                CreateUploadEntryStatus(files[i].FileName, message);
             }
+        }
+
+        private void CreateUploadEntryStatus(string fileName, string status)
+        {
+            TableRow uploadEntry = new TableRow();
+            TableCell fileCell = new TableCell();
+            fileCell.Text = fileName;
+            TableCell statusCell = new TableCell();
+            statusCell.Text = status;
+
+            uploadEntry.Cells.Add(fileCell);
+            uploadEntry.Cells.Add(statusCell);
+
+            tblResults.Rows.Add(uploadEntry);
+        }
+
+        private string BuildServerFileName(string fileName)
+        {
+            return String.Format("{0}user_uploads\\{1}", HttpRuntime.AppDomainAppPath, fileName);
         }
     }
 }
