@@ -1,4 +1,5 @@
 ﻿using Common;
+using DataAccess.Domain;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,7 +34,13 @@ namespace XMLWorker
                         files[i].SaveAs(serverFileName);
 
                         XMLValidator validator = new XMLValidator();
-                        message = validator.ValidateXML(serverFileName) ? "Success." : "File not valid by the DTD schema.";
+                        if (validator.ValidateXML(serverFileName))
+                        {
+                            message = "Success.";
+                            ComputerStoreDO.AddStoreData(serverFileName);
+                        }
+                        else
+                            message = "File not valid by the DTD schema.";
 
                         System.IO.File.Delete(serverFileName);
                     }

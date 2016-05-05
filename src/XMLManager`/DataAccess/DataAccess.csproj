@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ComputerStoreContext.cs" />
+    <Compile Include="Domain\ComputerStoreDO.cs" />
     <Compile Include="Models\Entities\Cache.cs" />
     <Compile Include="Models\Entities\DriveMemory.cs" />
     <Compile Include="Models\Entities\GPUMemory.cs" />
@@ -80,9 +81,7 @@
     <Compile Include="Repositories\IGenericRepository.cs" />
     <Compile Include="Repositories\UnitOfWork.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Domain\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
