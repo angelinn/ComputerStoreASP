@@ -18,6 +18,14 @@ namespace DataAccess.Repositories
         public UnitOfWork() : this(new ComputerStoreContext())
         { }
 
+        public IGenericRepository<ComputerStore> ComputerStores
+        {
+            get
+            {
+                return GetRepository<ComputerStore>();
+            }
+        }
+
         public IGenericRepository<Parts> Parts
         {
             get

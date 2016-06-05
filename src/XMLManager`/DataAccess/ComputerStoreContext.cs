@@ -14,6 +14,8 @@ namespace DataAccess
         public ComputerStoreContext() : base("ComputerStoreContext")
         {   }
 
+        public IDbSet<ComputerStore> ComputerStores { get; set; }
+
         public IDbSet<Parts> Parts { get; set; }
         public IDbSet<Socket> Sockets { get; set; }
         public IDbSet<MemoryType> MemoryTypes { get; set; }

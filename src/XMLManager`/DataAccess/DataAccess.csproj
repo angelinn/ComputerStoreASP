@@ -52,6 +52,7 @@
     <Compile Include="ComputerStoreContext.cs" />
     <Compile Include="Domain\ComputerStoreDO.cs" />
     <Compile Include="Models\Entities\Cache.cs" />
+    <Compile Include="Models\Entities\ComputerStore.cs" />
     <Compile Include="Models\Entities\DriveMemory.cs" />
     <Compile Include="Models\Entities\GPUMemory.cs" />
     <Compile Include="Models\Entities\HardDrive.cs" />

@@ -20,38 +20,9 @@ namespace DataAccess.Domain
             using (UnitOfWork uow = new UnitOfWork())
             {
                 Models.XML.ComputerStore store = (Models.XML.ComputerStore)serializer.Deserialize(reader);
+                ComputerStore dbStore = ComputerStore.XMLToEntity(store);
 
-                Parts parts = Parts.XMLToEntity(store.Parts);
-                List<Socket> sockets = new List<Socket>();
-                List<MemoryType> memoryTypes = new List<MemoryType>();
-
-                foreach (Models.XML.Socket xmlSocket in store.Sockets)
-                {
-                    sockets.Add(Socket.XMLToEntity(xmlSocket));
-                    uow.Sockets.Add(sockets.Last());
-                }
-
-                foreach(Models.XML.Memory xmlMemoryType in store.MemoryTypes)
-                {
-                    memoryTypes.Add(MemoryType.XMLToEntity(xmlMemoryType));
-                    uow.MemoryTypes.Add(memoryTypes.Last());
-                }
-
-                foreach (Processor cpu in parts.Processors)
-                {
-                    Socket socket = sockets.FirstOrDefault(s => s.Alias == cpu.Socket);
-                    if (socket != null)
-                        cpu.SocketObject = socket;
-                }
-
-                foreach (Motherboard mobo in parts.Motherboards)
-                {
-                    Socket socket = sockets.FirstOrDefault(s => s.Alias == mobo.SocketAlias);
-                    if (socket != null)
-                        mobo.Socket = socket;
-                }
-
-                uow.Parts.Add(parts);
+                uow.ComputerStores.Add(dbStore);
                 uow.Save();
             }
         }

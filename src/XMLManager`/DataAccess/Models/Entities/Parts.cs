@@ -23,17 +23,17 @@ namespace DataAccess.Models.Entities
             foreach (XML.Processor xmlCPU in xmlParts.Processors)
                 parts.Processors.Add(Processor.XMLToEntity(xmlCPU));
 
-            foreach (XML.VideoCard xmlGPU in xmlParts.VideoCards)
-                parts.VideoCards.Add(VideoCard.XMLToEntity(xmlGPU));
+            //foreach (XML.VideoCard xmlGPU in xmlParts.VideoCards)
+            //    parts.VideoCards.Add(VideoCard.XMLToEntity(xmlGPU));
 
-            foreach (XML.HardDrive xmlHDD in xmlParts.HardDrives)
-                parts.HardDrives.Add(HardDrive.XMLToEntity(xmlHDD));
+            //foreach (XML.HardDrive xmlHDD in xmlParts.HardDrives)
+            //    parts.HardDrives.Add(HardDrive.XMLToEntity(xmlHDD));
 
-            foreach (XML.RamBoard xmlRAM in xmlParts.RamBoards)
-                parts.RamBoards.Add(RamBoard.XMLToEntity(xmlRAM));
+            //foreach (XML.RamBoard xmlRAM in xmlParts.RamBoards)
+            //    parts.RamBoards.Add(RamBoard.XMLToEntity(xmlRAM));
 
-            foreach (XML.Motherboard xmlMobo in xmlParts.Motherboards)
-                parts.Motherboards.Add(Motherboard.XMLToEntity(xmlMobo));
+            //foreach (XML.Motherboard xmlMobo in xmlParts.Motherboards)
+            //    parts.Motherboards.Add(Motherboard.XMLToEntity(xmlMobo));
 
             return parts;
         }
