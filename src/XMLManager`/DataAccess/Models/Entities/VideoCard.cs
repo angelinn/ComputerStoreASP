@@ -19,8 +19,7 @@ namespace DataAccess.Models.Entities
         public string Shaders { get; set; }
         public int Available { get; set; }
         public string Price { get; set; }
-
-        public int? GPUMemoryID { get; set; }
+        
         public virtual GPUMemory GPUMemory { get; set; }
     }
 }

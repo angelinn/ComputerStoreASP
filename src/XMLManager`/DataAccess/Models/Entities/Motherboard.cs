@@ -16,15 +16,10 @@ namespace DataAccess.Models.Entities
         public string Price { get; set; }
         public string SocketAlias { get; set; }
 
-        public int? ProcessorID { get; set; }
         public virtual Processor Processor { get; set; }
-        public int? VideoCardID { get; set; }
         public virtual VideoCard VideoCard { get; set; }
-        public int? RamBoardID { get; set; }
         public virtual RamBoard RamBoard { get; set; }
-        public int? HardDriveID { get; set; }
         public virtual HardDrive HardDrive { get; set; }
-        public int? SocketID { get; set; }
         public virtual Socket Socket { get; set; }
     }
 }

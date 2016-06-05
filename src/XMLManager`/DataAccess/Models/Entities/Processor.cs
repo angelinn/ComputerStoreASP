@@ -37,11 +37,8 @@ namespace DataAccess.Models.Entities
         public int Available { get; set; }
         public bool IntegratedVideo { get; set; }
 
-        public int? ThreadsID { get; set; }
         public virtual Threads Threads { get; set; }
-        public int? CacheID { get; set; }
         public virtual Cache Cache { get; set; }
-        public int? SocketID { get; set; }
         public virtual Socket SocketObject { get; set; }
     }
 }

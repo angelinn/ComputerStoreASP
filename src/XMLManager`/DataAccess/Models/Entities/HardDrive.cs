@@ -17,8 +17,7 @@ namespace DataAccess.Models.Entities
         public string Size { get; set; }
         public int Available { get; set; }
         public string Price { get; set; }
-
-        public int? DriveMemoryID { get; set; }
+        
         public virtual DriveMemory DriveMemory { get; set; }
     }
 }

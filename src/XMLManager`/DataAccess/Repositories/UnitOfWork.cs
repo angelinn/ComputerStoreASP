@@ -26,14 +26,6 @@ namespace DataAccess.Repositories
             }
         }
 
-        public IGenericRepository<Parts> Parts
-        {
-            get
-            {
-                return GetRepository<Parts>();
-            }
-        }
-
         public IGenericRepository<Socket> Sockets
         {
             get

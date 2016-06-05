@@ -18,8 +18,7 @@ namespace DataAccess.Models.Entities
         public int Available { get; set; }
         public string Price { get; set; }
         public string Memory { get; set; }
-
-        public int? MemoryTypeID { get; set; }
+        
         public virtual MemoryType MemoryType { get; set; }
     }
 }
