@@ -56,12 +56,12 @@
             </asp:ContentPlaceHolder>
             <hr />
             <footer>
-            <div class="row">
-               <div class="col-lg-12">
-                  <p>ASP Програмиране <%= DateTime.Now.Year %> - Анджелин Неделчев</p>
-               </div>
-            </div>
-         </footer>
+                <div class="row">
+                   <div class="col-lg-12">
+                      <p>ASP Програмиране <%= DateTime.Now.Year %> - Анджелин Неделчев</p>
+                   </div>
+                </div>
+             </footer>
         </div>
     </form>
 </body>
