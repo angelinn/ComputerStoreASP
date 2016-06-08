@@ -31,15 +31,6 @@ namespace XMLWorker {
         protected global::System.Web.UI.WebControls.TextBox txtCpuSocket;
         
         /// <summary>
-        /// txtCpuVideo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCpuVideo;
-        
-        /// <summary>
         /// txtCpuModel control.
         /// </summary>
         /// <remarks>
@@ -112,22 +103,31 @@ namespace XMLWorker {
         protected global::System.Web.UI.WebControls.TextBox txtPhysicalThreads;
         
         /// <summary>
-        /// txtAvailable control.
+        /// txtCpuAvailable control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtAvailable;
+        protected global::System.Web.UI.WebControls.TextBox txtCpuAvailable;
         
         /// <summary>
-        /// txtPrice control.
+        /// txtCpuPrice control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPrice;
+        protected global::System.Web.UI.WebControls.TextBox txtCpuPrice;
+        
+        /// <summary>
+        /// chkCpuVideo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox chkCpuVideo;
         
         /// <summary>
         /// txtGpuID control.
@@ -283,15 +283,6 @@ namespace XMLWorker {
         protected global::System.Web.UI.WebControls.TextBox txtRamFrequency;
         
         /// <summary>
-        /// txtRamChannel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtRamChannel;
-        
-        /// <summary>
         /// txtRamAvailable control.
         /// </summary>
         /// <remarks>
@@ -308,6 +299,15 @@ namespace XMLWorker {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtRamPrice;
+        
+        /// <summary>
+        /// drpRamChannel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList drpRamChannel;
         
         /// <summary>
         /// txtHddID control.

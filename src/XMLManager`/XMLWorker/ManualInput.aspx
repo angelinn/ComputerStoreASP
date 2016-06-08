@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ManualInput.aspx.cs" Inherits="XMLWorker.ManualInput" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" Title="Ръчно въвеждане" AutoEventWireup="true" CodeBehind="ManualInput.aspx.cs" Inherits="XMLWorker.ManualInput" %>
 
 <asp:Content runat="server" ContentPlaceHolderID="MainContent" >
     <h2> Компютърен магазин </h2>
@@ -9,9 +9,6 @@
         </div>
         <div class="form-group col-md-3">
             <asp:TextBox class="form-control" ID="txtCpuSocket" runat="server" placeholder="Сокет"></asp:TextBox>
-        </div>
-        <div class="form-group col-md-3">
-            <asp:TextBox class="form-control" ID="txtCpuVideo" runat="server" placeholder="Вграден видео чип?"></asp:TextBox>
         </div>
         <div class="form-group col-md-3">
             <asp:TextBox class="form-control" ID="txtCpuModel" runat="server" placeholder="Модел"></asp:TextBox>
@@ -38,13 +35,17 @@
             <asp:TextBox class="form-control" ID="txtPhysicalThreads" runat="server" placeholder="Ядра"></asp:TextBox>
         </div>
         <div class="form-group col-md-3">
-            <asp:TextBox class="form-control" ID="txtAvailable" runat="server" placeholder="Наличност"></asp:TextBox>
+            <asp:TextBox class="form-control" ID="txtCpuAvailable" runat="server" placeholder="Наличност"></asp:TextBox>
         </div>
         <div class="form-group col-md-3">
-            <asp:TextBox class="form-control" ID="txtPrice" runat="server" placeholder="Цена"></asp:TextBox>
+            <asp:TextBox class="form-control" ID="txtCpuPrice" runat="server" placeholder="Цена"></asp:TextBox>
+        </div>
+        <div class="form-group col-md-3">
+            <asp:Label runat="server">Вграден видео чип?</asp:Label>
+            <asp:CheckBox ID="chkCpuVideo" runat="server"></asp:CheckBox>
         </div>
     </div>
-
+        
     <div class="row">
         <h3> Видео карти: </h3>
         <div class="form-group col-md-3">
@@ -103,13 +104,20 @@
             <asp:TextBox class="form-control" ID="txtRamFrequency" runat="server" placeholder="Тактова честота"></asp:TextBox>
         </div>
         <div class="form-group col-md-3">
-            <asp:TextBox class="form-control" ID="txtRamChannel" runat="server" placeholder="Канали"></asp:TextBox>
-        </div>
-        <div class="form-group col-md-3">
             <asp:TextBox class="form-control" ID="txtRamAvailable" runat="server" placeholder="Наличност"></asp:TextBox>
         </div>
         <div class="form-group col-md-3">
             <asp:TextBox class="form-control" ID="txtRamPrice" runat="server" placeholder="Цена"></asp:TextBox>
+        </div>
+        <div class="form-group col-md-4">
+            <div>
+                <asp:Label runat="server">Каналност:</asp:Label>
+            </div>
+            <asp:DropDownList ID="drpRamChannel" class="form-control" runat="server">
+                <asp:ListItem Selected="True" Text="Едноканална" Value="single"></asp:ListItem>
+                <asp:ListItem Text="Двуканална" Value="dual"></asp:ListItem>
+                <asp:ListItem Text="Триканална" Value="triple"></asp:ListItem>
+            </asp:DropDownList>
         </div>
     </div>
 
