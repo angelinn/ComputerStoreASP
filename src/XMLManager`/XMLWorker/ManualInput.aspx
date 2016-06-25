@@ -2,49 +2,57 @@
 
 <asp:Content runat="server" ContentPlaceHolderID="MainContent" >
     <h2> Компютърен магазин </h2>
-    <div class="row">
-        <h3> Процесори: </h3>
-        <div class="form-group col-md-3">
-            <asp:TextBox class="form-control" ID="txtCpuID" runat="server" placeholder="Идентификатор"></asp:TextBox>
-        </div>
-        <div class="form-group col-md-3">
-            <asp:TextBox class="form-control" ID="txtCpuSocket" runat="server" placeholder="Сокет"></asp:TextBox>
-        </div>
-        <div class="form-group col-md-3">
-            <asp:TextBox class="form-control" ID="txtCpuModel" runat="server" placeholder="Модел"></asp:TextBox>
-        </div>
-        <div class="form-group col-md-3">
-            <asp:TextBox class="form-control" ID="txtCpuManufacturer" runat="server" placeholder="Производител"></asp:TextBox>
-        </div>
-        <div class="form-group col-md-3">
-            <asp:TextBox class="form-control" ID="txtCpuArchitecture" runat="server" placeholder="Архитектура"></asp:TextBox>
-        </div>
-        <div class="form-group col-md-3">
-            <asp:TextBox class="form-control" ID="txtCpuFrequency" runat="server" placeholder="Тактова честота"></asp:TextBox>
-        </div>
-        <div class="form-group col-md-3">
-            <asp:TextBox class="form-control" ID="txtCacheLevels" runat="server" placeholder="Нива на кеш"></asp:TextBox>
-        </div>
-        <div class="form-group col-md-3">
-            <asp:TextBox class="form-control" ID="txtCacheMemory" runat="server" placeholder="Памет на кеш"></asp:TextBox>
-        </div>
-        <div class="form-group col-md-3">
-            <asp:TextBox class="form-control" ID="txtLogicalThreads" runat="server" placeholder="Нишки"></asp:TextBox>
-        </div>
-        <div class="form-group col-md-3">
-            <asp:TextBox class="form-control" ID="txtPhysicalThreads" runat="server" placeholder="Ядра"></asp:TextBox>
-        </div>
-        <div class="form-group col-md-3">
-            <asp:TextBox class="form-control" ID="txtCpuAvailable" runat="server" placeholder="Наличност"></asp:TextBox>
-        </div>
-        <div class="form-group col-md-3">
-            <asp:TextBox class="form-control" ID="txtCpuPrice" runat="server" placeholder="Цена"></asp:TextBox>
-        </div>
-        <div class="form-group col-md-3">
-            <asp:Label runat="server">Вграден видео чип?</asp:Label>
-            <asp:CheckBox ID="chkCpuVideo" runat="server"></asp:CheckBox>
-        </div>
-    </div>
+
+    <h3> Процесори: </h3>
+        <asp:ListView id="lvProcessors" runat="server" InsertItemPosition="LastItem" ItemType="DataAccess.Models.Entities.Processor" DataKeyNames="ID" SelectMethod="GetProcessors" InsertMethod="InsertProcessor">
+            
+            <InsertItemTemplate>
+                <div class="row">
+                <div class="form-group col-md-3">
+                    <asp:TextBox class="form-control" ID="txtCpuIDI" runat="server" placeholder="Идентификатор" Text="<%# BindItem.Alias %>"></asp:TextBox>
+                </div>
+                <div class="form-group col-md-3">
+                    <asp:TextBox class="form-control" ID="txtCpuSocketI" runat="server" placeholder="Сокет" Text="<%# BindItem.Socket %>"></asp:TextBox>
+                </div>
+                <div class="form-group col-md-3">
+                    <asp:TextBox class="form-control" ID="txtCpuModelI" runat="server" placeholder="Модел" Text="<%# BindItem.Model %>"></asp:TextBox>
+                </div>    
+                <div class="form-group col-md-3">
+                    <asp:TextBox class="form-control" ID="txtCpuManufacturer" runat="server" placeholder="Производител" Text="<%# BindItem.Manufacturer %>"></asp:TextBox>
+                </div>
+                <div class="form-group col-md-3">
+                    <asp:TextBox class="form-control" ID="txtCpuArchitecture" runat="server" placeholder="Архитектура" Text="<%# BindItem.Architecture %>"></asp:TextBox>
+                </div>
+                <div class="form-group col-md-3">
+                    <asp:TextBox class="form-control" ID="txtCpuFrequency" runat="server" placeholder="Тактова честота" Text="<%# BindItem.ClockFrequency %>"></asp:TextBox>
+                </div>
+                <div class="form-group col-md-3">
+                    <asp:TextBox class="form-control" ID="txtCacheLevels" runat="server" placeholder="Нива на кеш" Text="<%# BindItem.Cache.Levels %>"></asp:TextBox>
+                </div>
+                <div class="form-group col-md-3">
+                    <asp:TextBox class="form-control" ID="txtCacheMemory" runat="server" placeholder="Памет на кеш" Text="<%# BindItem.Cache.Memory %>"></asp:TextBox>
+                </div>
+                <div class="form-group col-md-3">
+                    <asp:TextBox class="form-control" ID="txtLogicalThreads" runat="server" placeholder="Нишки" Text="<%# BindItem.Threads.Logical %>"></asp:TextBox>
+                </div>
+                <div class="form-group col-md-3">
+                    <asp:TextBox class="form-control" ID="txtPhysicalThreads" runat="server" placeholder="Ядра" Text="<%# BindItem.Threads.Physical %>"></asp:TextBox>
+                </div>
+                <div class="form-group col-md-3">
+                    <asp:TextBox class="form-control" ID="txtCpuAvailable" runat="server" placeholder="Наличност" Text="<%# BindItem.Available %>"></asp:TextBox>
+                </div>
+                <div class="form-group col-md-3">
+                    <asp:TextBox class="form-control" ID="txtCpuPrice" runat="server" placeholder="Цена" Text="<%# BindItem.Price %>"></asp:TextBox>
+                </div>
+                <div class="form-group col-md-3">
+                    <asp:Label runat="server">Вграден видео чип?</asp:Label>
+                    <asp:CheckBox ID="chkCpuVideo" runat="server" Checked="<%# BindItem.IntegratedVideo %>"></asp:CheckBox>
+                </div>  
+                <asp:Button ID="btnInsertCpu" class="btn btn-default" runat="server" CommandName="Insert" Text="Добавяне на процесор" />
+                </div>
+            </InsertItemTemplate>
+            
+        </asp:ListView>
         
     <div class="row">
         <h3> Видео карти: </h3>

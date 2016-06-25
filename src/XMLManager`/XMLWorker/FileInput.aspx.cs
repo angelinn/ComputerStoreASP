@@ -25,24 +25,24 @@ namespace XMLWorker
             {
                 try
                 {
-                    if (files[i].ContentLength == 0)
-                        continue;
-
-                    if (System.IO.Path.GetExtension(files[i].FileName) == ".xml")
+                    if (files[i].ContentLength != 0)
                     {
-                        string serverFileName = BuildServerFileName(files[i].FileName);
-                        files[i].SaveAs(serverFileName);
-
-                        XMLValidator validator = new XMLValidator();
-                        if (validator.ValidateXML(serverFileName))
+                        if (System.IO.Path.GetExtension(files[i].FileName) == ".xml")
                         {
-                            message = "Success.";
-                            ComputerStoreDO.AddStoreData(serverFileName);
-                        }
-                        else
-                            message = "File not valid by the DTD schema.";
+                            string serverFileName = BuildServerFileName(files[i].FileName);
+                            files[i].SaveAs(serverFileName);
 
-                        System.IO.File.Delete(serverFileName);
+                            XMLValidator validator = new XMLValidator();
+                            if (validator.ValidateXML(serverFileName))
+                            {
+                                message = "Success.";
+                                ComputerStoreDO.AddStoreData(serverFileName);
+                            }
+                            else
+                                message = "File not valid by the DTD schema.";
+
+                            System.IO.File.Delete(serverFileName);
+                        }
                     }
                 }
                 catch (HttpException)
