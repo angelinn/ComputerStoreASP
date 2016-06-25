@@ -48,51 +48,60 @@
                     <asp:Label runat="server">Вграден видео чип?</asp:Label>
                     <asp:CheckBox ID="chkCpuVideo" runat="server" Checked="<%# BindItem.IntegratedVideo %>"></asp:CheckBox>
                 </div>  
-                <asp:Button ID="btnInsertCpu" class="btn btn-default" runat="server" CommandName="Insert" Text="Добавяне на процесор" />
+                    <asp:Button ID="btnInsertCpu" class="btn btn-default" runat="server" CommandName="Insert" Text="Добавяне на процесор" />
                 </div>
             </InsertItemTemplate>
             
         </asp:ListView>
         
-    <div class="row">
         <h3> Видео карти: </h3>
-        <div class="form-group col-md-3">
-            <asp:TextBox class="form-control" ID="txtGpuID" runat="server" placeholder="Идентификатор"></asp:TextBox>
-        </div>
-        <div class="form-group col-md-3">
-            <asp:TextBox class="form-control" ID="txtGpuIface" runat="server" placeholder="Интерфейс"></asp:TextBox>
-        </div>
-        <div class="form-group col-md-3">
-            <asp:TextBox class="form-control" ID="txtGpuModel" runat="server" placeholder="Модел"></asp:TextBox>
-        </div>
-        <div class="form-group col-md-3">
-            <asp:TextBox class="form-control" ID="txtGpuManufacturer" runat="server" placeholder="Производител"></asp:TextBox>
-        </div>
-        <div class="form-group col-md-3">
-            <asp:TextBox class="form-control" ID="txtGpuMemoryTypeID" runat="server" placeholder="ID на тип Памет"></asp:TextBox>
-        </div>
-        <div class="form-group col-md-3">
-            <asp:TextBox class="form-control" ID="txtGpuMemoryAmount" runat="server" placeholder="Размер памет"></asp:TextBox>
-        </div>
-        <div class="form-group col-md-3">
-            <asp:TextBox class="form-control" ID="txtGpuBus" runat="server" placeholder="Ширина на шината"></asp:TextBox>
-        </div>
-        <div class="form-group col-md-3">
-            <asp:TextBox class="form-control" ID="txtGpuBandwidth" runat="server" placeholder="Ширина на честотната лента"></asp:TextBox>
-        </div>
-        <div class="form-group col-md-3">
-            <asp:TextBox class="form-control" ID="txtGpuDirectX" runat="server" placeholder="DirectX"></asp:TextBox>
-        </div>
-        <div class="form-group col-md-3">
-            <asp:TextBox class="form-control" ID="txtGpuShaders" runat="server" placeholder="Шейдъри"></asp:TextBox>
-        </div>
-        <div class="form-group col-md-3">
-            <asp:TextBox class="form-control" ID="txtGpuAvailable" runat="server" placeholder="Наличност"></asp:TextBox>
-        </div>
-        <div class="form-group col-md-3">
-            <asp:TextBox class="form-control" ID="txtGpuPrice" runat="server" placeholder="Цена"></asp:TextBox>
-        </div>
-    </div>
+        <asp:ListView id="ListView1" runat="server" InsertItemPosition="LastItem" ItemType="DataAccess.Models.Entities.VideoCard" DataKeyNames="ID" SelectMethod="GetVideoCards" InsertMethod="InsertVideoCard">
+            
+        <InsertItemTemplate>
+            <div class="row">
+        
+                <div class="form-group col-md-3">
+                    <asp:TextBox class="form-control" ID="txtGpuID" runat="server" placeholder="Идентификатор" Text="<%# BindItem.Alias %>"></asp:TextBox>
+                </div>
+                <div class="form-group col-md-3">
+                    <asp:TextBox class="form-control" ID="txtGpuIface" runat="server" placeholder="Интерфейс" Text="<%# BindItem.Interface %>"></asp:TextBox>
+                </div>
+                <div class="form-group col-md-3">
+                    <asp:TextBox class="form-control" ID="txtGpuModel" runat="server" placeholder="Модел" Text="<%# BindItem.Model %>"></asp:TextBox>
+                </div>
+                <div class="form-group col-md-3">
+                    <asp:TextBox class="form-control" ID="txtGpuManufacturer" runat="server" placeholder="Производител" Text="<%# BindItem.Manufacturer %>"></asp:TextBox>
+                </div>
+                <div class="form-group col-md-3">
+                    <asp:TextBox class="form-control" ID="txtGpuMemoryTypeID" runat="server" placeholder="ID на тип Памет" Text="<%# BindItem.GPUMemory.Type %>"></asp:TextBox>
+                </div>
+                <div class="form-group col-md-3">
+                    <asp:TextBox class="form-control" ID="txtGpuMemoryAmount" runat="server" placeholder="Размер памет" Text="<%# BindItem.GPUMemory.Amount %>"></asp:TextBox>
+                </div>
+                <div class="form-group col-md-3">
+                    <asp:TextBox class="form-control" ID="txtGpuBus" runat="server" placeholder="Ширина на шината" Text="<%# BindItem.BusWidth %>"></asp:TextBox>
+                </div>
+                <div class="form-group col-md-3">
+                    <asp:TextBox class="form-control" ID="txtGpuBandwidth" runat="server" placeholder="Ширина на честотната лента" Text="<%# BindItem.Bandwidth %>"></asp:TextBox>
+                </div>
+                <div class="form-group col-md-3">
+                    <asp:TextBox class="form-control" ID="txtGpuDirectX" runat="server" placeholder="DirectX" Text="<%# BindItem.DirectX %>"></asp:TextBox>
+                </div>
+                <div class="form-group col-md-3">
+                    <asp:TextBox class="form-control" ID="txtGpuShaders" runat="server" placeholder="Шейдъри" Text="<%# BindItem.Shaders %>"></asp:TextBox>
+                </div>
+                <div class="form-group col-md-3">
+                    <asp:TextBox class="form-control" ID="txtGpuAvailable" runat="server" placeholder="Наличност" Text="<%# BindItem.Available %>"></asp:TextBox>
+                </div>
+                <div class="form-group col-md-3">
+                    <asp:TextBox class="form-control" ID="txtGpuPrice" runat="server" placeholder="Цена" Text="<%# BindItem.Price %>"></asp:TextBox>
+                </div>
+                </div>  
+                    <asp:Button ID="btnInsertGPU" class="btn btn-default" runat="server" CommandName="Insert" Text="Добавяне на видео-карта" />
+                </div>
+            </div>
+        </InsertItemTemplate>
+        </asp:ListView>
 
     <div class="row">
         <h3> Рам памети: </h3>

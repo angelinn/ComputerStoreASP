@@ -16,8 +16,8 @@ namespace XMLWorker
 {
     public partial class ManualInput : System.Web.UI.Page
     {
-        public ComputerStoreInputCount InputCount = new ComputerStoreInputCount();
         private IEnumerable<DataAccess.Models.Entities.Processor> processors;
+        private IEnumerable<DataAccess.Models.Entities.VideoCard> videoCards;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -26,6 +26,13 @@ namespace XMLWorker
             {
                 processors = new List<DataAccess.Models.Entities.Processor>();
                 ViewState["processors"] = processors;
+            }
+
+            videoCards = ViewState["videoCards"] as List<DataAccess.Models.Entities.VideoCard>;
+            if (videoCards == null)
+            {
+                videoCards = new List<DataAccess.Models.Entities.VideoCard>();
+                ViewState["videoCards"] = videoCards;
             }
         }
 
@@ -128,7 +135,6 @@ namespace XMLWorker
 
         }
 
-
         public IQueryable<DataAccess.Models.Entities.Processor> GetProcessors()
         {
             return processors.AsQueryable();
@@ -138,6 +144,17 @@ namespace XMLWorker
         {
             DataAccess.Models.Entities.Processor cpu = new DataAccess.Models.Entities.Processor();
             TryUpdateModel(cpu);
+        }
+
+        public IQueryable<DataAccess.Models.Entities.VideoCard> GetVideoCards()
+        {
+            return videoCards.AsQueryable();
+        }
+
+        public void InsertVideoCard()
+        {
+            DataAccess.Models.Entities.VideoCard gpu = new DataAccess.Models.Entities.VideoCard();
+            TryUpdateModel(gpu);
         }
     }
 }
