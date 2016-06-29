@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Models.Entities
 {
+    [Serializable]
     public class VideoCard
     {
         public int ID { get; set; }

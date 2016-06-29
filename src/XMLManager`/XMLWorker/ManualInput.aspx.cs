@@ -18,21 +18,30 @@ namespace XMLWorker
     {
         private IEnumerable<DataAccess.Models.Entities.Processor> processors;
         private IEnumerable<DataAccess.Models.Entities.VideoCard> videoCards;
+        private IEnumerable<DataAccess.Models.Entities.HardDrive> hardDrives;
+        private IEnumerable<DataAccess.Models.Entities.RamBoard> ramBoards;
+        private IEnumerable<DataAccess.Models.Entities.Motherboard> motherboards;
+        private IEnumerable<DataAccess.Models.Entities.Socket> sockets;
+        private IEnumerable<DataAccess.Models.Entities.MemoryType> memoryTypes;
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            processors = ViewState["processors"] as List<DataAccess.Models.Entities.Processor>;
-            if (processors == null)
-            {
-                processors = new List<DataAccess.Models.Entities.Processor>();
-                ViewState["processors"] = processors;
-            }
+            ProcessCollection(ref processors, "processors");
+            ProcessCollection(ref videoCards, "videoCards");
+            ProcessCollection(ref hardDrives, "hardDrives");
+            ProcessCollection(ref ramBoards, "ramBoards");
+            ProcessCollection(ref motherboards, "motherboards");
+            ProcessCollection(ref sockets, "sockets");
+            ProcessCollection(ref memoryTypes, "memoryTypes");
+        }
 
-            videoCards = ViewState["videoCards"] as List<DataAccess.Models.Entities.VideoCard>;
-            if (videoCards == null)
+        private void ProcessCollection<T>(ref IEnumerable<T> collection, string key)
+        {
+            collection = ViewState[key] as List<T>;
+            if (collection == null)
             {
-                videoCards = new List<DataAccess.Models.Entities.VideoCard>();
-                ViewState["videoCards"] = videoCards;
+                collection = new List<T>();
+                ViewState[key] = collection;
             }
         }
 
@@ -156,5 +165,61 @@ namespace XMLWorker
             DataAccess.Models.Entities.VideoCard gpu = new DataAccess.Models.Entities.VideoCard();
             TryUpdateModel(gpu);
         }
+
+        public IQueryable<DataAccess.Models.Entities.RamBoard> GetRamBoards()
+        {
+            return ramBoards.AsQueryable();
+        }
+
+        public void InsertRamBoard()
+        {
+            DataAccess.Models.Entities.RamBoard ram = new DataAccess.Models.Entities.RamBoard();
+            TryUpdateModel(ram);
+        }
+
+        public IQueryable<DataAccess.Models.Entities.HardDrive> GetHardDrives()
+        {
+            return hardDrives.AsQueryable();
+        }
+
+        public void InsertHardDrive()
+        {
+            DataAccess.Models.Entities.HardDrive hdd = new DataAccess.Models.Entities.HardDrive();
+            TryUpdateModel(hdd);
+        }
+
+        public IQueryable<DataAccess.Models.Entities.Motherboard> GetMotherboards()
+        {
+            return motherboards.AsQueryable();
+        }
+
+        public void InsertMotherboard()
+        {
+            DataAccess.Models.Entities.Motherboard gpu = new DataAccess.Models.Entities.Motherboard();
+            TryUpdateModel(gpu);
+        }
+
+        public IQueryable<DataAccess.Models.Entities.Socket> GetSockets()
+        {
+            return sockets.AsQueryable();
+        }
+
+        public void InsertSocket()
+        {
+            DataAccess.Models.Entities.Socket socket = new DataAccess.Models.Entities.Socket();
+            TryUpdateModel(socket);
+        }
+
+        public IQueryable<DataAccess.Models.Entities.MemoryType> GetMemoryTypes()
+        {
+            return memoryTypes.AsQueryable();
+        }
+
+        public void InsertMemoryType()
+        {
+            DataAccess.Models.Entities.MemoryType memory = new DataAccess.Models.Entities.MemoryType();
+            TryUpdateModel(memory);
+        }
+
     }
 }
