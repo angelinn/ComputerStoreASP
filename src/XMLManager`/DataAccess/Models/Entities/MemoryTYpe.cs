@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Models.Entities
 {
-    [Serializable]
     public class MemoryType
     {
         public MemoryType()

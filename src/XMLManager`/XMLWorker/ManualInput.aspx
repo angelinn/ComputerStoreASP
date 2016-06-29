@@ -4,12 +4,11 @@
     <h2> Компютърен магазин </h2>
 
     <h3> Процесори: </h3>
-    <asp:ListView id="lvProcessors" runat="server" InsertItemPosition="LastItem" ItemType="DataAccess.Models.Entities.Processor" DataKeyNames="ID" SelectMethod="GetProcessors" InsertMethod="InsertProcessor">
-            
-        <InsertItemTemplate>
+    <asp:ListView id="lvProcessors" runat="server" InsertItemPosition="LastItem" ItemType="DataAccess.Models.XML.Processor" DataKeyNames="ID" SelectMethod="GetProcessors" InsertMethod="InsertProcessor">  
+    <InsertItemTemplate>
         <div class="row">
             <div class="form-group col-md-3">
-                <asp:TextBox class="form-control" ID="txtCpuIDI" runat="server" placeholder="Идентификатор" Text="<%# BindItem.Alias %>"></asp:TextBox>
+                <asp:TextBox class="form-control" ID="txtCpuIDI" runat="server" placeholder="Идентификатор" Text="<%# BindItem.ID %>"></asp:TextBox>
             </div>
             <div class="form-group col-md-3">
                 <asp:TextBox class="form-control" ID="txtCpuSocketI" runat="server" placeholder="Сокет" Text="<%# BindItem.Socket %>"></asp:TextBox>
@@ -55,12 +54,12 @@
     </asp:ListView>
         
     <h3> Видео карти: </h3>
-    <asp:ListView id="ListView1" runat="server" InsertItemPosition="LastItem" ItemType="DataAccess.Models.Entities.VideoCard" DataKeyNames="ID" SelectMethod="GetVideoCards" InsertMethod="InsertVideoCard">
+    <asp:ListView id="ListView1" runat="server" InsertItemPosition="LastItem" ItemType="DataAccess.Models.XML.VideoCard" DataKeyNames="ID" SelectMethod="GetVideoCards" InsertMethod="InsertVideoCard">
             
     <InsertItemTemplate>
         <div class="row">
             <div class="form-group col-md-3">
-                <asp:TextBox class="form-control" ID="txtGpuID" runat="server" placeholder="Идентификатор" Text="<%# BindItem.Alias %>"></asp:TextBox>
+                <asp:TextBox class="form-control" ID="txtGpuID" runat="server" placeholder="Идентификатор" Text="<%# BindItem.ID %>"></asp:TextBox>
             </div>
             <div class="form-group col-md-3">
                 <asp:TextBox class="form-control" ID="txtGpuIface" runat="server" placeholder="Интерфейс" Text="<%# BindItem.Interface %>"></asp:TextBox>
@@ -103,14 +102,14 @@
     </asp:ListView>
     
     <h3> Рам памети: </h3>
-    <asp:ListView id="lvRamBoards" runat="server" InsertItemPosition="LastItem" ItemType="DataAccess.Models.Entities.RamBoard" DataKeyNames="ID" SelectMethod="GetRamBoards" InsertMethod="InsertRamBoard">
+    <asp:ListView id="lvRamBoards" runat="server" InsertItemPosition="LastItem" ItemType="DataAccess.Models.XML.RamBoard" DataKeyNames="ID" SelectMethod="GetRamBoards" InsertMethod="InsertRamBoard">
     <InsertItemTemplate>
         <div class="row">
             <div class="form-group col-md-3">
-                <asp:TextBox class="form-control" ID="txtRamID" runat="server" placeholder="Идентификатор" Text="<%# BindItem.Alias %>"></asp:TextBox>
+                <asp:TextBox class="form-control" ID="txtRamID" runat="server" placeholder="Идентификатор" Text="<%# BindItem.ID %>"></asp:TextBox>
             </div>
             <div class="form-group col-md-3">
-                <asp:TextBox class="form-control" ID="txtRamType" runat="server" placeholder="ID към тип Памет" Text="<%# BindItem.MemoryType.Alias %>"></asp:TextBox>
+                <asp:TextBox class="form-control" ID="txtRamType" runat="server" placeholder="ID към тип Памет" Text="<%# BindItem.Type %>"></asp:TextBox>
             </div>
             <div class="form-group col-md-3">
                 <asp:TextBox class="form-control" ID="txtRamManufacturer" runat="server" placeholder="Производител" Text="<%# BindItem.Manufacturer %>"></asp:TextBox>
@@ -145,11 +144,11 @@
     </asp:ListView>
     
     <h3> Твърди дискове: </h3>
-    <asp:ListView id="lvHard" runat="server" InsertItemPosition="LastItem" ItemType="DataAccess.Models.Entities.HardDrive" DataKeyNames="ID" SelectMethod="GetHardDrives" InsertMethod="InsertHardDrive">
+    <asp:ListView id="lvHard" runat="server" InsertItemPosition="LastItem" ItemType="DataAccess.Models.XML.HardDrive" DataKeyNames="ID" SelectMethod="GetHardDrives" InsertMethod="InsertHardDrive">
     <InsertItemTemplate>
         <div class="row">
             <div class="form-group col-md-3">
-                <asp:TextBox class="form-control" ID="txtHddID" runat="server" placeholder="Идентификатор" Text="<%# BindItem.Alias %>"></asp:TextBox>
+                <asp:TextBox class="form-control" ID="txtHddID" runat="server" placeholder="Идентификатор" Text="<%# BindItem.ID %>"></asp:TextBox>
             </div>
             <div class="form-group col-md-3">
                 <asp:TextBox class="form-control" ID="txtHddBus" runat="server" placeholder="Шина" Text="<%# BindItem.Bus %>"></asp:TextBox>
@@ -186,14 +185,14 @@
     </asp:ListView>
 
     <h3> Дънни платки: </h3>
-    <asp:ListView id="lvMotherboards" runat="server" InsertItemPosition="LastItem" ItemType="DataAccess.Models.Entities.Motherboard" DataKeyNames="ID" SelectMethod="GetMotherboards" InsertMethod="InsertMotherboard">
+    <asp:ListView id="lvMotherboards" runat="server" InsertItemPosition="LastItem" ItemType="DataAccess.Models.XML.Motherboard" DataKeyNames="ID" SelectMethod="GetMotherboards" InsertMethod="InsertMotherboard">
     <InsertItemTemplate>
         <div class="row">
             <div class="form-group col-md-3">
-                <asp:TextBox class="form-control" ID="txtMoboID" runat="server" placeholder="Идентификатор" Text="<%# BindItem.Alias %>"></asp:TextBox>
+                <asp:TextBox class="form-control" ID="txtMoboID" runat="server" placeholder="Идентификатор" Text="<%# BindItem.ID %>"></asp:TextBox>
             </div>
             <div class="form-group col-md-3">
-                <asp:TextBox class="form-control" ID="txtMoboSocket" runat="server" placeholder="ID на Сокет" Text="<%# BindItem.SocketAlias %>"></asp:TextBox>
+                <asp:TextBox class="form-control" ID="txtMoboSocket" runat="server" placeholder="ID на Сокет" Text="<%# BindItem.SocketID %>"></asp:TextBox>
             </div>
             <div class="form-group col-md-3">
                 <asp:TextBox class="form-control" ID="txtMoboCpu" runat="server" placeholder="ID на процесор" Text="<%# BindItem.Processor %>"></asp:TextBox>
@@ -205,7 +204,7 @@
                 <asp:TextBox class="form-control" ID="txtMoboHdd" runat="server" placeholder="ID на твърд диск" Text="<%# BindItem.HardDrive %>"></asp:TextBox>
             </div>
             <div class="form-group col-md-3">
-                <asp:TextBox class="form-control" ID="txtMoboRam" runat="server" placeholder="ID на рам памет" Text="<%# BindItem.RamBoard %>"></asp:TextBox>
+                <asp:TextBox class="form-control" ID="txtMoboRam" runat="server" placeholder="ID на рам памет" Text="<%# BindItem.RamMemory %>"></asp:TextBox>
             </div>
             <div class="form-group col-md-3">
                 <asp:TextBox class="form-control" ID="txtMoboManufacturer" runat="server" placeholder="Производител" Text="<%# BindItem.Manufacturer %>"></asp:TextBox>
@@ -227,7 +226,7 @@
     </asp:ListView>
     
     <h3> Цокли: </h3>
-    <asp:ListView id="lvSockets" runat="server" InsertItemPosition="LastItem" ItemType="DataAccess.Models.Entities.Socket" DataKeyNames="ID" SelectMethod="GetSockets" InsertMethod="InsertSocket">
+    <asp:ListView id="lvSockets" runat="server" InsertItemPosition="LastItem" ItemType="DataAccess.Models.XML.Socket" DataKeyNames="ID" SelectMethod="GetSockets" InsertMethod="InsertSocket">
     <InsertItemTemplate>
         <div class="row">
             <div class="form-group col-md-3">
@@ -244,7 +243,7 @@
     </asp:ListView>
     
     <h3> Типове памет: </h3>
-    <asp:ListView id="lvMemoryTypes" runat="server" InsertItemPosition="LastItem" ItemType="DataAccess.Models.Entities.MemoryType" DataKeyNames="ID" SelectMethod="GetMemoryTypes" InsertMethod="InsertMemoryType">
+    <asp:ListView id="lvMemoryTypes" runat="server" InsertItemPosition="LastItem" ItemType="DataAccess.Models.XML.Memory" DataKeyNames="ID" SelectMethod="GetMemoryTypes" InsertMethod="InsertMemoryType">
     <InsertItemTemplate>
         <div class="row">
             <div class="form-group col-md-3">

@@ -16,13 +16,13 @@ namespace XMLWorker
 {
     public partial class ManualInput : System.Web.UI.Page
     {
-        private IEnumerable<DataAccess.Models.Entities.Processor> processors;
-        private IEnumerable<DataAccess.Models.Entities.VideoCard> videoCards;
-        private IEnumerable<DataAccess.Models.Entities.HardDrive> hardDrives;
-        private IEnumerable<DataAccess.Models.Entities.RamBoard> ramBoards;
-        private IEnumerable<DataAccess.Models.Entities.Motherboard> motherboards;
-        private IEnumerable<DataAccess.Models.Entities.Socket> sockets;
-        private IEnumerable<DataAccess.Models.Entities.MemoryType> memoryTypes;
+        private IEnumerable<Processor> processors;
+        private IEnumerable<VideoCard> videoCards;
+        private IEnumerable<HardDrive> hardDrives;
+        private IEnumerable<RamBoard> ramBoards;
+        private IEnumerable<Motherboard> motherboards;
+        private IEnumerable<Socket> sockets;
+        private IEnumerable<Memory> memoryTypes;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -48,8 +48,6 @@ namespace XMLWorker
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
             ComputerStore store = new ComputerStore();
-            //store.Parts = new Parts();
-            //store.Parts.Processors = new Processor[1];
             
             //store.Parts.Processors[0] = new Processor
             //{
@@ -144,80 +142,80 @@ namespace XMLWorker
 
         }
 
-        public IQueryable<DataAccess.Models.Entities.Processor> GetProcessors()
+        public IQueryable<Processor> GetProcessors()
         {
             return processors.AsQueryable();
         }
 
         public void InsertProcessor()
         {
-            DataAccess.Models.Entities.Processor cpu = new DataAccess.Models.Entities.Processor();
+            Processor cpu = new Processor();
             TryUpdateModel(cpu);
         }
 
-        public IQueryable<DataAccess.Models.Entities.VideoCard> GetVideoCards()
+        public IQueryable<VideoCard> GetVideoCards()
         {
             return videoCards.AsQueryable();
         }
 
         public void InsertVideoCard()
         {
-            DataAccess.Models.Entities.VideoCard gpu = new DataAccess.Models.Entities.VideoCard();
+            VideoCard gpu = new VideoCard();
             TryUpdateModel(gpu);
         }
 
-        public IQueryable<DataAccess.Models.Entities.RamBoard> GetRamBoards()
+        public IQueryable<RamBoard> GetRamBoards()
         {
             return ramBoards.AsQueryable();
         }
 
         public void InsertRamBoard()
         {
-            DataAccess.Models.Entities.RamBoard ram = new DataAccess.Models.Entities.RamBoard();
+            RamBoard ram = new RamBoard();
             TryUpdateModel(ram);
         }
 
-        public IQueryable<DataAccess.Models.Entities.HardDrive> GetHardDrives()
+        public IQueryable<HardDrive> GetHardDrives()
         {
             return hardDrives.AsQueryable();
         }
 
         public void InsertHardDrive()
         {
-            DataAccess.Models.Entities.HardDrive hdd = new DataAccess.Models.Entities.HardDrive();
+            HardDrive hdd = new HardDrive();
             TryUpdateModel(hdd);
         }
 
-        public IQueryable<DataAccess.Models.Entities.Motherboard> GetMotherboards()
+        public IQueryable<Motherboard> GetMotherboards()
         {
             return motherboards.AsQueryable();
         }
 
         public void InsertMotherboard()
         {
-            DataAccess.Models.Entities.Motherboard gpu = new DataAccess.Models.Entities.Motherboard();
+            Motherboard gpu = new Motherboard();
             TryUpdateModel(gpu);
         }
 
-        public IQueryable<DataAccess.Models.Entities.Socket> GetSockets()
+        public IQueryable<Socket> GetSockets()
         {
             return sockets.AsQueryable();
         }
 
         public void InsertSocket()
         {
-            DataAccess.Models.Entities.Socket socket = new DataAccess.Models.Entities.Socket();
+            Socket socket = new Socket();
             TryUpdateModel(socket);
         }
 
-        public IQueryable<DataAccess.Models.Entities.MemoryType> GetMemoryTypes()
+        public IQueryable<Memory> GetMemoryTypes()
         {
             return memoryTypes.AsQueryable();
         }
 
         public void InsertMemoryType()
         {
-            DataAccess.Models.Entities.MemoryType memory = new DataAccess.Models.Entities.MemoryType();
+            Memory memory = new Memory();
             TryUpdateModel(memory);
         }
 

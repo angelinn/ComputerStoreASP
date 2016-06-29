@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Models.Entities
 {
-    [Serializable]
     public class Processor
     {
         public static Processor XMLToEntity(XML.Processor xmlProcessor)

@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Models.Entities
 {
-    [Serializable]
     public class RamBoard
     {
         public int ID { get; set; }
