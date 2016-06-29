@@ -103,40 +103,45 @@
         </InsertItemTemplate>
         </asp:ListView>
 
-    <div class="row">
-        <h3> Рам памети: </h3>
-        <div class="form-group col-md-3">
-            <asp:TextBox class="form-control" ID="txtRamID" runat="server" placeholder="Идентификатор"></asp:TextBox>
-        </div>
-        <div class="form-group col-md-3">
-            <asp:TextBox class="form-control" ID="txtRamType" runat="server" placeholder="ID към тип Памет"></asp:TextBox>
-        </div>
-        <div class="form-group col-md-3">
-            <asp:TextBox class="form-control" ID="txtRamManufacturer" runat="server" placeholder="Производител"></asp:TextBox>
-        </div>
-        <div class="form-group col-md-3">
-            <asp:TextBox class="form-control" ID="txtRamMemory" runat="server" placeholder="Размер памет"></asp:TextBox>
-        </div>
-        <div class="form-group col-md-3">
-            <asp:TextBox class="form-control" ID="txtRamFrequency" runat="server" placeholder="Тактова честота"></asp:TextBox>
-        </div>
-        <div class="form-group col-md-3">
-            <asp:TextBox class="form-control" ID="txtRamAvailable" runat="server" placeholder="Наличност"></asp:TextBox>
-        </div>
-        <div class="form-group col-md-3">
-            <asp:TextBox class="form-control" ID="txtRamPrice" runat="server" placeholder="Цена"></asp:TextBox>
-        </div>
-        <div class="form-group col-md-4">
-            <div>
-                <asp:Label runat="server">Каналност:</asp:Label>
+        <asp:ListView id="ListView2" runat="server" InsertItemPosition="LastItem" ItemType="DataAccess.Models.Entities.RamBoard" DataKeyNames="ID" SelectMethod="GetRamBoards" InsertMethod="InsertRamBoard">
+            
+        <InsertItemTemplate>
+            <div class="row">
+                <h3> Рам памети: </h3>
+                <div class="form-group col-md-3">
+                    <asp:TextBox class="form-control" ID="txtRamID" runat="server" placeholder="Идентификатор" Text="<%# BindItem.Alias %>"></asp:TextBox>
+                </div>
+                <div class="form-group col-md-3">
+                    <asp:TextBox class="form-control" ID="txtRamType" runat="server" placeholder="ID към тип Памет" Text="<%# BindItem.MemoryType.Alias %>"></asp:TextBox>
+                </div>
+                <div class="form-group col-md-3">
+                    <asp:TextBox class="form-control" ID="txtRamManufacturer" runat="server" placeholder="Производител" Text="<%# BindItem.Manufacturer %>"></asp:TextBox>
+                </div>
+                <div class="form-group col-md-3">
+                    <asp:TextBox class="form-control" ID="txtRamMemory" runat="server" placeholder="Размер памет" Text="<%# BindItem.Memory %>"></asp:TextBox>
+                </div>
+                <div class="form-group col-md-3">
+                    <asp:TextBox class="form-control" ID="txtRamFrequency" runat="server" placeholder="Тактова честота" Text="<%# BindItem.Frequency %>"></asp:TextBox>
+                </div>
+                <div class="form-group col-md-3">
+                    <asp:TextBox class="form-control" ID="txtRamAvailable" runat="server" placeholder="Наличност" Text="<%# BindItem.Available %>"></asp:TextBox>
+                </div>
+                <div class="form-group col-md-3">
+                    <asp:TextBox class="form-control" ID="txtRamPrice" runat="server" placeholder="Цена" Text="<%# BindItem.Price %>"></asp:TextBox>
+                </div>
+                <div class="form-group col-md-4">
+                    <div>
+                        <asp:Label runat="server">Каналност:</asp:Label>
+                    </div>
+                    <asp:DropDownList ID="drpRamChannel" class="form-control" runat="server">
+                        <asp:ListItem Selected="True" Text="Едноканална" Value="single"></asp:ListItem>
+                        <asp:ListItem Text="Двуканална" Value="dual"></asp:ListItem>
+                        <asp:ListItem Text="Триканална" Value="triple"></asp:ListItem>
+                    </asp:DropDownList>
+                </div>
             </div>
-            <asp:DropDownList ID="drpRamChannel" class="form-control" runat="server">
-                <asp:ListItem Selected="True" Text="Едноканална" Value="single"></asp:ListItem>
-                <asp:ListItem Text="Двуканална" Value="dual"></asp:ListItem>
-                <asp:ListItem Text="Триканална" Value="triple"></asp:ListItem>
-            </asp:DropDownList>
-        </div>
-    </div>
+        </InsertItemTemplate>
+        </asp:ListView>
 
     <div class="row">
         <h3> Твърди дискове: </h3>
