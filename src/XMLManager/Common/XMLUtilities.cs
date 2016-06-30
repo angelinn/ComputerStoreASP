@@ -1,14 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
 using System.Xml.Schema;
+using System.Xml.Serialization;
 
 namespace Common
 {
-    public class XMLValidator
+    public class XMLUtilities
     {
         private bool isValid = true;
 
@@ -40,6 +42,17 @@ namespace Common
         {
             isValid = false;
             Console.WriteLine("Validation event\n" + args.Message);
+        }
+
+        public static T ReadFromXML<T>(string fileName)
+        {
+            using (StreamReader reader = new StreamReader(fileName))
+            {
+                XmlSerializer serializer = new XmlSerializer(typeof(T));
+                T deserialized = (T)serializer.Deserialize(reader);
+
+                return deserialized;
+            }
         }
 
     }

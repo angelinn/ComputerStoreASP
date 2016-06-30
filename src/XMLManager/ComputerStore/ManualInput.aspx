@@ -5,7 +5,7 @@
 
    <asp:ListView id="lvProcessors" runat="server" InsertItemPosition="LastItem" ItemType="DataAccess.Models.XML.Processor" DataKeyNames="ID" SelectMethod="GetProcessors" InsertMethod="InsertProcessor">  
     <InsertItemTemplate>
-        <div class="panel panel-default">
+        <div class="panel panel-success">
             <div class="panel-heading">
                 <h3 class="panel-title">Процесор</h3>
             </div>
@@ -64,7 +64,7 @@
     <asp:ListView id="ListView1" runat="server" InsertItemPosition="LastItem" ItemType="DataAccess.Models.XML.VideoCard" DataKeyNames="ID" SelectMethod="GetVideoCards" InsertMethod="InsertVideoCard">
             
     <InsertItemTemplate>
-        <div class="panel panel-default">
+        <div class="panel panel-success">
             <div class="panel-heading">
                 <h3 class="panel-title">Видео-карта</h3>
             </div>
@@ -118,7 +118,7 @@
 
     <asp:ListView id="lvRamBoards" runat="server" InsertItemPosition="LastItem" ItemType="DataAccess.Models.XML.RamBoard" DataKeyNames="ID" SelectMethod="GetRamBoards" InsertMethod="InsertRamBoard">
     <InsertItemTemplate>
-        <div class="panel panel-default">
+        <div class="panel panel-success">
             <div class="panel-heading">
                 <h3 class="panel-title">Рам памет</h3>
             </div>
@@ -148,7 +148,7 @@
                     <div>
                         <asp:Label runat="server">Каналност:</asp:Label>
                     </div>
-                    <asp:DropDownList ID="drpRamChannel" class="form-control" runat="server">
+                    <asp:DropDownList ID="drpRamChannel" class="form-control" runat="server" SelectedValue="<%# BindItem.Channel %>">
                         <asp:ListItem Selected="True" Text="Едноканална" Value="single"></asp:ListItem>
                         <asp:ListItem Text="Двуканална" Value="dual"></asp:ListItem>
                         <asp:ListItem Text="Триканална" Value="triple"></asp:ListItem>
@@ -167,7 +167,7 @@
     
     <asp:ListView id="lvHard" runat="server" InsertItemPosition="LastItem" ItemType="DataAccess.Models.XML.HardDrive" DataKeyNames="ID" SelectMethod="GetHardDrives" InsertMethod="InsertHardDrive">
     <InsertItemTemplate>
-        <div class="panel panel-default">
+        <div class="panel panel-success">
             <div class="panel-heading">
                 <h3 class="panel-title">Твърд диск</h3>
             </div>
@@ -215,7 +215,7 @@
 
     <asp:ListView id="lvMotherboards" runat="server" InsertItemPosition="LastItem" ItemType="DataAccess.Models.XML.Motherboard" DataKeyNames="ID" SelectMethod="GetMotherboards" InsertMethod="InsertMotherboard">
     <InsertItemTemplate>        
-        <div class="panel panel-default">
+        <div class="panel panel-success">
             <div class="panel-heading">
                 <h3 class="panel-title">Дънна платка</h3>
             </div>
@@ -263,21 +263,21 @@
     
     <asp:ListView id="lvSockets" runat="server" InsertItemPosition="LastItem" ItemType="DataAccess.Models.XML.Socket" DataKeyNames="ID" SelectMethod="GetSockets" InsertMethod="InsertSocket">
     <InsertItemTemplate>
-        <div class="panel panel-default">
+        <div class="panel panel-success">
             <div class="panel-heading">
                 <h3 class="panel-title">Процесорен цокъл</h3>
             </div>
             <div class="panel-body">
                 <div class="form-group col-md-3">
-                    <asp:TextBox class="form-control" ID="txtSocketID" runat="server" placeholder="Идентификатор"></asp:TextBox>
+                    <asp:TextBox class="form-control" ID="txtSocketID" runat="server" placeholder="Идентификатор" Text="<%# BindItem.ID %>"></asp:TextBox>
                 </div>
                 <div class="form-group col-md-3">
-                    <asp:TextBox class="form-control" ID="txtSocketName" runat="server" placeholder="Име"></asp:TextBox>
+                    <asp:TextBox class="form-control" ID="txtSocketName" runat="server" placeholder="Име" Text="<%# BindItem.SocketName %>"></asp:TextBox>
                 </div>
                 <div class="form-group col-md-12">
                     <hr />
                     <div>  
-                        <asp:Button ID="btnInsertRamBoard" class="btn btn-default" runat="server" CommandName="Insert" Text="Добавяне на рам памет" />
+                        <asp:Button ID="btnInsertSocket" class="btn btn-default" runat="server" CommandName="Insert" Text="Добавяне на цокъл" />
                     </div>
                 </div>
             </div>
@@ -287,16 +287,16 @@
     
     <asp:ListView id="lvMemoryTypes" runat="server" InsertItemPosition="LastItem" ItemType="DataAccess.Models.XML.Memory" DataKeyNames="ID" SelectMethod="GetMemoryTypes" InsertMethod="InsertMemoryType">
     <InsertItemTemplate>
-        <div class="panel panel-default">
+        <div class="panel panel-success">
             <div class="panel-heading">
-                <h3 class="panel-title">Процесорен цокъл</h3>
+                <h3 class="panel-title">Тип памет</h3>
             </div>
             <div class="panel-body">
                 <div class="form-group col-md-3">
-                    <asp:TextBox class="form-control" ID="txtMemoryID" runat="server" placeholder="Идентификатор"></asp:TextBox>
+                    <asp:TextBox class="form-control" ID="txtMemoryID" runat="server" placeholder="Идентификатор" Text="<%# BindItem.ID %>"></asp:TextBox>
                 </div>
                 <div class="form-group col-md-3">
-                    <asp:TextBox class="form-control" ID="txtMemoryName" runat="server" placeholder="Име"></asp:TextBox>
+                    <asp:TextBox class="form-control" ID="txtMemoryName" runat="server" placeholder="Име" Text="<%# BindItem.MemoryName %>"></asp:TextBox>
                 </div>
                 <div class="form-group col-md-12">
                     <hr />
@@ -309,5 +309,5 @@
     </InsertItemTemplate>
     </asp:ListView>
 
-    <asp:Button ID="btnSubmit" runat="server" class="btn btn-success" type="submit" Text="Качване на всичко" OnClick="btnSubmit_Click" />
+    <asp:Button ID="btnSubmit" runat="server" class="btn btn-primary" type="submit" Text="Качване на всичко" OnClick="btnSubmit_Click" />
 </asp:Content>

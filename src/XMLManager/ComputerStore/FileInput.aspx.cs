@@ -32,11 +32,13 @@ namespace ComputerStore
                             string serverFileName = BuildServerFileName(files[i].FileName);
                             files[i].SaveAs(serverFileName);
 
-                            XMLValidator validator = new XMLValidator();
+                            XMLUtilities validator = new XMLUtilities();
                             if (validator.ValidateXML(serverFileName))
                             {
                                 message = "Success.";
-                                ComputerStoreDO.AddStoreData(serverFileName);
+                                DataAccess.Models.XML.ComputerStore store = XMLUtilities.ReadFromXML<DataAccess.Models.XML.ComputerStore>(serverFileName);
+
+                                ComputerStoreDO.Add(store);
                             }
                             else
                                 message = "File not valid by the DTD schema.";

@@ -75,7 +75,7 @@ namespace ComputerStore
                 serializer.Serialize(xmlWriter, store, ns);
             }
 
-            ComputerStoreDO.AddStoreData(resultXml);
+            ComputerStoreDO.Add(store);
         }
 
         public IQueryable<Processor> GetProcessors()
