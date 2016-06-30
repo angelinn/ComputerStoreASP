@@ -2,8 +2,13 @@
 
 <asp:Content runat="server" ContentPlaceHolderID="MainContent" >
     <h2> Компютърен магазин </h2>
-
-    <h3> Процесори: </h3>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Процесори</h3>
+      </div>
+      <div class="panel-body">
+   
+  
     <asp:ListView id="lvProcessors" runat="server" InsertItemPosition="LastItem" ItemType="DataAccess.Models.XML.Processor" DataKeyNames="ID" SelectMethod="GetProcessors" InsertMethod="InsertProcessor">  
     <InsertItemTemplate>
         <div class="row">
@@ -52,7 +57,8 @@
         </div>
         </InsertItemTemplate>
     </asp:ListView>
-        
+      </div>
+    </div>
     <h3> Видео карти: </h3>
     <asp:ListView id="ListView1" runat="server" InsertItemPosition="LastItem" ItemType="DataAccess.Models.XML.VideoCard" DataKeyNames="ID" SelectMethod="GetVideoCards" InsertMethod="InsertVideoCard">
             
@@ -100,7 +106,7 @@
         </div>
     </InsertItemTemplate>
     </asp:ListView>
-    
+
     <h3> Рам памети: </h3>
     <asp:ListView id="lvRamBoards" runat="server" InsertItemPosition="LastItem" ItemType="DataAccess.Models.XML.RamBoard" DataKeyNames="ID" SelectMethod="GetRamBoards" InsertMethod="InsertRamBoard">
     <InsertItemTemplate>
