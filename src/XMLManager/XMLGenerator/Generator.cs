@@ -1,4 +1,5 @@
-﻿using DataAccess.Models.XML;
+﻿using Common;
+using DataAccess.Models.XML;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,14 +18,8 @@ namespace XMLGenerator
         public static void SerializeXML<T>(T toSerialize, string fileName)
         {
             XmlSerializer serializer = new XmlSerializer(typeof(T));
-            
-
-            XmlWriterSettings writerSettings = new XmlWriterSettings();
-            writerSettings.Indent = true;
-            writerSettings.IndentChars = "\t";
-
-            XmlSerializerNamespaces ns = new XmlSerializerNamespaces();
-            ns.Add("", "");
+            XmlWriterSettings writerSettings = XMLUtilities.GetComputerStoreXmlWriterSettings();
+            XmlSerializerNamespaces ns = XMLUtilities.GetComputerStoreNamespaces();
 
             using (TextWriter textWriter = new StreamWriter(fileName))
             using (XmlWriter xmlWriter = XmlWriter.Create(textWriter, writerSettings))

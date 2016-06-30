@@ -3,7 +3,8 @@
 <asp:Content runat="server" ContentPlaceHolderID="MainContent" >
     <h2> Компютърен магазин </h2>
 
-   <asp:ListView id="lvProcessors" runat="server" InsertItemPosition="LastItem" ItemType="DataAccess.Models.XML.Processor" DataKeyNames="ID" SelectMethod="GetProcessors" InsertMethod="InsertProcessor">  
+   <asp:ListView id="lvProcessors" runat="server" InsertItemPosition="LastItem" ItemType="DataAccess.Models.XML.Processor" 
+                 DataKeyNames="ID" SelectMethod="GetProcessors" InsertMethod="InsertProcessor">  
     <InsertItemTemplate>
         <div class="panel panel-success">
             <div class="panel-heading">
@@ -11,13 +12,17 @@
             </div>
             <div class="panel-body">
                 <div class="form-group col-md-3">
-                    <asp:TextBox class="form-control" ID="txtCpuIDI" runat="server" placeholder="Идентификатор" Text="<%# BindItem.ID %>"></asp:TextBox>
+                    <asp:TextBox class="form-control" ID="txtCpuID" runat="server" placeholder="Идентификатор" Text="<%# BindItem.ID %>"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="rfvCpuID" ErrorMessage="Задължително поле" ControlToValidate="txtCpuID"
+                    ForeColor="Red" Display="Dynamic" runat="server" ValidationGroup="InsertComputerStoreGroup" />
                 </div>
                 <div class="form-group col-md-3">
-                    <asp:TextBox class="form-control" ID="txtCpuSocketI" runat="server" placeholder="Сокет" Text="<%# BindItem.Socket %>"></asp:TextBox>
+                    <asp:TextBox class="form-control" ID="txtCpuSocket" runat="server" placeholder="Сокет" Text="<%# BindItem.Socket %>"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="rfvCpuSocket" ErrorMessage="Задължително поле" ControlToValidate="txtCpuSocket"
+                    ForeColor="Red" Display="Dynamic" runat="server" ValidationGroup="InsertComputerStoreGroup" />
                 </div>
                 <div class="form-group col-md-3">
-                    <asp:TextBox class="form-control" ID="txtCpuModelI" runat="server" placeholder="Модел" Text="<%# BindItem.Model %>"></asp:TextBox>
+                    <asp:TextBox class="form-control" ID="txtCpuModel" runat="server" placeholder="Модел" Text="<%# BindItem.Model %>"></asp:TextBox>
                 </div>    
                 <div class="form-group col-md-3">
                     <asp:TextBox class="form-control" ID="txtCpuManufacturer" runat="server" placeholder="Производител" Text="<%# BindItem.Manufacturer %>"></asp:TextBox>

@@ -55,5 +55,21 @@ namespace Common
             }
         }
 
+        public static XmlSerializerNamespaces GetComputerStoreNamespaces()
+        {
+            XmlSerializerNamespaces ns = new XmlSerializerNamespaces();
+            ns.Add("", "");
+
+            return ns;
+        }
+
+        public static XmlWriterSettings GetComputerStoreXmlWriterSettings()
+        {
+            XmlWriterSettings writerSettings = new XmlWriterSettings();
+            writerSettings.Indent = true;
+            writerSettings.IndentChars = "\t";
+
+            return writerSettings;
+        }
     }
 }

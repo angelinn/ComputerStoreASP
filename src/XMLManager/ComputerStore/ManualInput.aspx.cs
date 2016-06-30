@@ -58,24 +58,22 @@ namespace ComputerStore
             store.Sockets = sockets.ToArray();
             store.MemoryTypes = memoryTypes.ToArray();
 
-            XmlSerializer serializer = new XmlSerializer(typeof(DataAccess.Models.Entities.ComputerStore));
-            XmlWriterSettings writerSettings = new XmlWriterSettings();
-            writerSettings.Indent = true;
-            writerSettings.IndentChars = "\t";
+            XmlSerializer serializer = new XmlSerializer(typeof(DataAccess.Models.XML.ComputerStore));
+            XmlWriterSettings writerSettings = XMLUtilities.GetComputerStoreXmlWriterSettings();
+            XmlSerializerNamespaces ns = XMLUtilities.GetComputerStoreNamespaces();
 
-            XmlSerializerNamespaces ns = new XmlSerializerNamespaces();
-            ns.Add("", "");
+            string xmlName = Server.MapPath("~/App_Data/some.xml");
 
-            string resultXml = "C:\\Users\\betra\\desktop\\res.xml";
-
-            using (TextWriter textWriter = new StreamWriter(resultXml))
+            using (TextWriter textWriter = new StreamWriter(xmlName))
             using (XmlWriter xmlWriter = XmlWriter.Create(textWriter, writerSettings))
             {
                 xmlWriter.WriteDocType("computer-store", null, "computer_store.dtd", null);
                 serializer.Serialize(xmlWriter, store, ns);
             }
 
-            ComputerStoreDO.Add(store);
+            XMLUtilities utils = new XMLUtilities();
+            if (utils.ValidateXML(xmlName))
+                ComputerStoreDO.Add(store);
         }
 
         public IQueryable<Processor> GetProcessors()

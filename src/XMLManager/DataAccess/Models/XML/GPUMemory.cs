@@ -7,6 +7,7 @@ using System.Xml.Serialization;
 
 namespace DataAccess.Models.XML
 {
+    [Serializable]
     public class GPUMemory
     {
         [XmlAttribute("type")]
