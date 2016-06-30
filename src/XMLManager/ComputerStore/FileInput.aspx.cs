@@ -32,8 +32,8 @@ namespace ComputerStore
                             string serverFileName = BuildServerFileName(files[i].FileName);
                             files[i].SaveAs(serverFileName);
 
-                            XMLUtilities validator = new XMLUtilities();
-                            if (validator.ValidateXML(serverFileName))
+                            XMLUtilities utilities = new XMLUtilities();
+                            if (utilities.ValidateXML(serverFileName))
                             {
                                 message = "Success.";
                                 DataAccess.Models.XML.ComputerStore store = XMLUtilities.ReadFromXML<DataAccess.Models.XML.ComputerStore>(serverFileName);

@@ -16,13 +16,13 @@ namespace ComputerStore
 {
     public partial class ManualInput : System.Web.UI.Page
     {
-        private IEnumerable<Processor> processors;
-        private IEnumerable<VideoCard> videoCards;
-        private IEnumerable<HardDrive> hardDrives;
-        private IEnumerable<RamBoard> ramBoards;
-        private IEnumerable<Motherboard> motherboards;
-        private IEnumerable<Socket> sockets;
-        private IEnumerable<Memory> memoryTypes;
+        private ICollection<Processor> processors;
+        private ICollection<VideoCard> videoCards;
+        private ICollection<HardDrive> hardDrives;
+        private ICollection<RamBoard> ramBoards;
+        private ICollection<Motherboard> motherboards;
+        private ICollection<Socket> sockets;
+        private ICollection<Memory> memoryTypes;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -35,7 +35,7 @@ namespace ComputerStore
             ProcessCollection(ref memoryTypes, "memoryTypes");
         }
 
-        private void ProcessCollection<T>(ref IEnumerable<T> collection, string key)
+        private void ProcessCollection<T>(ref ICollection<T> collection, string key)
         {
             collection = ViewState[key] as List<T>;
             if (collection == null)
@@ -87,6 +87,8 @@ namespace ComputerStore
         {
             Processor cpu = new Processor();
             TryUpdateModel(cpu);
+
+            processors.Add(cpu);
         }
 
         public IQueryable<VideoCard> GetVideoCards()
@@ -98,6 +100,8 @@ namespace ComputerStore
         {
             VideoCard gpu = new VideoCard();
             TryUpdateModel(gpu);
+
+            videoCards.Add(gpu);
         }
 
         public IQueryable<RamBoard> GetRamBoards()
@@ -109,6 +113,8 @@ namespace ComputerStore
         {
             RamBoard ram = new RamBoard();
             TryUpdateModel(ram);
+
+            ramBoards.Add(ram);
         }
 
         public IQueryable<HardDrive> GetHardDrives()
@@ -120,6 +126,8 @@ namespace ComputerStore
         {
             HardDrive hdd = new HardDrive();
             TryUpdateModel(hdd);
+
+            hardDrives.Add(hdd);
         }
 
         public IQueryable<Motherboard> GetMotherboards()
@@ -142,6 +150,8 @@ namespace ComputerStore
         {
             Socket socket = new Socket();
             TryUpdateModel(socket);
+
+            sockets.Add(socket);
         }
 
         public IQueryable<Memory> GetMemoryTypes()
@@ -153,7 +163,8 @@ namespace ComputerStore
         {
             Memory memory = new Memory();
             TryUpdateModel(memory);
-        }
 
+            memoryTypes.Add(memory);
+        }
     }
 }
