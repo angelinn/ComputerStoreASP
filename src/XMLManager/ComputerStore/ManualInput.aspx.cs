@@ -137,8 +137,10 @@ namespace ComputerStore
 
         public void InsertMotherboard()
         {
-            Motherboard gpu = new Motherboard();
-            TryUpdateModel(gpu);
+            Motherboard mobo = new Motherboard();
+            TryUpdateModel(mobo);
+
+            motherboards.Add(mobo);
         }
 
         public IQueryable<Socket> GetSockets()
