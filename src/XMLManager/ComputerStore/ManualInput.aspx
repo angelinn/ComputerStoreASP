@@ -5,9 +5,17 @@
 
    <asp:ListView id="lvProcessors" runat="server" InsertItemPosition="LastItem" ItemType="DataAccess.Models.XML.Processor" 
                  DataKeyNames="ID" SelectMethod="GetProcessors" InsertMethod="InsertProcessor">  
-    <ItemTemplate>
-
-    </ItemTemplate>
+       <ItemTemplate>
+           <div class="panel panel-default">
+               <div class="panel-heading">Процесори в опашка</div>
+              <div class="panel-body">
+                  <div>
+                      <asp:Label runat="server" Text="ID: "></asp:Label>
+                      <asp:Literal ID="cpuSelectID" runat="server" Text="<%# BindItem.ID %>"></asp:Literal>
+                  </div>
+              </div>
+           </div>
+       </ItemTemplate>
        
        <InsertItemTemplate>
         <div class="panel panel-success">
@@ -72,7 +80,15 @@
 
     <asp:ListView id="ListView1" runat="server" InsertItemPosition="LastItem" ItemType="DataAccess.Models.XML.VideoCard" DataKeyNames="ID" SelectMethod="GetVideoCards" InsertMethod="InsertVideoCard">
     <ItemTemplate>
-
+        <div class="panel panel-default">
+               <div class="panel-heading">Видеок арти в опашка</div>
+              <div class="panel-body">
+                  <div>
+                      <asp:Label runat="server" Text="ID: "></asp:Label>
+                      <asp:Literal ID="cpuSelectID" runat="server" Text="<%# BindItem.ID %>"></asp:Literal>
+                  </div>
+              </div>
+        </div>
     </ItemTemplate>
 
     <InsertItemTemplate>
@@ -130,7 +146,15 @@
 
     <asp:ListView id="lvRamBoards" runat="server" InsertItemPosition="LastItem" ItemType="DataAccess.Models.XML.RamBoard" DataKeyNames="ID" SelectMethod="GetRamBoards" InsertMethod="InsertRamBoard">
     <ItemTemplate>
-
+        <div class="panel panel-default">
+               <div class="panel-heading">Рам памети в опашка</div>
+              <div class="panel-body">
+                  <div>
+                      <asp:Label runat="server" Text="ID: "></asp:Label>
+                      <asp:Literal ID="cpuSelectID" runat="server" Text="<%# BindItem.ID %>"></asp:Literal>
+                  </div>
+              </div>
+        </div>
     </ItemTemplate>
         
     <InsertItemTemplate>
@@ -183,7 +207,15 @@
     
     <asp:ListView id="lvHard" runat="server" InsertItemPosition="LastItem" ItemType="DataAccess.Models.XML.HardDrive" DataKeyNames="ID" SelectMethod="GetHardDrives" InsertMethod="InsertHardDrive">
     <ItemTemplate>
-
+        <div class="panel panel-default">
+               <div class="panel-heading">Дискове в опашка</div>
+              <div class="panel-body">
+                  <div>
+                      <asp:Label runat="server" Text="ID: "></asp:Label>
+                      <asp:Literal ID="cpuSelectID" runat="server" Text="<%# BindItem.ID %>"></asp:Literal>
+                  </div>
+              </div>
+        </div>
     </ItemTemplate>
         
     <InsertItemTemplate>
@@ -235,7 +267,15 @@
 
     <asp:ListView id="lvMotherboards" runat="server" InsertItemPosition="LastItem" ItemType="DataAccess.Models.XML.Motherboard" DataKeyNames="ID" SelectMethod="GetMotherboards" InsertMethod="InsertMotherboard">
     <ItemTemplate>
-
+        <div class="panel panel-default">
+               <div class="panel-heading">Дънни платки в опашка</div>
+              <div class="panel-body">
+                  <div>
+                      <asp:Label runat="server" Text="ID: "></asp:Label>
+                      <asp:Literal ID="cpuSelectID" runat="server" Text="<%# BindItem.ID %>"></asp:Literal>
+                  </div>
+              </div>
+        </div>
     </ItemTemplate>
         
     <InsertItemTemplate>        
@@ -287,7 +327,15 @@
     
     <asp:ListView id="lvSockets" runat="server" InsertItemPosition="LastItem" ItemType="DataAccess.Models.XML.Socket" DataKeyNames="ID" SelectMethod="GetSockets" InsertMethod="InsertSocket">
     <ItemTemplate>
-
+        <div class="panel panel-default">
+               <div class="panel-heading">Процесорни цокли в опашка</div>
+              <div class="panel-body">
+                  <div>
+                      <asp:Label runat="server" Text="ID: "></asp:Label>
+                      <asp:Literal ID="cpuSelectID" runat="server" Text="<%# BindItem.ID %>"></asp:Literal>
+                  </div>
+              </div>
+        </div>
     </ItemTemplate>
         
     <InsertItemTemplate>
@@ -315,7 +363,15 @@
     
     <asp:ListView id="lvMemoryTypes" runat="server" InsertItemPosition="LastItem" ItemType="DataAccess.Models.XML.Memory" DataKeyNames="ID" SelectMethod="GetMemoryTypes" InsertMethod="InsertMemoryType">
     <ItemTemplate>
-
+        <div class="panel panel-default">
+               <div class="panel-heading">Типове памет в опашка</div>
+              <div class="panel-body">
+                  <div>
+                      <asp:Label runat="server" Text="ID: "></asp:Label>
+                      <asp:Literal ID="cpuSelectID" runat="server" Text="<%# BindItem.ID %>"></asp:Literal>
+                  </div>
+              </div>
+        </div>
     </ItemTemplate>
         
     <InsertItemTemplate>
