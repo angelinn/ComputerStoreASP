@@ -53,11 +53,11 @@ namespace DataAccess.Models.Entities
 
             foreach (Motherboard mobo in store.Motherboards)
             {
-                mobo.Socket = store.Sockets.FirstOrDefault(s => s.Alias == mobo.SocketAlias);
+                mobo.Socket    = store.Sockets.FirstOrDefault(s => s.Alias == mobo.SocketAlias);
                 mobo.Processor = store.Processors.FirstOrDefault(c => c.Alias == mobo.ProcessorAlias);
                 mobo.VideoCard = store.VideoCards.FirstOrDefault(v => v.Alias == mobo.GpuAlias);
                 mobo.HardDrive = store.HardDrives.FirstOrDefault(h => h.Alias == mobo.HDDAlias);
-                mobo.RamBoard = store.RamBoards.FirstOrDefault(r => r.Alias == mobo.RamAlias);
+                mobo.RamBoard  = store.RamBoards.FirstOrDefault(r => r.Alias == mobo.RamAlias);
             }
 
             return store;

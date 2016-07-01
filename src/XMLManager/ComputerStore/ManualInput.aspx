@@ -5,7 +5,11 @@
 
    <asp:ListView id="lvProcessors" runat="server" InsertItemPosition="LastItem" ItemType="DataAccess.Models.XML.Processor" 
                  DataKeyNames="ID" SelectMethod="GetProcessors" InsertMethod="InsertProcessor">  
-    <InsertItemTemplate>
+    <ItemTemplate>
+
+    </ItemTemplate>
+       
+       <InsertItemTemplate>
         <div class="panel panel-success">
             <div class="panel-heading">
                 <h3 class="panel-title">Процесор</h3>
@@ -67,7 +71,10 @@
     </asp:ListView>
 
     <asp:ListView id="ListView1" runat="server" InsertItemPosition="LastItem" ItemType="DataAccess.Models.XML.VideoCard" DataKeyNames="ID" SelectMethod="GetVideoCards" InsertMethod="InsertVideoCard">
-            
+    <ItemTemplate>
+
+    </ItemTemplate>
+
     <InsertItemTemplate>
         <div class="panel panel-success">
             <div class="panel-heading">
@@ -122,6 +129,10 @@
     </asp:ListView>
 
     <asp:ListView id="lvRamBoards" runat="server" InsertItemPosition="LastItem" ItemType="DataAccess.Models.XML.RamBoard" DataKeyNames="ID" SelectMethod="GetRamBoards" InsertMethod="InsertRamBoard">
+    <ItemTemplate>
+
+    </ItemTemplate>
+        
     <InsertItemTemplate>
         <div class="panel panel-success">
             <div class="panel-heading">
@@ -171,6 +182,10 @@
     </asp:ListView>
     
     <asp:ListView id="lvHard" runat="server" InsertItemPosition="LastItem" ItemType="DataAccess.Models.XML.HardDrive" DataKeyNames="ID" SelectMethod="GetHardDrives" InsertMethod="InsertHardDrive">
+    <ItemTemplate>
+
+    </ItemTemplate>
+        
     <InsertItemTemplate>
         <div class="panel panel-success">
             <div class="panel-heading">
@@ -219,6 +234,10 @@
     </asp:ListView>
 
     <asp:ListView id="lvMotherboards" runat="server" InsertItemPosition="LastItem" ItemType="DataAccess.Models.XML.Motherboard" DataKeyNames="ID" SelectMethod="GetMotherboards" InsertMethod="InsertMotherboard">
+    <ItemTemplate>
+
+    </ItemTemplate>
+        
     <InsertItemTemplate>        
         <div class="panel panel-success">
             <div class="panel-heading">
@@ -267,6 +286,10 @@
     </asp:ListView>
     
     <asp:ListView id="lvSockets" runat="server" InsertItemPosition="LastItem" ItemType="DataAccess.Models.XML.Socket" DataKeyNames="ID" SelectMethod="GetSockets" InsertMethod="InsertSocket">
+    <ItemTemplate>
+
+    </ItemTemplate>
+        
     <InsertItemTemplate>
         <div class="panel panel-success">
             <div class="panel-heading">
@@ -291,6 +314,10 @@
     </asp:ListView>
     
     <asp:ListView id="lvMemoryTypes" runat="server" InsertItemPosition="LastItem" ItemType="DataAccess.Models.XML.Memory" DataKeyNames="ID" SelectMethod="GetMemoryTypes" InsertMethod="InsertMemoryType">
+    <ItemTemplate>
+
+    </ItemTemplate>
+        
     <InsertItemTemplate>
         <div class="panel panel-success">
             <div class="panel-heading">

@@ -16,6 +16,8 @@ namespace ComputerStore
 {
     public partial class ManualInput : System.Web.UI.Page
     {
+        private const string XML_SAVE_PATH = "~/App_Data/";
+
         private ICollection<Processor> processors;
         private ICollection<VideoCard> videoCards;
         private ICollection<HardDrive> hardDrives;
@@ -62,8 +64,9 @@ namespace ComputerStore
             XmlWriterSettings writerSettings = XMLUtilities.GetComputerStoreXmlWriterSettings();
             XmlSerializerNamespaces ns = XMLUtilities.GetComputerStoreNamespaces();
 
-            string xmlName = Server.MapPath("~/App_Data/some.xml");
-
+            string folder = Server.MapPath(XML_SAVE_PATH);
+            string xmlName = String.Format("{0}computer-store-new-{1}.xml", folder, XMLUtilities.GetNextXMLNumber(folder));
+            
             using (TextWriter textWriter = new StreamWriter(xmlName))
             using (XmlWriter xmlWriter = XmlWriter.Create(textWriter, writerSettings))
             {

@@ -71,5 +71,10 @@ namespace Common
 
             return writerSettings;
         }
+
+        public static int GetNextXMLNumber(string folder)
+        {
+            return Directory.GetFiles(folder, "*.xml").Count();
+        }
     }
 }
