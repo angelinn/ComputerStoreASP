@@ -27,6 +27,9 @@ namespace DataAccess.Models.Entities
             foreach (XML.Processor xmlCPU in xmlStore.Parts.Processors)
                 store.Processors.Add(Processor.XMLToEntity(xmlCPU));
 
+            foreach (XML.VideoCard xmlGPU in xmlStore.Parts.VideoCards)
+                store.VideoCards.Add(VideoCard.XMLToEntity(xmlGPU));
+
             foreach (XML.Socket xmlSocket in xmlStore.Sockets)
                 store.Sockets.Add(Socket.XMLToEntity(xmlSocket));
 

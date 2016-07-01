@@ -8,6 +8,24 @@ namespace DataAccess.Models.Entities
 {
     public class VideoCard
     {
+        public static VideoCard XMLToEntity(XML.VideoCard xml)
+        {
+            return new VideoCard
+            {
+                Alias = xml.ID,
+                Interface = xml.Interface,
+                Manufacturer = xml.Manufacturer,
+                Model = xml.Model,
+                BusWidth = xml.BusWidth,
+                Bandwidth = xml.Bandwidth,
+                DirectX = xml.DirectX,
+                Shaders = xml.Shaders,
+                Available = xml.Available,
+                Price = xml.Price,
+                GPUMemory = GPUMemory.XMLToEntity(xml.GPUMemory)
+            };
+        }
+
         public int ID { get; set; }
         public string Alias { get; set; }
         public string Interface { get; set; }

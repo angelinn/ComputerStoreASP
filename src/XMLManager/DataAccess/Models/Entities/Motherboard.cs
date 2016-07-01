@@ -8,6 +8,19 @@ namespace DataAccess.Models.Entities
 {
     public class Motherboard
     {
+        public static Motherboard XMLToEntity(XML.Motherboard xml)
+        {
+            return new Motherboard
+            {
+                Alias = xml.ID,
+                Manufacturer = xml.Manufacturer,
+                Chipset = xml.Chipset,
+                Available = xml.Available,
+                Price = xml.Price,
+                SocketAlias = xml.SocketID
+            };
+        }
+
         public int ID { get; set; }
         public string Alias { get; set; }
         public string Manufacturer { get; set; }

@@ -10,11 +10,11 @@ namespace DataAccess.Models.Entities
     {
         public static Threads XMLToEntity(XML.Threads xmlThreads)
         {
-            Threads threads = new Threads();
-            threads.Logical = xmlThreads.Logical;
-            threads.Physical = xmlThreads.Physical;
-
-            return threads;
+            return new Threads()
+            {
+                Logical = xmlThreads.Logical,
+                Physical = xmlThreads.Physical
+            };
         }
 
         public int ID { get; set; }

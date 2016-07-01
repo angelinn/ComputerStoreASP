@@ -9,6 +9,21 @@ namespace DataAccess.Models.Entities
 {
     public class RamBoard
     {
+        public static RamBoard XMLToEntity(XML.RamBoard xml)
+        {
+            return new RamBoard
+            {               
+                Alias = xml.ID,
+                Type = xml.Type,
+                Manufacturer = xml.Manufacturer,
+                Frequency = xml.Frequency,
+                Channel = xml.Channel,
+                Available = xml.Available,
+                Price = xml.Price,
+                Memory = xml.Price
+            };
+        }
+
         public int ID { get; set; }
         public string Alias { get; set; }
         public string Type { get; set; }

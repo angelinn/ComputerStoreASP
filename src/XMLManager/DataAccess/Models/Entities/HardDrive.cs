@@ -8,6 +8,22 @@ namespace DataAccess.Models.Entities
 {
     public class HardDrive
     {
+        public static HardDrive XMLToEntity(XML.HardDrive xml)
+        {
+            return new HardDrive
+            {
+                Alias = xml.ID,
+                Bus = xml.Bus,
+                LaptopCompatible = xml.LaptopCompatible,
+                Manufacturer = xml.Manufacturer,
+                Speed = xml.Speed,
+                Size = xml.Size,
+                Available = xml.Available,
+                Price = xml.Price,
+                DriveMemory = DriveMemory.XMLToEntity(xml.DriveMemory)
+            };
+        }
+
         public int ID { get; set; }
         public string Alias { get; set; }
         public string Bus { get; set; }

@@ -11,11 +11,11 @@ namespace DataAccess.Models.Entities
     {
         public static Cache XMLToEntity(XML.Cache xmlCache)
         {
-            Cache cache = new Cache();
-            cache.Levels = xmlCache.Levels;
-            cache.Memory = xmlCache.Memory;
-
-            return cache;
+            return new Cache
+            {
+                Levels = xmlCache.Levels,
+                Memory = xmlCache.Memory
+            };
         }
 
         public int ID { get; set; }

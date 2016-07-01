@@ -16,11 +16,11 @@ namespace DataAccess.Models.Entities
 
         public static MemoryType XMLToEntity(XML.Memory xmlMemory)
         {
-            MemoryType memory = new MemoryType();
-            memory.Alias = xmlMemory.ID;
-            memory.Name = xmlMemory.MemoryName;
-
-            return memory;
+            return new MemoryType
+            {
+                Alias = xmlMemory.ID,
+                Name = xmlMemory.MemoryName
+            };
         }
 
         public int ID { get; set; }

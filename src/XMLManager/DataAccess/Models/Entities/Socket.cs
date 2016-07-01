@@ -16,11 +16,11 @@ namespace DataAccess.Models.Entities
 
         public static Socket XMLToEntity(XML.Socket xmlSocket)
         {
-            Socket socket = new Socket();
-            socket.Alias = xmlSocket.ID;
-            socket.Name = xmlSocket.SocketName;
-
-            return socket;
+            return new Socket
+            {
+                Alias = xmlSocket.ID,
+                Name = xmlSocket.SocketName
+            };
         }
 
         public int ID { get; set; }
