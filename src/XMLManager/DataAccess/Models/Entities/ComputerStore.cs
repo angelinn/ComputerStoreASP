@@ -30,6 +30,15 @@ namespace DataAccess.Models.Entities
             foreach (XML.VideoCard xmlGPU in xmlStore.Parts.VideoCards)
                 store.VideoCards.Add(VideoCard.XMLToEntity(xmlGPU));
 
+            foreach (XML.HardDrive xmlHDD in xmlStore.Parts.HardDrives)
+                store.HardDrives.Add(HardDrive.XMLToEntity(xmlHDD));
+
+            foreach (XML.RamBoard xmlRAM in xmlStore.Parts.RamBoards)
+                store.RamBoards.Add(RamBoard.XMLToEntity(xmlRAM));
+
+            foreach (XML.Motherboard xmlMobo in xmlStore.Parts.Motherboards)
+                store.Motherboards.Add(Motherboard.XMLToEntity(xmlMobo));
+
             foreach (XML.Socket xmlSocket in xmlStore.Sockets)
                 store.Sockets.Add(Socket.XMLToEntity(xmlSocket));
 
@@ -37,17 +46,18 @@ namespace DataAccess.Models.Entities
                 store.MemoryTypes.Add(MemoryType.XMLToEntity(xmlMemory));
 
             foreach (Processor cpu in store.Processors)
-            {
-                Socket socket = store.Sockets.FirstOrDefault(s => s.Alias == cpu.Socket);
-                if (socket != null)
-                    cpu.SocketObject = socket;
-            }
+                cpu.SocketObject = store.Sockets.FirstOrDefault(s => s.Alias == cpu.Socket);
+
+            foreach (RamBoard ram in store.RamBoards)
+                ram.MemoryType = store.MemoryTypes.FirstOrDefault(m => m.Alias == ram.Type);
 
             foreach (Motherboard mobo in store.Motherboards)
             {
-                Socket socket = store.Sockets.FirstOrDefault(s => s.Alias == mobo.SocketAlias);
-                if (socket != null)
-                    mobo.Socket = socket;
+                mobo.Socket = store.Sockets.FirstOrDefault(s => s.Alias == mobo.SocketAlias);
+                mobo.Processor = store.Processors.FirstOrDefault(c => c.Alias == mobo.ProcessorAlias);
+                mobo.VideoCard = store.VideoCards.FirstOrDefault(v => v.Alias == mobo.GpuAlias);
+                mobo.HardDrive = store.HardDrives.FirstOrDefault(h => h.Alias == mobo.HDDAlias);
+                mobo.RamBoard = store.RamBoards.FirstOrDefault(r => r.Alias == mobo.RamAlias);
             }
 
             return store;

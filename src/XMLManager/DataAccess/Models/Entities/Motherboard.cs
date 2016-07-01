@@ -17,7 +17,11 @@ namespace DataAccess.Models.Entities
                 Chipset = xml.Chipset,
                 Available = xml.Available,
                 Price = xml.Price,
-                SocketAlias = xml.SocketID
+                SocketAlias = xml.SocketID,
+                ProcessorAlias = xml.Processor,
+                GpuAlias = xml.VideoCard,
+                RamAlias = xml.RamMemory,
+                HDDAlias = xml.HardDrive
             };
         }
 
@@ -28,6 +32,10 @@ namespace DataAccess.Models.Entities
         public int Available { get; set; }
         public string Price { get; set; }
         public string SocketAlias { get; set; }
+        public string ProcessorAlias { get; set; }
+        public string GpuAlias { get; set; }
+        public string RamAlias { get; set; }
+        public string HDDAlias { get; set; }
 
         public virtual Processor Processor { get; set; }
         public virtual VideoCard VideoCard { get; set; }
