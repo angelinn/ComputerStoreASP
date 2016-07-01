@@ -85,7 +85,7 @@
               <div class="panel-body">
                   <div>
                       <asp:Label runat="server" Text="ID: "></asp:Label>
-                      <asp:Literal ID="cpuSelectID" runat="server" Text="<%# BindItem.ID %>"></asp:Literal>
+                      <asp:Literal ID="gpuSelectID" runat="server" Text="<%# BindItem.ID %>"></asp:Literal>
                   </div>
               </div>
         </div>
@@ -151,7 +151,7 @@
               <div class="panel-body">
                   <div>
                       <asp:Label runat="server" Text="ID: "></asp:Label>
-                      <asp:Literal ID="cpuSelectID" runat="server" Text="<%# BindItem.ID %>"></asp:Literal>
+                      <asp:Literal ID="ramSelectID" runat="server" Text="<%# BindItem.ID %>"></asp:Literal>
                   </div>
               </div>
         </div>
@@ -212,7 +212,7 @@
               <div class="panel-body">
                   <div>
                       <asp:Label runat="server" Text="ID: "></asp:Label>
-                      <asp:Literal ID="cpuSelectID" runat="server" Text="<%# BindItem.ID %>"></asp:Literal>
+                      <asp:Literal ID="hddSelectID" runat="server" Text="<%# BindItem.ID %>"></asp:Literal>
                   </div>
               </div>
         </div>
@@ -272,7 +272,7 @@
               <div class="panel-body">
                   <div>
                       <asp:Label runat="server" Text="ID: "></asp:Label>
-                      <asp:Literal ID="cpuSelectID" runat="server" Text="<%# BindItem.ID %>"></asp:Literal>
+                      <asp:Literal ID="moboSelectID" runat="server" Text="<%# BindItem.ID %>"></asp:Literal>
                   </div>
               </div>
         </div>
@@ -332,7 +332,7 @@
               <div class="panel-body">
                   <div>
                       <asp:Label runat="server" Text="ID: "></asp:Label>
-                      <asp:Literal ID="cpuSelectID" runat="server" Text="<%# BindItem.ID %>"></asp:Literal>
+                      <asp:Literal ID="sockSelectID" runat="server" Text="<%# BindItem.ID %>"></asp:Literal>
                   </div>
               </div>
         </div>
@@ -368,7 +368,7 @@
               <div class="panel-body">
                   <div>
                       <asp:Label runat="server" Text="ID: "></asp:Label>
-                      <asp:Literal ID="cpuSelectID" runat="server" Text="<%# BindItem.ID %>"></asp:Literal>
+                      <asp:Literal ID="memSelectID" runat="server" Text="<%# BindItem.ID %>"></asp:Literal>
                   </div>
               </div>
         </div>
