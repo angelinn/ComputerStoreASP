@@ -75,8 +75,21 @@ namespace ComputerStore
             }
 
             XMLUtilities utils = new XMLUtilities();
-            if (utils.ValidateXML(xmlName))
+            ICollection<string> invalidMessages = new List<string>();
+            if (utils.ValidateXML(xmlName, invalidMessages))
                 ComputerStoreDO.Add(store);
+            else
+            {
+
+            }
+
+            ViewState["processors"] = null;
+            ViewState["videoCards"] = null;
+            ViewState["ramBoards"] = null;
+            ViewState["hardDrives"] = null;
+            ViewState["motherboards"] = null;
+            ViewState["sockets"] = null;
+            ViewState["memoryTypes"] = null;
         }
 
         public IQueryable<Processor> GetProcessors()

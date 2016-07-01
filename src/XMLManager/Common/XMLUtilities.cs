@@ -13,8 +13,9 @@ namespace Common
     public class XMLUtilities
     {
         private bool isValid = true;
+        private ICollection<string> messages = new List<string>();
 
-        public bool ValidateXML(string fileName)
+        public bool ValidateXML(string fileName, ICollection<string> messages = null)
         {
             // Set the validation settings.
             XmlReaderSettings settings = new XmlReaderSettings();
@@ -35,6 +36,10 @@ namespace Common
                 else
                     Console.WriteLine(String.Format("Document {0} is invalid", fileName));
             }
+
+            if (messages != null)
+                messages = this.messages;
+
             return isValid;
         }
 
@@ -42,6 +47,7 @@ namespace Common
         {
             isValid = false;
             Console.WriteLine("Validation event\n" + args.Message);
+            messages.Add(args.Message);
         }
 
         public static T ReadFromXML<T>(string fileName)
