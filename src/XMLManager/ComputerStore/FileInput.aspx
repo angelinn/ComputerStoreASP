@@ -6,7 +6,7 @@
         <asp:FileUpload  ID="fuXmlFiles" runat="server" AllowMultiple="true"  />
     </div>
 
-    <div style="font-style: italic"> *DTD файлът трябва да се намира в <%= USER_UPLOADS %>* </div>
+    <div id="dtd-warning"> *DTD файлът трябва да се намира в <%= USER_UPLOADS %>* </div>
 
     <asp:Button id="btnSubmit" runat="server" class="btn btn-default" type="submit" Text="Качване" OnClick="btnSubmit_Click" />
 

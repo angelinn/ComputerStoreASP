@@ -12,7 +12,9 @@ namespace DataAccess
     public class ComputerStoreContext : DbContext
     {
         public ComputerStoreContext() : base("ComputerStoreContext")
-        {   }
+        {
+            // Database.SetInitializer(new DropCreateDatabaseAlways<ComputerStoreContext>());
+        }
 
         public IDbSet<ComputerStore> ComputerStores { get; set; }
 
