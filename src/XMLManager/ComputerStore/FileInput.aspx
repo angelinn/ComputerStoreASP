@@ -16,4 +16,9 @@
 
     <asp:Table ID="tblResults" runat="server" CellPadding="10" >
     </asp:Table>
+
+    <div>
+        <h3> Изчистване на базата </h3>
+        <asp:Button ID="btnClear" runat="server" class="btn btn-default" Text="Натисни ме" OnClick="btnClear_Click" />
+    </div>
 </asp:Content>

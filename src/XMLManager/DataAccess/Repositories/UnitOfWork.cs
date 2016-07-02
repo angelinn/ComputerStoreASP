@@ -18,6 +18,11 @@ namespace DataAccess.Repositories
         public UnitOfWork() : this(new ComputerStoreContext())
         { }
 
+        public void Clear()
+        {
+            context.Clear();
+        }
+
         public IGenericRepository<ComputerStore> ComputerStores
         {
             get

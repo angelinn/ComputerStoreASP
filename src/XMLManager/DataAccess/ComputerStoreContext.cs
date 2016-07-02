@@ -1,4 +1,5 @@
-﻿using DataAccess.Models.Entities;
+﻿using DataAccess.Extensions;
+using DataAccess.Models.Entities;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -16,24 +17,45 @@ namespace DataAccess
             // Database.SetInitializer(new DropCreateDatabaseAlways<ComputerStoreContext>());
         }
 
-        public IDbSet<ComputerStore> ComputerStores { get; set; }
+        public DbSet<ComputerStore> ComputerStores { get; set; }
 
-        public IDbSet<Socket> Sockets { get; set; }
-        public IDbSet<MemoryType> MemoryTypes { get; set; }
+        public DbSet<Socket> Sockets { get; set; }
+        public DbSet<MemoryType> MemoryTypes { get; set; }
 
-        public IDbSet<Processor> Processors { get; set; }
-        public IDbSet<Threads> Threads { get; set; }
-        public IDbSet<Cache> Caches { get; set; }
+        public DbSet<Processor> Processors { get; set; }
+        public DbSet<Threads> Threads { get; set; }
+        public DbSet<Cache> Caches { get; set; }
 
-        public IDbSet<VideoCard> VideoCards { get; set; }
-        public IDbSet<GPUMemory> GPUMemories { get; set; }
+        public DbSet<VideoCard> VideoCards { get; set; }
+        public DbSet<GPUMemory> GPUMemories { get; set; }
 
-        public IDbSet<HardDrive> HardDrives { get; set; }
-        public IDbSet<DriveMemory> DriveMemories { get; set; }
+        public DbSet<RamBoard> RamBoards { get; set; }
+
+        public DbSet<Motherboard> Motherboards { get; set; }
+
+        public DbSet<HardDrive> HardDrives { get; set; }
+        public DbSet<DriveMemory> DriveMemories { get; set; }
+
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+        }
+
+        public void Clear()
+        {
+            Sockets.Clear();
+            MemoryTypes.Clear();
+            GPUMemories.Clear();
+            DriveMemories.Clear();
+            Caches.Clear();
+            Threads.Clear();
+            HardDrives.Clear();
+            Processors.Clear();
+            VideoCards.Clear();
+            RamBoards.Clear();
+            Motherboards.Clear();
+            ComputerStores.Clear();
         }
     }
 }

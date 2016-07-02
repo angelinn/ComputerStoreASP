@@ -1,4 +1,6 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" Title="Ръчно въвеждане" AutoEventWireup="true" CodeBehind="ManualInput.aspx.cs" Inherits="ComputerStore.ManualInput" %>
+<%--<%@ Register TagPrefix="uc" TagName="InsertProcessor" Src="~/UserControls/InsertProcessor.ascx" %>--%>
+
 
 <asp:Content runat="server" ContentPlaceHolderID="MainContent" >
     <h2> Компютърен магазин </h2>
@@ -11,7 +13,7 @@
               <div class="panel-body">
                   <div>
                       <asp:Label runat="server" Text="ID: "></asp:Label>
-                      <asp:Literal ID="cpuSelectID" runat="server" Text="<%# BindItem.ID %>"></asp:Literal>
+                      <asp:Literal ID="cpuSelectID" runat="server" Text="<% BindItem.ID %>"></asp:Literal>
                   </div>
               </div>
            </div>

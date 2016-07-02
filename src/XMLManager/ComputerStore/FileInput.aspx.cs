@@ -1,6 +1,7 @@
 ﻿using Common;
 using ComputerStore.Common;
 using DataAccess.Domain;
+using DataAccess.Repositories;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -73,6 +74,15 @@ namespace ComputerStore
         private string BuildServerFileName(string fileName)
         {
             return UserUploads + fileName;
+        }
+
+        protected void btnClear_Click(object sender, EventArgs e)
+        {
+            using (UnitOfWork uow = new UnitOfWork())
+            {
+                uow.Clear();
+                uow.Save();
+            }
         }
 
         private const string TARGET_EXTENSION = ".xml";

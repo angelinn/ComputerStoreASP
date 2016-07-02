@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="ComputerStoreContext.cs" />
     <Compile Include="Domain\ComputerStoreDO.cs" />
+    <Compile Include="Extensions\DbSetClearExtension.cs" />
     <Compile Include="Models\Entities\Cache.cs" />
     <Compile Include="Models\Entities\ComputerStore.cs" />
     <Compile Include="Models\Entities\DriveMemory.cs" />
