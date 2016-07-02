@@ -1,17 +1,21 @@
 ﻿using Common;
+using ComputerStore.Common;
 using DataAccess.Domain;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
+using ComputerStoreXMLModel = DataAccess.Models.XML.ComputerStore;
+
 namespace ComputerStore
 {
     public partial class FileInput : System.Web.UI.Page
     {
-        public static string USER_UPLOADS = String.Format("{0}user_uploads\\", HttpRuntime.AppDomainAppPath);
+        public static string UserUploads = String.Format("{0}user_uploads\\", HttpRuntime.AppDomainAppPath);
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -21,39 +25,33 @@ namespace ComputerStore
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
             HttpFileCollection files = Request.Files;
-            string message = "File extension is not XML.";
+            string message = UploadMessages.NoFilesAttached;
 
             for (int i = 0; i < files.Count; ++i)
             {
-                try
+                if (files[i].ContentLength != 0)
                 {
-                    if (files[i].ContentLength != 0)
+                    if (Path.GetExtension(files[i].FileName) == TARGET_EXTENSION)
                     {
-                        if (System.IO.Path.GetExtension(files[i].FileName) == ".xml")
+                        string serverFileName = BuildServerFileName(files[i].FileName);
+                        files[i].SaveAs(serverFileName);
+
+                        XMLUtilities utilities = new XMLUtilities();
+                        if (utilities.ValidateXML(serverFileName))
                         {
-                            string serverFileName = BuildServerFileName(files[i].FileName);
-                            files[i].SaveAs(serverFileName);
+                            message = UploadMessages.MessageSuccess;
+                            ComputerStoreXMLModel store = XMLUtilities.ReadFromXML<ComputerStoreXMLModel>(serverFileName);
 
-                            XMLUtilities utilities = new XMLUtilities();
-                            if (utilities.ValidateXML(serverFileName))
-                            {
-                                message = "Success.";
-                                DataAccess.Models.XML.ComputerStore store = XMLUtilities.ReadFromXML<DataAccess.Models.XML.ComputerStore>(serverFileName);
-
-                                ComputerStoreDO.Add(store);
-                            }
-                            else
-                                message = "File not valid by the DTD schema.";
-
-                            System.IO.File.Delete(serverFileName);
+                            ComputerStoreDO.Add(store);
                         }
-                    }
-                }
-                catch (HttpException)
-                {
-                    message = "Failed to upload file.";
-                }
+                        else
+                            message = UploadMessages.XMLNotValid;
 
+                        File.Delete(serverFileName);
+                    }
+                    else
+                        message = UploadMessages.ExtensionNotXML;
+                }
                 CreateUploadEntryStatus(files[i].FileName, message);
             }
         }
@@ -74,7 +72,9 @@ namespace ComputerStore
 
         private string BuildServerFileName(string fileName)
         {
-            return USER_UPLOADS + fileName;
+            return UserUploads + fileName;
         }
+
+        private const string TARGET_EXTENSION = ".xml";
     }
 }
