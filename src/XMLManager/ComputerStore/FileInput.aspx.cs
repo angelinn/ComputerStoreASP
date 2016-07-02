@@ -11,6 +11,8 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 
 using ComputerStoreXMLModel = DataAccess.Models.XML.ComputerStore;
+using ComputerStoreEntity = DataAccess.Models.Entities.ComputerStore;
+using ComputerStore.ViewModels;
 
 namespace ComputerStore
 {
@@ -54,6 +56,7 @@ namespace ComputerStore
                         message = UploadMessages.ExtensionNotXML;
                 }
                 CreateUploadEntryStatus(files[i].FileName, message);
+                gvStores.DataBind();
             }
         }
 
@@ -83,6 +86,22 @@ namespace ComputerStore
                 uow.Clear();
                 uow.Save();
             }
+            gvStores.DataBind();
+        }
+
+        public IEnumerable<ComputerStoreViewModel> GetComputerStores()
+        {
+            return new UnitOfWork().ComputerStores.All().Select(cs => new ComputerStoreViewModel
+            {
+                ID = cs.ID,
+                ProcessorCount = cs.Processors.Count,
+                GPUCount = cs.VideoCards.Count,
+                HDDCount = cs.HardDrives.Count,
+                RAMCount = cs.RamBoards.Count,
+                MoboCount = cs.Motherboards.Count,
+                SocketCount = cs.Sockets.Count,
+                MemoryCount = cs.MemoryTypes.Count
+            });
         }
 
         private const string TARGET_EXTENSION = ".xml";
