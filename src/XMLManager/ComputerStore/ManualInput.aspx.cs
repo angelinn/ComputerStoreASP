@@ -75,8 +75,9 @@ namespace ComputerStore
             }
 
             XMLUtilities utils = new XMLUtilities();
-            ICollection<string> invalidMessages = new List<string>();
-            if (utils.ValidateXML(xmlName, invalidMessages))
+            ICollection<string> invalidMessages;
+
+            if (utils.ValidateXML(xmlName, out invalidMessages))
                 ComputerStoreDO.Add(store);
             else
             {

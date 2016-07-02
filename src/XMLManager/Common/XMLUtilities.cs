@@ -15,8 +15,10 @@ namespace Common
         private bool isValid = true;
         private ICollection<string> messages = new List<string>();
 
-        public bool ValidateXML(string fileName, ICollection<string> messages = null)
+        public bool ValidateXML(string fileName, out ICollection<string> messages)
         {
+            messages = new List<string>();
+
             // Set the validation settings.
             XmlReaderSettings settings = new XmlReaderSettings();
             settings.DtdProcessing = DtdProcessing.Parse;
@@ -37,8 +39,7 @@ namespace Common
                     Console.WriteLine(String.Format("Document {0} is invalid", fileName));
             }
 
-            if (messages != null)
-                messages = this.messages;
+            messages = this.messages.Select(s => (string)s.Clone()).ToList();
 
             return isValid;
         }

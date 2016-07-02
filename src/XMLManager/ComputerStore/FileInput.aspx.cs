@@ -40,7 +40,9 @@ namespace ComputerStore
                         files[i].SaveAs(serverFileName);
 
                         XMLUtilities utilities = new XMLUtilities();
-                        if (utilities.ValidateXML(serverFileName))
+                        ICollection<string> validationMessages;
+
+                        if (utilities.ValidateXML(serverFileName, out validationMessages))
                         {
                             message = UploadMessages.MessageSuccess;
                             ComputerStoreXMLModel store = XMLUtilities.ReadFromXML<ComputerStoreXMLModel>(serverFileName);
@@ -48,7 +50,7 @@ namespace ComputerStore
                             ComputerStoreDO.Add(store);
                         }
                         else
-                            message = UploadMessages.XMLNotValid;
+                            message = String.Join(" ", validationMessages);
 
                         File.Delete(serverFileName);
                     }
