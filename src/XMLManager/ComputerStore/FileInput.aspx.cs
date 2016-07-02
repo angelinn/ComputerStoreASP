@@ -11,6 +11,8 @@ namespace ComputerStore
 {
     public partial class FileInput : System.Web.UI.Page
     {
+        public static string USER_UPLOADS = String.Format("{0}user_uploads\\", HttpRuntime.AppDomainAppPath);
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -72,7 +74,7 @@ namespace ComputerStore
 
         private string BuildServerFileName(string fileName)
         {
-            return String.Format("{0}user_uploads\\{1}", HttpRuntime.AppDomainAppPath, fileName);
+            return USER_UPLOADS + fileName;
         }
     }
 }

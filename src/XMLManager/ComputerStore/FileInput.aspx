@@ -5,9 +5,15 @@
         <h3>Избиране на файлове</h3>
         <asp:FileUpload  ID="fuXmlFiles" runat="server" AllowMultiple="true"  />
     </div>
+
+    <div style="font-style: italic"> *DTD файлът трябва да се намира в <%= USER_UPLOADS %>* </div>
+
     <asp:Button id="btnSubmit" runat="server" class="btn btn-default" type="submit" Text="Качване" OnClick="btnSubmit_Click" />
 
-    <hr />
+    <% if (tblResults.Rows.Count > 0) { %>
+        <hr />
+    <% } %>
+
     <asp:Table ID="tblResults" runat="server" CellPadding="10" >
     </asp:Table>
 </asp:Content>
