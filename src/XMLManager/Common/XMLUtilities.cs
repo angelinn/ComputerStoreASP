@@ -18,25 +18,17 @@ namespace Common
         public bool ValidateXML(string fileName, out ICollection<string> messages)
         {
             messages = new List<string>();
-
-            // Set the validation settings.
+            
             XmlReaderSettings settings = new XmlReaderSettings();
             settings.DtdProcessing = DtdProcessing.Parse;
             settings.ValidationType = ValidationType.DTD;
             settings.ValidationEventHandler += new ValidationEventHandler(ValidationCallBack);
             settings.XmlResolver = new XmlUrlResolver();
 
-            // Create the XmlReader object.
             using (XmlReader reader = XmlReader.Create(fileName, settings))
             {
-                // Parse the file. 
-                while (reader.Read()) ;
-
-                // Check whether the document is valid or invalid.
-                if (isValid)
-                    Console.WriteLine(String.Format("Document {0} is valid", fileName));
-                else
-                    Console.WriteLine(String.Format("Document {0} is invalid", fileName));
+                while (reader.Read())
+                    ;
             }
 
             messages = this.messages.Select(s => (string)s.Clone()).ToList();
