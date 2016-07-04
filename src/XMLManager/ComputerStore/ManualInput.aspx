@@ -118,13 +118,47 @@
     <asp:ListView id="ListView1" runat="server" InsertItemPosition="LastItem" ItemType="DataAccess.Models.XML.VideoCard" DataKeyNames="ID" SelectMethod="GetVideoCards" InsertMethod="InsertVideoCard">
     <ItemTemplate>
         <div class="panel panel-default">
-               <div class="panel-heading">Видеок арти в опашка</div>
-              <div class="panel-body">
-                  <div>
-                      <asp:Label runat="server" Text="ID: "></asp:Label>
-                      <asp:Literal ID="gpuSelectID" runat="server" Text="<%# BindItem.ID %>"></asp:Literal>
-                  </div>
-              </div>
+            <div class="panel-heading">Видео-карти в опашка</div>
+            <div class="panel-body">
+                <div class="form-group">
+                        Идентификатор: <asp:Label ID="lbl" runat="server" Text="<%# BindItem.ID %>"></asp:Label>
+                </div>
+                <div class="form-group">
+                        Интерфейс: <asp:Label ID="Label1" runat="server" Text="<%# BindItem.Interface %>"></asp:Label>
+                </div>
+                <div class="form-group">
+                        Модел: <asp:Label ID="Label2" runat="server" Text="<%# BindItem.Model %>"></asp:Label>
+                </div>
+                <div class="form-group">
+                        Производител: <asp:Label ID="Label3" runat="server" Text="<%# BindItem.Manufacturer %>"></asp:Label>
+                </div>
+                <div class="form-group">
+                        ID на тип Памет: <asp:Label ID="Label4" runat="server" Text="<%# BindItem.GPUMemory.Type %>"></asp:Label>
+                </div>
+
+                <div class="form-group">
+                        Размер памет: <asp:Label ID="Label5" runat="server" Text="<%# BindItem.GPUMemory.Amount %>"></asp:Label>
+                </div>
+
+                <div class="form-group">
+                        Ширина на шината: <asp:Label ID="Label6" runat="server" Text="<%# BindItem.BusWidth %>"></asp:Label>
+                </div>
+                <div class="form-group">
+                        Ширина на честотната лента: <asp:Label ID="Label7" runat="server" Text="<%# BindItem.Bandwidth %>"></asp:Label>
+                </div>
+                <div class="form-group">
+                        DirectX: <asp:Label ID="Label8" runat="server" Text="<%# BindItem.DirectX %>"></asp:Label>
+                </div>
+                <div class="form-group">
+                        Шейдъри: <asp:Label ID="Label9" runat="server" Text="<%# BindItem.Shaders %>"></asp:Label>
+                </div>
+                <div class="form-group">
+                        Наличност: <asp:Label ID="Label11" runat="server" Text="<%# BindItem.Available %>"></asp:Label>
+                </div>
+                <div class="form-group">
+                        Цена: <asp:Label ID="Label10" runat="server" Text="<%# BindItem.Price %>"></asp:Label>
+                </div>
+            </div>
         </div>
     </ItemTemplate>
 
@@ -184,13 +218,31 @@
     <asp:ListView id="lvRamBoards" runat="server" InsertItemPosition="LastItem" ItemType="DataAccess.Models.XML.RamBoard" DataKeyNames="ID" SelectMethod="GetRamBoards" InsertMethod="InsertRamBoard">
     <ItemTemplate>
         <div class="panel panel-default">
-               <div class="panel-heading">Рам памети в опашка</div>
-              <div class="panel-body">
-                  <div>
-                      <asp:Label runat="server" Text="ID: "></asp:Label>
-                      <asp:Literal ID="ramSelectID" runat="server" Text="<%# BindItem.ID %>"></asp:Literal>
-                  </div>
-              </div>
+            <div class="panel-heading">Рам памети в опашка</div>
+            <div class="panel-body">
+                <div class="form-group">
+                        Идентификатор: <asp:Label ID="lbl" runat="server" Text="<%# BindItem.ID %>"></asp:Label>
+                </div>
+                <div class="form-group">
+                        Тип: <asp:Label ID="Label1" runat="server" Text="<%# BindItem.Type %>"></asp:Label>
+                </div>
+                <div class="form-group">
+                        Производител: <asp:Label ID="Label3" runat="server" Text="<%# BindItem.Manufacturer %>"></asp:Label>
+                </div>
+                <div class="form-group">
+                        Размер памет: <asp:Label ID="Label4" runat="server" Text="<%# BindItem.Memory %>"></asp:Label>
+                </div>
+
+                <div class="form-group">
+                        Тактова честота: <asp:Label ID="Label5" runat="server" Text="<%# BindItem.Frequency %>"></asp:Label>
+                </div>
+                <div class="form-group">
+                        Наличност: <asp:Label ID="Label9" runat="server" Text="<%# BindItem.Available %>"></asp:Label>
+                </div>
+                <div class="form-group">
+                        Цена: <asp:Label ID="Label10" runat="server" Text="<%# BindItem.Price %>"></asp:Label>
+                </div>
+            </div>
         </div>
     </ItemTemplate>
         
@@ -245,13 +297,39 @@
     <asp:ListView id="lvHard" runat="server" InsertItemPosition="LastItem" ItemType="DataAccess.Models.XML.HardDrive" DataKeyNames="ID" SelectMethod="GetHardDrives" InsertMethod="InsertHardDrive">
     <ItemTemplate>
         <div class="panel panel-default">
-               <div class="panel-heading">Дискове в опашка</div>
-              <div class="panel-body">
-                  <div>
-                      <asp:Label runat="server" Text="ID: "></asp:Label>
-                      <asp:Literal ID="hddSelectID" runat="server" Text="<%# BindItem.ID %>"></asp:Literal>
-                  </div>
-              </div>
+            <div class="panel-heading">Твърди дискове в опашка</div>
+            <div class="panel-body">
+                <div class="form-group">
+                        Идентификатор: <asp:Label ID="lbl" runat="server" Text="<%# BindItem.ID %>"></asp:Label>
+                </div>
+                <div class="form-group">
+                        Шина: <asp:Label ID="Label1" runat="server" Text="<%# BindItem.Bus %>"></asp:Label>
+                </div>
+                <div class="form-group">
+                        Съвместим с лаптоп?: <asp:Label ID="Label4" runat="server" Text="<%# BindItem.LaptopCompatible %>"></asp:Label>
+                </div>
+                <div class="form-group">
+                        Производител: <asp:Label ID="Label3" runat="server" Text="<%# BindItem.Manufacturer %>"></asp:Label>
+                </div>
+                <div class="form-group">
+                        Размер памет: <asp:Label ID="Label5" runat="server" Text="<%# BindItem.DriveMemory.Amount %>"></asp:Label>
+                </div>
+                <div class="form-group">
+                        Тип памет: <asp:Label ID="Label12" runat="server" Text="<%# BindItem.DriveMemory.Type %>"></asp:Label>
+                </div>
+                <div class="form-group">
+                        Скорост: <asp:Label ID="Label13" runat="server" Text="<%# BindItem.Speed %>"></asp:Label>
+                </div>
+                <div class="form-group">
+                        Физически размер: <asp:Label ID="Label14" runat="server" Text="<%# BindItem.Size %>"></asp:Label>
+                </div>
+                <div class="form-group">
+                        Наличност: <asp:Label ID="Label9" runat="server" Text="<%# BindItem.Available %>"></asp:Label>
+                </div>
+                <div class="form-group">
+                        Цена: <asp:Label ID="Label10" runat="server" Text="<%# BindItem.Price %>"></asp:Label>
+                </div>
+            </div>
         </div>
     </ItemTemplate>
         
@@ -305,13 +383,39 @@
     <asp:ListView id="lvMotherboards" runat="server" InsertItemPosition="LastItem" ItemType="DataAccess.Models.XML.Motherboard" DataKeyNames="ID" SelectMethod="GetMotherboards" InsertMethod="InsertMotherboard">
     <ItemTemplate>
         <div class="panel panel-default">
-               <div class="panel-heading">Дънни платки в опашка</div>
-              <div class="panel-body">
-                  <div>
-                      <asp:Label runat="server" Text="ID: "></asp:Label>
-                      <asp:Literal ID="moboSelectID" runat="server" Text="<%# BindItem.ID %>"></asp:Literal>
-                  </div>
-              </div>
+            <div class="panel-heading">Дънни платки в опашка</div>
+            <div class="panel-body">
+                <div class="form-group">
+                        Идентификатор: <asp:Label ID="lbl" runat="server" Text="<%# BindItem.ID %>"></asp:Label>
+                </div>
+                <div class="form-group">
+                        ID на сокет: <asp:Label ID="Label1" runat="server" Text="<%# BindItem.SocketID %>"></asp:Label>
+                </div>
+                <div class="form-group">
+                        ID на процесор: <asp:Label ID="Label4" runat="server" Text="<%# BindItem.Processor %>"></asp:Label>
+                </div>
+                <div class="form-group">
+                        ID на видео-карта: <asp:Label ID="Label3" runat="server" Text="<%# BindItem.VideoCard %>"></asp:Label>
+                </div>
+                <div class="form-group">
+                        ID на рам памет: <asp:Label ID="Label5" runat="server" Text="<%# BindItem.RamMemory %>"></asp:Label>
+                </div>
+                <div class="form-group">
+                        ID на твърд диск: <asp:Label ID="Label12" runat="server" Text="<%# BindItem.HardDrive %>"></asp:Label>
+                </div>
+                <div class="form-group">
+                        Производител: <asp:Label ID="Label13" runat="server" Text="<%# BindItem.Manufacturer %>"></asp:Label>
+                </div>
+                <div class="form-group">
+                        Чипсет: <asp:Label ID="Label14" runat="server" Text="<%# BindItem.Chipset %>"></asp:Label>
+                </div>
+                <div class="form-group">
+                        Наличност: <asp:Label ID="Label9" runat="server" Text="<%# BindItem.Available %>"></asp:Label>
+                </div>
+                <div class="form-group">
+                        Цена: <asp:Label ID="Label10" runat="server" Text="<%# BindItem.Price %>"></asp:Label>
+                </div>
+            </div>
         </div>
     </ItemTemplate>
         
@@ -365,13 +469,15 @@
     <asp:ListView id="lvSockets" runat="server" InsertItemPosition="LastItem" ItemType="DataAccess.Models.XML.Socket" DataKeyNames="ID" SelectMethod="GetSockets" InsertMethod="InsertSocket">
     <ItemTemplate>
         <div class="panel panel-default">
-               <div class="panel-heading">Процесорни цокли в опашка</div>
-              <div class="panel-body">
-                  <div>
-                      <asp:Label runat="server" Text="ID: "></asp:Label>
-                      <asp:Literal ID="sockSelectID" runat="server" Text="<%# BindItem.ID %>"></asp:Literal>
-                  </div>
-              </div>
+            <div class="panel-heading">Процесорни цокли в опашка</div>
+            <div class="panel-body">
+                <div class="form-group">
+                        Идентификатор: <asp:Label ID="lbl" runat="server" Text="<%# BindItem.ID %>"></asp:Label>
+                </div>
+                <div class="form-group">
+                        Име: <asp:Label ID="Label1" runat="server" Text="<%# BindItem.SocketName %>"></asp:Label>
+                </div>
+            </div>
         </div>
     </ItemTemplate>
         
@@ -401,13 +507,15 @@
     <asp:ListView id="lvMemoryTypes" runat="server" InsertItemPosition="LastItem" ItemType="DataAccess.Models.XML.Memory" DataKeyNames="ID" SelectMethod="GetMemoryTypes" InsertMethod="InsertMemoryType">
     <ItemTemplate>
         <div class="panel panel-default">
-               <div class="panel-heading">Типове памет в опашка</div>
-              <div class="panel-body">
-                  <div>
-                      <asp:Label runat="server" Text="ID: "></asp:Label>
-                      <asp:Literal ID="memSelectID" runat="server" Text="<%# BindItem.ID %>"></asp:Literal>
-                  </div>
-              </div>
+            <div class="panel-heading">Типове памет в опашка</div>
+            <div class="panel-body">
+                <div class="form-group">
+                        Идентификатор: <asp:Label ID="lbl" runat="server" Text="<%# BindItem.ID %>"></asp:Label>
+                </div>
+                <div class="form-group">
+                        Име: <asp:Label ID="Label1" runat="server" Text="<%# BindItem.MemoryName %>"></asp:Label>
+                </div>
+            </div>
         </div>
     </ItemTemplate>
         

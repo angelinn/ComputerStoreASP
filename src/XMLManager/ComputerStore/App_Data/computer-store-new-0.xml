@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE computer-store SYSTEM "computer_store.dtd">
+<computer-store>
+	<parts>
+		<processors>
+			<processor id="cpu_1" socket="A3" integrated_video="true">
+				<model>i5</model>
+				<manufacturer>Intel</manufacturer>
+				<architecture>Maxwell</architecture>
+				<clock-frequency>4200mhz</clock-frequency>
+				<cache>
+					<levels>3</levels>
+					<memory>6MB</memory>
+				</cache>
+				<threads>
+					<physical>2</physical>
+					<logical>4</logical>
+				</threads>
+				<available>2</available>
+				<price>10 лева</price>
+			</processor>
+		</processors>
+		<ram-boards>
+			<ram-board id="ram_1" type="D3">
+				<manufacturer>Kingston</manufacturer>
+				<memory>4096MB</memory>
+				<frequency>1333mhz</frequency>
+				<channel>triple</channel>
+				<available>2</available>
+				<price>4</price>
+			</ram-board>
+		</ram-boards>
+		<video-cards>
+			<video-card id="gpu_1" interface="PCI-E">
+				<manufacturer>Nvidia</manufacturer>
+				<model>GTX 850m</model>
+				<gpu_memory type="mem_1">4096MB</gpu_memory>
+				<bus-width>250</bus-width>
+				<bandwidth>350</bandwidth>
+				<directx>12</directx>
+				<shaders>12000</shaders>
+				<available>2</available>
+				<price>300 лева</price>
+			</video-card>
+		</video-cards>
+		<hard-drives>
+			<hard-drive id="hdd_1" bus="SATA-3" laptop-compatible="true">
+				<manufacturer>Hitachi</manufacturer>
+				<drive-memory>
+					<amount>2TB</amount>
+					<type>Flash</type>
+				</drive-memory>
+				<speed>7200rpm</speed>
+				<size>2.5"</size>
+				<available>2</available>
+				<price>400</price>
+			</hard-drive>
+		</hard-drives>
+		<motherboards>
+			<motherboard id="mobo_1" socket-id="A3" processor="cpu_1" video-card="gpu_1" ram-memory="ram_1" hard-drive="hdd_1">
+				<manufacturer>Asus</manufacturer>
+				<chipset>Intel</chipset>
+				<available>2</available>
+				<price>500</price>
+			</motherboard>
+		</motherboards>
+	</parts>
+	<sockets>
+		<socket id="A3">AM3+</socket>
+	</sockets>
+	<memory-types>
+		<memory-type id="mem_1">GDDR3</memory-type>
+		<memory-type id="D3">DDR3</memory-type>
+	</memory-types>
+</computer-store>
