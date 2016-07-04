@@ -78,19 +78,33 @@ namespace ComputerStore
             ICollection<string> invalidMessages;
 
             if (utils.ValidateXML(xmlName, out invalidMessages))
+            {
                 ComputerStoreDO.Add(store);
+
+                ViewState["processors"] = null;
+                ViewState["videoCards"] = null;
+                ViewState["ramBoards"] = null;
+                ViewState["hardDrives"] = null;
+                ViewState["motherboards"] = null;
+                ViewState["sockets"] = null;
+                ViewState["memoryTypes"] = null;
+
+                Action<ControlCollection> func = null;
+                func = (controls) =>
+                {
+                    foreach (Control control in controls)
+                        if (control is ListView)
+                            (control as ListView).DataBind();
+                        else
+                            func(control.Controls);
+                };
+
+                func(Controls);
+            }
             else
             {
 
             }
-
-            ViewState["processors"] = null;
-            ViewState["videoCards"] = null;
-            ViewState["ramBoards"] = null;
-            ViewState["hardDrives"] = null;
-            ViewState["motherboards"] = null;
-            ViewState["sockets"] = null;
-            ViewState["memoryTypes"] = null;
         }
 
         public IQueryable<Processor> GetProcessors()
