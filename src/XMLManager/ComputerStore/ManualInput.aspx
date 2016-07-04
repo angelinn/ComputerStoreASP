@@ -9,13 +9,48 @@
                  DataKeyNames="ID" SelectMethod="GetProcessors" InsertMethod="InsertProcessor">  
        <ItemTemplate>
            <div class="panel panel-default">
-               <div class="panel-heading">Процесори в опашка</div>
-              <div class="panel-body">
-                  <div>
-                      <asp:Label runat="server" Text="ID: "></asp:Label>
-                      <asp:Literal ID="cpuSelectID" runat="server" Text="<% BindItem.ID %>"></asp:Literal>
-                  </div>
-              </div>
+                <div class="panel-heading">Процесори в опашка</div>
+                <div class="panel-body">
+                    <div class="form-group">
+                          Идентификатор: <asp:Label ID="lbl" runat="server" Text="<%# BindItem.ID %>"></asp:Label>
+                    </div>
+                    <div class="form-group">
+                          Сокет: <asp:Label ID="Label1" runat="server" Text="<%# BindItem.Socket %>"></asp:Label>
+                    </div>
+                    <div class="form-group">
+                          Модел: <asp:Label ID="Label2" runat="server" Text="<%# BindItem.Model %>"></asp:Label>
+                    </div>
+                    <div class="form-group">
+                          Производител: <asp:Label ID="Label3" runat="server" Text="<%# BindItem.Manufacturer %>"></asp:Label>
+                    </div>
+                    <div class="form-group">
+                          Тактова честота: <asp:Label ID="Label4" runat="server" Text="<%# BindItem.ClockFrequency %>"></asp:Label>
+                    </div>
+
+                    <div class="form-group">
+                          Нива на кеш: <asp:Label ID="Label5" runat="server" Text="<%# BindItem.Cache.Levels %>"></asp:Label>
+                    </div>
+
+                    <div class="form-group">
+                          Памет на кеш: <asp:Label ID="Label6" runat="server" Text="<%# BindItem.Cache.Memory %>"></asp:Label>
+                    </div>
+                    <div class="form-group">
+                          Нишки: <asp:Label ID="Label7" runat="server" Text="<%# BindItem.Threads.Logical %>"></asp:Label>
+                    </div>
+                    <div class="form-group">
+                          Ядра: <asp:Label ID="Label8" runat="server" Text="<%# BindItem.Threads.Physical %>"></asp:Label>
+                    </div>
+                    <div class="form-group">
+                          Наличност: <asp:Label ID="Label9" runat="server" Text="<%# BindItem.Available %>"></asp:Label>
+                    </div>
+                    <div class="form-group">
+                          Цена: <asp:Label ID="Label10" runat="server" Text="<%# BindItem.Price %>"></asp:Label>
+                    </div>
+                    <div class="form-group">
+                        <asp:Label runat="server">Вграден видео чип?</asp:Label>
+                        <asp:CheckBox ID="chkCpuVideo" runat="server" Checked="<%# BindItem.IntegratedVideo %>"></asp:CheckBox>
+                    </div>
+                </div>
            </div>
        </ItemTemplate>
        
@@ -31,7 +66,7 @@
                     ForeColor="Red" Display="Dynamic" runat="server" ValidationGroup="InsertComputerStoreGroup" />
                 </div>
                 <div class="form-group">
-                    <asp:TextBox class="form-control" ID="txtCpuSocket" runat="server" placeholder="Сокет" Text="<%# BindItem.Socket %>"></asp:TextBox>
+                    <asp:TextBox class="form-control" ID="txtCpuSocket" runat="server" placeholder="Сокет ID" Text="<%# BindItem.Socket %>"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="rfvCpuSocket" ErrorMessage="Задължително поле" ControlToValidate="txtCpuSocket"
                     ForeColor="Red" Display="Dynamic" runat="server" ValidationGroup="InsertComputerStoreGroup" />
                 </div>
