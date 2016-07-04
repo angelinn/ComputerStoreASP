@@ -5,6 +5,9 @@
 <asp:Content runat="server" ContentPlaceHolderID="MainContent" >
     <h2> Компютърен магазин </h2>
 
+    <asp:Label runat="server" ID="lblValidationErrors" style="color: red" ></asp:Label>
+    <hr />
+
    <asp:ListView id="lvProcessors" runat="server" InsertItemPosition="LastItem" ItemType="DataAccess.Models.XML.Processor" 
                  DataKeyNames="ID" SelectMethod="GetProcessors" InsertMethod="InsertProcessor">  
        <ItemTemplate>
